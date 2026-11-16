@@ -1,0 +1,802 @@
+[
+  {
+    "n": 1,
+    "code": 34,
+    "name": "İstanbul",
+    "region": "Marmara",
+    "file": "scene_001_istanbul.png",
+    "prompt": "İstanbul (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 2,
+    "code": 22,
+    "name": "Edirne",
+    "region": "Marmara",
+    "file": "scene_002_edirne.png",
+    "prompt": "Edirne (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 3,
+    "code": 16,
+    "name": "Bursa",
+    "region": "Marmara",
+    "file": "scene_003_bursa.png",
+    "prompt": "Bursa (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 4,
+    "code": 17,
+    "name": "Çanakkale",
+    "region": "Marmara",
+    "file": "scene_004_canakkale.png",
+    "prompt": "Çanakkale (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 5,
+    "code": 10,
+    "name": "Balıkesir",
+    "region": "Marmara",
+    "file": "scene_005_balikesir.png",
+    "prompt": "Balıkesir (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 6,
+    "code": 41,
+    "name": "Kocaeli",
+    "region": "Marmara",
+    "file": "scene_006_kocaeli.png",
+    "prompt": "Kocaeli (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 7,
+    "code": 77,
+    "name": "Yalova",
+    "region": "Marmara",
+    "file": "scene_007_yalova.png",
+    "prompt": "Yalova (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 8,
+    "code": 54,
+    "name": "Sakarya",
+    "region": "Marmara",
+    "file": "scene_008_sakarya.png",
+    "prompt": "Sakarya (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 9,
+    "code": 59,
+    "name": "Tekirdağ",
+    "region": "Marmara",
+    "file": "scene_009_tekirdag.png",
+    "prompt": "Tekirdağ (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 10,
+    "code": 39,
+    "name": "Kırklareli",
+    "region": "Marmara",
+    "file": "scene_010_kirklareli.png",
+    "prompt": "Kırklareli (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 11,
+    "code": 11,
+    "name": "Bilecik",
+    "region": "Marmara",
+    "file": "scene_011_bilecik.png",
+    "prompt": "Bilecik (Marmara region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 12,
+    "code": 35,
+    "name": "İzmir",
+    "region": "Ege",
+    "file": "scene_012_izmir.png",
+    "prompt": "İzmir (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 13,
+    "code": 48,
+    "name": "Muğla",
+    "region": "Ege",
+    "file": "scene_013_mugla.png",
+    "prompt": "Muğla (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 14,
+    "code": 9,
+    "name": "Aydın",
+    "region": "Ege",
+    "file": "scene_014_aydin.png",
+    "prompt": "Aydın (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 15,
+    "code": 20,
+    "name": "Denizli",
+    "region": "Ege",
+    "file": "scene_015_denizli.png",
+    "prompt": "Denizli (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 16,
+    "code": 45,
+    "name": "Manisa",
+    "region": "Ege",
+    "file": "scene_016_manisa.png",
+    "prompt": "Manisa (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 17,
+    "code": 3,
+    "name": "Afyonkarahisar",
+    "region": "Ege",
+    "file": "scene_017_afyonkarahisar.png",
+    "prompt": "Afyonkarahisar (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 18,
+    "code": 43,
+    "name": "Kütahya",
+    "region": "Ege",
+    "file": "scene_018_kutahya.png",
+    "prompt": "Kütahya (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 19,
+    "code": 64,
+    "name": "Uşak",
+    "region": "Ege",
+    "file": "scene_019_usak.png",
+    "prompt": "Uşak (Aegean region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 20,
+    "code": 7,
+    "name": "Antalya",
+    "region": "Akdeniz",
+    "file": "scene_020_antalya.png",
+    "prompt": "Antalya (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 21,
+    "code": 33,
+    "name": "Mersin",
+    "region": "Akdeniz",
+    "file": "scene_021_mersin.png",
+    "prompt": "Mersin (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 22,
+    "code": 31,
+    "name": "Hatay",
+    "region": "Akdeniz",
+    "file": "scene_022_hatay.png",
+    "prompt": "Hatay (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 23,
+    "code": 1,
+    "name": "Adana",
+    "region": "Akdeniz",
+    "file": "scene_023_adana.png",
+    "prompt": "Adana (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 24,
+    "code": 32,
+    "name": "Isparta",
+    "region": "Akdeniz",
+    "file": "scene_024_isparta.png",
+    "prompt": "Isparta (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 25,
+    "code": 15,
+    "name": "Burdur",
+    "region": "Akdeniz",
+    "file": "scene_025_burdur.png",
+    "prompt": "Burdur (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 26,
+    "code": 46,
+    "name": "Kahramanmaraş",
+    "region": "Akdeniz",
+    "file": "scene_026_kahramanmaras.png",
+    "prompt": "Kahramanmaraş (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 27,
+    "code": 80,
+    "name": "Osmaniye",
+    "region": "Akdeniz",
+    "file": "scene_027_osmaniye.png",
+    "prompt": "Osmaniye (Mediterranean region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 28,
+    "code": 50,
+    "name": "Nevşehir",
+    "region": "İç Anadolu",
+    "file": "scene_028_nevsehir.png",
+    "prompt": "Nevşehir (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 29,
+    "code": 6,
+    "name": "Ankara",
+    "region": "İç Anadolu",
+    "file": "scene_029_ankara.png",
+    "prompt": "Ankara (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 30,
+    "code": 42,
+    "name": "Konya",
+    "region": "İç Anadolu",
+    "file": "scene_030_konya.png",
+    "prompt": "Konya (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 31,
+    "code": 26,
+    "name": "Eskişehir",
+    "region": "İç Anadolu",
+    "file": "scene_031_eskisehir.png",
+    "prompt": "Eskişehir (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 32,
+    "code": 38,
+    "name": "Kayseri",
+    "region": "İç Anadolu",
+    "file": "scene_032_kayseri.png",
+    "prompt": "Kayseri (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 33,
+    "code": 58,
+    "name": "Sivas",
+    "region": "İç Anadolu",
+    "file": "scene_033_sivas.png",
+    "prompt": "Sivas (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 34,
+    "code": 68,
+    "name": "Aksaray",
+    "region": "İç Anadolu",
+    "file": "scene_034_aksaray.png",
+    "prompt": "Aksaray (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 35,
+    "code": 51,
+    "name": "Niğde",
+    "region": "İç Anadolu",
+    "file": "scene_035_nigde.png",
+    "prompt": "Niğde (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 36,
+    "code": 40,
+    "name": "Kırşehir",
+    "region": "İç Anadolu",
+    "file": "scene_036_kirsehir.png",
+    "prompt": "Kırşehir (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 37,
+    "code": 66,
+    "name": "Yozgat",
+    "region": "İç Anadolu",
+    "file": "scene_037_yozgat.png",
+    "prompt": "Yozgat (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 38,
+    "code": 70,
+    "name": "Karaman",
+    "region": "İç Anadolu",
+    "file": "scene_038_karaman.png",
+    "prompt": "Karaman (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 39,
+    "code": 18,
+    "name": "Çankırı",
+    "region": "İç Anadolu",
+    "file": "scene_039_cankiri.png",
+    "prompt": "Çankırı (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 40,
+    "code": 71,
+    "name": "Kırıkkale",
+    "region": "İç Anadolu",
+    "file": "scene_040_kirikkale.png",
+    "prompt": "Kırıkkale (Central Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 41,
+    "code": 61,
+    "name": "Trabzon",
+    "region": "Karadeniz",
+    "file": "scene_041_trabzon.png",
+    "prompt": "Trabzon (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 42,
+    "code": 53,
+    "name": "Rize",
+    "region": "Karadeniz",
+    "file": "scene_042_rize.png",
+    "prompt": "Rize (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 43,
+    "code": 8,
+    "name": "Artvin",
+    "region": "Karadeniz",
+    "file": "scene_043_artvin.png",
+    "prompt": "Artvin (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 44,
+    "code": 78,
+    "name": "Karabük",
+    "region": "Karadeniz",
+    "file": "scene_044_karabuk.png",
+    "prompt": "Karabük (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 45,
+    "code": 55,
+    "name": "Samsun",
+    "region": "Karadeniz",
+    "file": "scene_045_samsun.png",
+    "prompt": "Samsun (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 46,
+    "code": 5,
+    "name": "Amasya",
+    "region": "Karadeniz",
+    "file": "scene_046_amasya.png",
+    "prompt": "Amasya (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 47,
+    "code": 57,
+    "name": "Sinop",
+    "region": "Karadeniz",
+    "file": "scene_047_sinop.png",
+    "prompt": "Sinop (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 48,
+    "code": 37,
+    "name": "Kastamonu",
+    "region": "Karadeniz",
+    "file": "scene_048_kastamonu.png",
+    "prompt": "Kastamonu (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 49,
+    "code": 14,
+    "name": "Bolu",
+    "region": "Karadeniz",
+    "file": "scene_049_bolu.png",
+    "prompt": "Bolu (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 50,
+    "code": 28,
+    "name": "Giresun",
+    "region": "Karadeniz",
+    "file": "scene_050_giresun.png",
+    "prompt": "Giresun (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 51,
+    "code": 52,
+    "name": "Ordu",
+    "region": "Karadeniz",
+    "file": "scene_051_ordu.png",
+    "prompt": "Ordu (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 52,
+    "code": 74,
+    "name": "Bartın",
+    "region": "Karadeniz",
+    "file": "scene_052_bartin.png",
+    "prompt": "Bartın (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 53,
+    "code": 67,
+    "name": "Zonguldak",
+    "region": "Karadeniz",
+    "file": "scene_053_zonguldak.png",
+    "prompt": "Zonguldak (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 54,
+    "code": 81,
+    "name": "Düzce",
+    "region": "Karadeniz",
+    "file": "scene_054_duzce.png",
+    "prompt": "Düzce (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 55,
+    "code": 60,
+    "name": "Tokat",
+    "region": "Karadeniz",
+    "file": "scene_055_tokat.png",
+    "prompt": "Tokat (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 56,
+    "code": 19,
+    "name": "Çorum",
+    "region": "Karadeniz",
+    "file": "scene_056_corum.png",
+    "prompt": "Çorum (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 57,
+    "code": 29,
+    "name": "Gümüşhane",
+    "region": "Karadeniz",
+    "file": "scene_057_gumushane.png",
+    "prompt": "Gümüşhane (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 58,
+    "code": 69,
+    "name": "Bayburt",
+    "region": "Karadeniz",
+    "file": "scene_058_bayburt.png",
+    "prompt": "Bayburt (Black Sea region, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 59,
+    "code": 25,
+    "name": "Erzurum",
+    "region": "Doğu Anadolu",
+    "file": "scene_059_erzurum.png",
+    "prompt": "Erzurum (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 60,
+    "code": 36,
+    "name": "Kars",
+    "region": "Doğu Anadolu",
+    "file": "scene_060_kars.png",
+    "prompt": "Kars (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 61,
+    "code": 65,
+    "name": "Van",
+    "region": "Doğu Anadolu",
+    "file": "scene_061_van.png",
+    "prompt": "Van (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 62,
+    "code": 44,
+    "name": "Malatya",
+    "region": "Doğu Anadolu",
+    "file": "scene_062_malatya.png",
+    "prompt": "Malatya (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 63,
+    "code": 23,
+    "name": "Elazığ",
+    "region": "Doğu Anadolu",
+    "file": "scene_063_elazig.png",
+    "prompt": "Elazığ (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 64,
+    "code": 4,
+    "name": "Ağrı",
+    "region": "Doğu Anadolu",
+    "file": "scene_064_agri.png",
+    "prompt": "Ağrı (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 65,
+    "code": 24,
+    "name": "Erzincan",
+    "region": "Doğu Anadolu",
+    "file": "scene_065_erzincan.png",
+    "prompt": "Erzincan (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 66,
+    "code": 13,
+    "name": "Bitlis",
+    "region": "Doğu Anadolu",
+    "file": "scene_066_bitlis.png",
+    "prompt": "Bitlis (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 67,
+    "code": 62,
+    "name": "Tunceli",
+    "region": "Doğu Anadolu",
+    "file": "scene_067_tunceli.png",
+    "prompt": "Tunceli (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 68,
+    "code": 75,
+    "name": "Ardahan",
+    "region": "Doğu Anadolu",
+    "file": "scene_068_ardahan.png",
+    "prompt": "Ardahan (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 69,
+    "code": 76,
+    "name": "Iğdır",
+    "region": "Doğu Anadolu",
+    "file": "scene_069_igdir.png",
+    "prompt": "Iğdır (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 70,
+    "code": 49,
+    "name": "Muş",
+    "region": "Doğu Anadolu",
+    "file": "scene_070_mus.png",
+    "prompt": "Muş (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 71,
+    "code": 12,
+    "name": "Bingöl",
+    "region": "Doğu Anadolu",
+    "file": "scene_071_bingol.png",
+    "prompt": "Bingöl (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 72,
+    "code": 30,
+    "name": "Hakkari",
+    "region": "Doğu Anadolu",
+    "file": "scene_072_hakkari.png",
+    "prompt": "Hakkari (Eastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 73,
+    "code": 63,
+    "name": "Şanlıurfa",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_073_sanliurfa.png",
+    "prompt": "Şanlıurfa (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 74,
+    "code": 47,
+    "name": "Mardin",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_074_mardin.png",
+    "prompt": "Mardin (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 75,
+    "code": 27,
+    "name": "Gaziantep",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_075_gaziantep.png",
+    "prompt": "Gaziantep (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 76,
+    "code": 21,
+    "name": "Diyarbakır",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_076_diyarbakir.png",
+    "prompt": "Diyarbakır (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 77,
+    "code": 2,
+    "name": "Adıyaman",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_077_adiyaman.png",
+    "prompt": "Adıyaman (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 78,
+    "code": 72,
+    "name": "Batman",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_078_batman.png",
+    "prompt": "Batman (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 79,
+    "code": 56,
+    "name": "Siirt",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_079_siirt.png",
+    "prompt": "Siirt (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 80,
+    "code": 79,
+    "name": "Kilis",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_080_kilis.png",
+    "prompt": "Kilis (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 81,
+    "code": 73,
+    "name": "Şırnak",
+    "region": "Güneydoğu Anadolu",
+    "file": "scene_081_sirnak.png",
+    "prompt": "Şırnak (Southeastern Anatolia, Türkiye): its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 82,
+    "code": 82,
+    "name": "Bakü",
+    "region": "Dünya şehirleri",
+    "file": "scene_082_baku.png",
+    "prompt": "Bakü: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 83,
+    "code": 83,
+    "name": "Saraybosna",
+    "region": "Dünya şehirleri",
+    "file": "scene_083_saraybosna.png",
+    "prompt": "Saraybosna: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 84,
+    "code": 84,
+    "name": "Üsküp",
+    "region": "Dünya şehirleri",
+    "file": "scene_084_uskup.png",
+    "prompt": "Üsküp: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 85,
+    "code": 85,
+    "name": "Selanik",
+    "region": "Dünya şehirleri",
+    "file": "scene_085_selanik.png",
+    "prompt": "Selanik: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 86,
+    "code": 86,
+    "name": "Semerkant",
+    "region": "Dünya şehirleri",
+    "file": "scene_086_semerkant.png",
+    "prompt": "Semerkant: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 87,
+    "code": 87,
+    "name": "Budapeşte",
+    "region": "Dünya şehirleri",
+    "file": "scene_087_budapeste.png",
+    "prompt": "Budapeşte: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 88,
+    "code": 88,
+    "name": "Viyana",
+    "region": "Dünya şehirleri",
+    "file": "scene_088_viyana.png",
+    "prompt": "Viyana: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 89,
+    "code": 89,
+    "name": "Berlin",
+    "region": "Dünya şehirleri",
+    "file": "scene_089_berlin.png",
+    "prompt": "Berlin: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 90,
+    "code": 90,
+    "name": "Amsterdam",
+    "region": "Dünya şehirleri",
+    "file": "scene_090_amsterdam.png",
+    "prompt": "Amsterdam: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 91,
+    "code": 91,
+    "name": "Londra",
+    "region": "Dünya şehirleri",
+    "file": "scene_091_londra.png",
+    "prompt": "Londra: its most famous, instantly recognisable real view or landmark, at dawn, soft pink light."
+  },
+  {
+    "n": 92,
+    "code": 92,
+    "name": "Paris",
+    "region": "Dünya şehirleri",
+    "file": "scene_092_paris.png",
+    "prompt": "Paris: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 93,
+    "code": 93,
+    "name": "Roma",
+    "region": "Dünya şehirleri",
+    "file": "scene_093_roma.png",
+    "prompt": "Roma: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 94,
+    "code": 94,
+    "name": "Kahire",
+    "region": "Dünya şehirleri",
+    "file": "scene_094_kahire.png",
+    "prompt": "Kahire: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 95,
+    "code": 95,
+    "name": "Marakeş",
+    "region": "Dünya şehirleri",
+    "file": "scene_095_marakes.png",
+    "prompt": "Marakeş: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 96,
+    "code": 96,
+    "name": "Dubai",
+    "region": "Dünya şehirleri",
+    "file": "scene_096_dubai.png",
+    "prompt": "Dubai: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 97,
+    "code": 97,
+    "name": "Pekin",
+    "region": "Dünya şehirleri",
+    "file": "scene_097_pekin.png",
+    "prompt": "Pekin: its most famous, instantly recognisable real view or landmark, on a clear sunny day."
+  },
+  {
+    "n": 98,
+    "code": 98,
+    "name": "Tokyo",
+    "region": "Dünya şehirleri",
+    "file": "scene_098_tokyo.png",
+    "prompt": "Tokyo: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  },
+  {
+    "n": 99,
+    "code": 99,
+    "name": "Rio de Janeiro",
+    "region": "Dünya şehirleri",
+    "file": "scene_099_rio-de-janeiro.png",
+    "prompt": "Rio de Janeiro: its most famous, instantly recognisable real view or landmark, at golden-hour sunset."
+  },
+  {
+    "n": 100,
+    "code": 100,
+    "name": "New York",
+    "region": "Dünya şehirleri",
+    "file": "scene_100_new-york.png",
+    "prompt": "New York: its most famous, instantly recognisable real view or landmark, at blue hour just after sunset, warm city lights."
+  }
+]

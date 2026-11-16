@@ -22,6 +22,7 @@ import { stops, type StopInfo } from '@/services/levels';
 import { useGame } from '@/store';
 import { fonts } from '@/theme/fonts';
 import { backgrounds, ui } from '@/theme/images';
+import { scenePhoto } from '@/theme/scenes';
 import { palette } from '@/theme/palette';
 
 const ROW = 112;
@@ -192,7 +193,7 @@ function StopSheet({
         <Text style={styles.sheetName} accessibilityRole="header">
           {stop.name}
         </Text>
-        <Scene stop={stop} width={w} height={Math.round(w * 0.7)} />
+        <Scene stop={stop} photo={scenePhoto(stop.index)} width={w} height={Math.round(w * 0.7)} />
         <Text style={styles.sheetIntro}>{stop.intro}</Text>
         <Text style={styles.sheetStats}>
           {t('map.levels', { done: p.done, total })} · ★ {p.stars}

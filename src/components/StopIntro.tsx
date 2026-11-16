@@ -6,6 +6,7 @@ import { t } from '@/i18n';
 import type { StopInfo } from '@/services/levels';
 import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
+import { scenePhoto } from '@/theme/scenes';
 import { trUpper } from '@/utils/tr';
 
 import { Scene } from './Scene';
@@ -22,7 +23,7 @@ export function StopIntro({ stop, onStart }: { stop: StopInfo; onStart: () => vo
         <Text style={styles.name} accessibilityRole="header">
           {trUpper(stop.name)}
         </Text>
-        <Scene stop={stop} width={w} height={Math.round(w * 0.75)} />
+        <Scene stop={stop} photo={scenePhoto(stop.index)} width={w} height={Math.round(w * 0.75)} />
         <Text style={styles.intro}>{stop.intro}</Text>
         <Pressable onPress={onStart} accessibilityRole="button" style={styles.btn}>
           <Text style={styles.btnText}>{t('stop.start')}</Text>

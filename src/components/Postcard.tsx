@@ -10,6 +10,7 @@ import type { StopInfo } from '@/services/levels';
 import { canShare, shareSnapshot } from '@/services/share';
 import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
+import { scenePhoto } from '@/theme/scenes';
 
 import { Scene } from './Scene';
 
@@ -36,6 +37,7 @@ export function Postcard({ stop, onClose }: Props) {
         <Scene
           ref={canvas}
           stop={stop}
+          photo={scenePhoto(stop.index)}
           width={w}
           height={h}
           caption={{

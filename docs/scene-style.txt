@@ -1,0 +1,3 @@
+STYLE: photorealistic, like a high-quality travel photograph of the real place, true-to-life architecture, colours and landscape. Natural, warm, inviting light, slightly soft and dreamy, gentle atmospheric haze, shallow depth. Clean and uncluttered: one clear main subject (the landmark or view the place is famous for), simple background, no busy crowds.
+COMPOSITION: vertical 2:3 portrait, full-bleed. Main subject in the middle third. Top 30% mostly open sky. Bottom 25% calm and low-detail (water, grass, road or soft shadow), because the game puts its letter wheel and buttons over it.
+RULES: no people in close-up, no tourists' faces, no cars in the foreground, no text, no letters, no signs, no logos, no watermark, no border or frame, no collage.

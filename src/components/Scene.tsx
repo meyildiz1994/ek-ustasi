@@ -1,7 +1,11 @@
-/** Draws a stop's procedural scene with Skia (spec §10). Shapes come from src/scenes/scene.ts. */
+/**
+ * Draws a stop's scene with Skia (spec §10): the stop's photo when there is one (cover-fit), else the
+ * procedural paper-cut scene from src/scenes/scene.ts (also shown while the photo loads).
+ */
 import {
   Canvas,
   Group,
+  Image as SkImage,
   LinearGradient,
   Path,
   Rect,
@@ -10,11 +14,13 @@ import {
   Skia,
   Text as SkText,
   useFont,
+  useImage,
   vec,
   type CanvasRef,
   type SkPath,
 } from '@shopify/react-native-skia';
 import { forwardRef, useMemo } from 'react';
+import type { ImageSourcePropType } from 'react-native';
 
 import { buildScene, type SceneRecipe } from '@/scenes/scene';
 import { fontFiles } from '@/theme/fonts';
@@ -27,6 +33,8 @@ interface Props {
   muted?: boolean;
   /** Postcard caption drawn into the image (so a shared snapshot carries it). */
   caption?: { title: string; sub: string };
+  /** Photo of the stop (src/theme/scenes.ts); drawn instead of the procedural shapes. */
+  photo?: ImageSourcePropType | undefined;
 }
 
 type Drawn =
@@ -35,9 +43,11 @@ type Drawn =
   | { kind: 'stroke'; path: SkPath; color: string; width: number; opacity: number };
 
 export const Scene = forwardRef<CanvasRef, Props>(function Scene(
-  { stop, width, height, muted, caption },
+  { stop, width, height, muted, caption, photo },
   ref,
 ) {
+  // useImage takes the bundler's asset reference (a require() result).
+  const image = useImage((photo ?? null) as Parameters<typeof useImage>[0]);
   const titleFont = useFont(fontFiles['Baloo2-ExtraBold'], Math.round(height * 0.1));
   const subFont = useFont(fontFiles['Baloo2-Bold'], Math.round(height * 0.055));
   const drawn = useMemo(() => {
@@ -68,40 +78,45 @@ export const Scene = forwardRef<CanvasRef, Props>(function Scene(
   return (
     <Canvas ref={ref} style={{ width, height }} pointerEvents="none">
       <Group opacity={muted ? 0.35 : 1}>
-        {drawn.map((d, i) => {
-          if (d.kind === 'sky') {
-            return (
-              <Rect key={i} x={0} y={0} width={width} height={height}>
-                <LinearGradient
-                  start={vec(0, 0)}
-                  end={vec(0, height)}
-                  colors={d.colors}
-                  positions={d.colors.map((_, k) => (k / (d.colors.length - 1)) * 0.7)}
+        {image ? (
+          <SkImage image={image} x={0} y={0} width={width} height={height} fit="cover" />
+        ) : null}
+        {image
+          ? null
+          : drawn.map((d, i) => {
+              if (d.kind === 'sky') {
+                return (
+                  <Rect key={i} x={0} y={0} width={width} height={height}>
+                    <LinearGradient
+                      start={vec(0, 0)}
+                      end={vec(0, height)}
+                      colors={d.colors}
+                      positions={d.colors.map((_, k) => (k / (d.colors.length - 1)) * 0.7)}
+                    />
+                  </Rect>
+                );
+              }
+              if (d.kind === 'fill') {
+                return (
+                  <Path key={i} path={d.path} color={d.color} opacity={d.opacity}>
+                    {d.shadow ? (
+                      <Shadow dx={0} dy={shadow} blur={shadow} color="rgba(0,0,0,0.28)" />
+                    ) : null}
+                  </Path>
+                );
+              }
+              return (
+                <Path
+                  key={i}
+                  path={d.path}
+                  color={d.color}
+                  style="stroke"
+                  strokeWidth={d.width}
+                  strokeCap="round"
+                  opacity={d.opacity}
                 />
-              </Rect>
-            );
-          }
-          if (d.kind === 'fill') {
-            return (
-              <Path key={i} path={d.path} color={d.color} opacity={d.opacity}>
-                {d.shadow ? (
-                  <Shadow dx={0} dy={shadow} blur={shadow} color="rgba(0,0,0,0.28)" />
-                ) : null}
-              </Path>
-            );
-          }
-          return (
-            <Path
-              key={i}
-              path={d.path}
-              color={d.color}
-              style="stroke"
-              strokeWidth={d.width}
-              strokeCap="round"
-              opacity={d.opacity}
-            />
-          );
-        })}
+              );
+            })}
       </Group>
       {caption && titleFont && subFont ? (
         <Group>

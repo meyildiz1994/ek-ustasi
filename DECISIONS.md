@@ -217,3 +217,18 @@ cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
 - **Sessiz mod:** iOS'ta sessiz düğmesine uyuluyor, oyuncunun kendi müziğiyle karışıyor (kesmiyor).
 - Spec'teki "ışık dalgası" ve 5+ ekte ekran sarsıntısı: sarsıntı Aşama 6'dan beri var; ışık dalgası cihaz
   testinden sonra, performansa bakılarak eklenecek.
+
+## D-023 — Durak sahneleri fotoğraf gibi görseller (Emre, 2026-11-16)
+
+- **Spec'ten sapma:** Spec durak sahnelerinin kodla çizilmesini istiyordu (D-021). Emre gerçek yerlere çok yakın
+  görseller istedi; 100 durağın her biri için GPT ile üretilmiş, fotoğraf gerçekçiliğinde bir görsel eklendi.
+  Kodla çizilen kâğıt kesik sahne yedek olarak kalıyor (görsel yüklenirken ya da eksikse).
+- **Nerede:** Oyun ekranının arka planı (bölge resmi yerine durağın görseli), durak tanıtımı, harita kartı ve
+  kartpostal (paylaşılan görüntü dahil).
+- **Boyut:** 1024×1536 PNG'ler 720×1080 WebP'ye (kalite 78) çevrildi: 100 dosya toplam ~7,2 MB.
+- **Promptlar:** `docs/scene-prompts.json` ve `docs/scene-style.txt` (lisans kaydı için saklanıyor).
+- **Dosya adı düzeltmesi:** ChatGPT 55 görseli yanlış durağın adıyla kaydetmişti (ör. Bursa'nın görseli
+  `scene_002_edirne.png` adını taşıyordu). Her görsel içeriğine bakılarak doğru durağa yerleştirildi. Simge yapısı
+  belirgin olmayan birkaç durak (Manisa, Kütahya, Kahramanmaraş, Ardahan, Gaziantep, Kilis, Şırnak) Emre'nin
+  onayına açık.
+- **Not:** Durak tanıtım cümleleri kodla çizilen sahnelere göre yazılmıştı; görsellerle birebir örtüşmeyebilir.
