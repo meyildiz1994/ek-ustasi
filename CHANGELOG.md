@@ -1,5 +1,10 @@
 # Değişiklik günlüğü
 
+## [0.8.1] — 2026-11-16 — Durak görselleri
+
+- 100 durağın her birine fotoğraf gibi bir görsel (`assets/images/scenes/*.webp`, ~7,2 MB): oyun arka planı,
+  durak tanıtımı, harita kartı ve kartpostalda. Kodla çizilen sahne yedek. Kararlar: D-023.
+
 ## [0.8.0] — 2026-11-16 — Aşama 8: His, ses, titreşim
 
 - `tools/audio/synth.ts`: 29 özgün ses efekti ve müzik döngüsü kodla üretiliyor (`pnpm sounds`).

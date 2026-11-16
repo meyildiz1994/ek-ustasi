@@ -33,6 +33,7 @@ import { stopForLevel, stops } from '@/services/levels';
 import { gameStore, useGame } from '@/store';
 import { fonts } from '@/theme/fonts';
 import { backgrounds, ui } from '@/theme/images';
+import { scenePhoto } from '@/theme/scenes';
 import { palette } from '@/theme/palette';
 
 const FLASH_MS = 900;
@@ -167,7 +168,10 @@ export default function PlayScreen() {
     !result &&
     !ek &&
     introSeen !== level.id;
-  const bg = (stop && backgrounds[stop.region as keyof typeof backgrounds]) ?? backgrounds.marmara;
+  // The stop's photo sits behind the board; the region painting is the fallback.
+  const bg =
+    (stop && (scenePhoto(stop.index) ?? backgrounds[stop.region as keyof typeof backgrounds])) ??
+    backgrounds.marmara;
   // Side buttons take 56 + 2·6 px on each side.
   const wheelSize = Math.min(width - 2 * (56 + 12) - 8, 300);
 
