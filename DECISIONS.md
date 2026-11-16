@@ -101,3 +101,69 @@ planı gönderdi; bu, önerilen hibrit yaklaşımın kabulü sayıldı:
 - Boyutlar: arka planlar 1024×1536 JPG (q82), ikonlar 256 px, maskot 512 px, çark tabağı 1024 px; PNG'ler 256 renge
   indirildi. Toplam ≈4,3 MB. Orijinal 1254/1536 px dosyalar Emre'de duruyor.
 - Ekranda yazı içeren görsel yok; bütün metinler `i18n/tr.json` üzerinden çiziliyor.
+
+## D-015 — Zorluk puanı normları ve harf sayısı dağılımı (Aşama 4)
+
+Spec 8.4 formülü aynen kullanılıyor; `norm()` aralıkları belgede yoktu, eğrinin gerçekten kullandığı aralığa göre
+seçildi (`tools/levelgen/difficulty.ts`):
+
+| Özellik             | Aralık                                         |
+| ------------------- | ---------------------------------------------- |
+| harf sayısı         | 4–7 (8 harf = 1)                               |
+| hedef kelime sayısı | 3–12 (12+ = 1)                                 |
+| en uzun kelime      | 4–7                                            |
+| tekrar eden harf    | 0–2                                            |
+| frekans persentili  | hedef listesindeki Zipf sırası (1 = en yaygın) |
+| kesişim yoğunluğu   | kesişen hücre / dolu hücre, 0,1–0,5            |
+
+Daha geniş aralıklarla (ör. 3–8 harf, 3–16 kelime) üst bantlar (65–80, 75–95) erişilemiyordu. 75–95 bandında
+gerçekçi tavan ≈ 88; son katmanın hedefi bandın %60'ında (≈ 87) kesiliyor.
+
+Ana kelime uzunluğu aralıklı katmanlarda ilerlemeye göre seçiliyor: 7 harfli kelime kümeleri en kıt kaynak ve
+3001–4000 yalnızca 7 harf kullanıyor, bu yüzden 2001–3000 önce 6, 4001–5000 önce 8 harfli ana kelime alıyor.
+1–20 aralığında 3 harfli ana kelimeyle 3 hedef kelime kurulamadığı için pratikte 4 harf kullanılıyor.
+
+## D-016 — Bölüm üreticisi ayrıntıları (Aşama 4)
+
+- Ana kelime: hedef listesindeki herhangi bir kelime (önce madde başları, sonra çekimli biçimler). 1–3. bölümler
+  elle seçildi: `elma`, `kale`, `okul` (uymazsa üretici kendi seçer).
+- Kelime seçimi hedef zorluğa göre yapılıyor (yaygın ↔ nadir karışımı, kelime sayısı); daha önce kullanılmış
+  kelimeler kullanım sayısıyla cezalandırılıyor ki yaygın kısa kelimeler 5000 bölüme yayılsın (en fazla 12 kez).
+- "Ardışık 30 bölüm içinde tekrar etmez" = aynı kelimenin iki kullanımı arasında en az 31 bölüm.
+- Izgara: en fazla 200 yeniden başlatma; bütün kelimeler yerleştiyse 20 denemeden sonra duruluyor (en iyi düzen
+  zaten bulunmuş oluyor, süre ≈ 10× kısalıyor). Hedef en-boy oranı sütun/satır = 1,2.
+- Bonus kelimeler = `valid_words.bin` içinden çark harfleriyle kurulabilen her kelime (çekimli biçimler dahil),
+  ızgaradakiler hariç.
+- `letters` karıştırılmış olarak saklanıyor (ana kelime çarkta okunmasın).
+- Paketler `fflate` ile gzip (mtime 0): her işletim sisteminde aynı bayt; uygulama da aynı kütüphaneyle açacak.
+
+## D-017 — Ek Turu verisi (Aşama 4)
+
+- Kök: bölümün ızgaradaki kelimelerinden, `derivations.json` içinde türetim ağacı olan ve son 200 bölümde kök
+  olmamış kelime; en yüksek, sonra en geniş ağaç seçiliyor.
+- En iyi zincir: en derin türetim yolu + sabit çekim kuyruğu `-lAr → -(I)mIz → -DA → -ki → (-lAr → -DA → -ki)…`,
+  `maxDepth`'e kadar. Her zincir motorla yeniden türetiliyor (8.8).
+- Kartlar `{ id, form }` olarak saklanıyor (spec örneğinde düz metin): "i" hem belirtme hem iyelik olabildiği için
+  biçim tek başına eki belirlemiyor. Kart sayısı maxDepth ≤ 3 → 8, ≤ 6 → 10, üstü → 12; en iyi zincirin her adımı
+  için doğru biçim + en az bir yanıltıcı varyant (önce ince/kalın çevirmesi), geçerli kartlar ≥ %40.
+- `targetScore` = zincirin son eki olmadan alınan puanın ⅔'ü, 10'a yuvarlanmış (spec örneği kalem → 160 tutuyor).
+- Büyük Ek Turu (her durağın 50. bölümü): `maxDepth` + 2 (en çok 12), `big: true`; ödül çarpanı uygulamada.
+- `archiphoneme: true` 1001. bölümden itibaren (spec 5.3).
+
+## D-018 — Duraklar (Aşama 4)
+
+- Sıra: bölgeler spec 10'daki sırayla, bölge içinde turistik tanınırlığa göre (tahminî sıralama, Emre değiştirebilir:
+  `tools/levelgen/stops-list.ts`). 82–100: Bakü, Saraybosna, Üsküp, Selanik, Semerkant, Budapeşte, Viyana, Berlin,
+  Amsterdam, Londra, Paris, Roma, Kahire, Marakeş, Dubai, Pekin, Tokyo, Rio de Janeiro, New York.
+- `stopId`: iller `tr-50-nevsehir`, dünya şehirleri `w-82-baku`.
+- Sahne tarifleri genel biçimlerden oluşuyor (kubbe, minare, kule, köprü, peri bacası…); gerçek bir yapının
+  kopyası yok. Palet bölge tabanından + günün saatinden türetiliyor, durak başına küçük kaydırma.
+- Tanıtım cümleleri özgün olarak yazıldı.
+
+## D-019 — 3–4 harfli kelimeler için kullanım sınırı 24 (spec 8.6: 12)
+
+5000 bölüm ≈ 53.000 hedef kelime yeri istiyor ve ızgaralar kısa kelimeye muhtaç. 3–4 harfli hedef kelime sayısı
+yalnızca 1.849; hepsi 12 kez kullanılınca (~3.200. bölüm) 7 harfli çarklarda 10 kelimelik bölüm kurulamıyor.
+Bu yüzden 3–4 harfli kelimelerin toplam sınırı 24'e çıkarıldı; 5+ harfli kelimeler için 12 aynen geçerli.
+"30 bölüm içinde tekrar etmez" kuralı herkes için aynı. Üretici ayrıca kelimeleri kullanım sayısına göre
+cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.

@@ -1,6 +1,18 @@
 # Değişiklik günlüğü
 
-## [Unreleased] — Görsel varlıklar
+## [0.4.0] — 2026-11-16 — Aşama 4: Bölüm üretim hattı
+
+- `tools/levelgen`: seed'li PRNG, ana kelime + kelime seçimi, ızgara yerleşimi (geri izleme + 200 yeniden
+  başlatma), zorluk puanı (8.4), testere dişi zorluk eğrisi (8.5), tekrar kuralları (8.6), Ek Turu verisi (8.7),
+  otomatik doğrulama (8.8), paketleme (50 bölüm/paket, gzip, SHA-256 manifest), `report.html` + `review.html`.
+- `assets/levels`: 5000 bölüm (100 paket, ≈1,4 MB), `manifest.json`, `stops.json`.
+- `stops.json`: 81 il + 19 dünya şehri; özgün tanıtım cümlesi, palet, prosedürel sahne tarifi;
+  `tools/scenes/preview.html` önizlemesi.
+- `src/game/level.ts`: bölüm veri tipleri (spec 9).
+- Kararlar: D-015 (zorluk normları), D-016 (üretici ayrıntıları), D-017 (Ek Turu), D-018 (duraklar),
+  D-019 (kısa kelime kullanım sınırı).
+
+## [0.3.1] — 2026-11-16 — Görsel varlıklar
 
 - Emre'nin GPT ile ürettiği 29 görsel eklendi: 9 arka plan, 13 arayüz ikonu/rozeti, çark tabağı, 3 maskot pozu,
   uygulama ikonu (iOS + Android adaptive + monokrom), açılış amblemi (`expo-splash-screen`), favicon.

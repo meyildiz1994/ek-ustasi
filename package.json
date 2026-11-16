@@ -44,6 +44,8 @@
     "format:check": "prettier --check .",
     "dict:fetch": "tsx tools/dict/fetch.ts",
     "dict": "tsx tools/dict/build.ts",
+    "levelgen": "tsx tools/levelgen/cli.ts",
+    "scenes": "tsx tools/scenes/preview.ts",
     "test:tools": "vitest run --config tools/vitest.config.mts"
   },
   "private": true,
