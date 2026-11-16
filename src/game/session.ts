@@ -111,7 +111,7 @@ export interface HintOutcome {
 }
 
 /** Applies a paid hint. Returns null when the player cannot afford it or it would open nothing. */
-export function useHint(
+export function applyHint(
   level: Level,
   s: Session,
   req: HintRequest,

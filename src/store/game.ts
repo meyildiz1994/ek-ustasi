@@ -13,7 +13,7 @@ import {
   sessionStars,
   shuffleSession,
   submitWord,
-  useHint,
+  applyHint,
   type HintRequest,
   type Session,
   type SubmitOutcome,
@@ -132,7 +132,7 @@ export function createGameStore(deps: GameDeps) {
         hint(req) {
           const { level, session, save } = get();
           if (!level || !session) return null;
-          const out = useHint(level, session, req, save.coins, rngFor(level));
+          const out = applyHint(level, session, req, save.coins, rngFor(level));
           if (!out) return null;
           set((st) => {
             st.session = out.session;
