@@ -2,11 +2,23 @@
  * Game store (zustand + immer). Created with injected dependencies so tests run without native
  * modules; src/store/index.ts wires the real ones.
  */
+import { castDraft } from 'immer';
 import { createStore } from 'zustand/vanilla';
 import { immer } from 'zustand/middleware/immer';
 
+import {
+  applyCards,
+  collect,
+  ekReward,
+  hintCard,
+  newEkSession,
+  type EkSession,
+  type EkTip,
+} from '../game/ekturu';
 import type { CellKey } from '../game/grid';
+import { HINT_COST } from '../game/hints';
 import type { Level } from '../game/level';
+import type { Engine } from '../morph/engine';
 import { bonusCoins, levelEndCoins } from '../game/scoring';
 import {
   newSession,
@@ -24,6 +36,7 @@ import { readSave, writeSave, type SaveData, type SaveProvider, type Settings } 
 export interface GameDeps {
   provider: SaveProvider;
   loadLevel: (id: number) => Promise<Level>;
+  engine: Engine;
   now?: () => number;
 }
 
@@ -41,6 +54,12 @@ export interface GameState {
   result: LevelResult | null;
   loading: boolean;
   error: string | null;
+  /** Ek Turu round in progress (after the level's result card). */
+  ek: EkSession | null;
+  /** Coins paid out when the Ek Turu round ended; null while playing. */
+  ekPaid: number | null;
+  /** Tutorial card to show now (spec §5.4). */
+  tip: EkTip | null;
 
   openLevel(id?: number): Promise<void>;
   submit(word: string): SubmitOutcome | null;
@@ -48,6 +67,14 @@ export interface GameState {
   shuffle(): void;
   nextLevel(): Promise<void>;
   setSetting<K extends keyof Settings>(key: K, value: Settings[K]): void;
+
+  startEkTuru(): void;
+  /** Applies wheel cards in order; returns how many stuck and whether the chain broke. */
+  ekApply(indices: number[]): { added: number; failed: boolean } | null;
+  /** Ek hint (40 coins): highlights a card that continues the word. false if unaffordable/none. */
+  ekHint(): boolean;
+  ekCollect(): void;
+  dismissTip(): void;
 }
 
 export function createGameStore(deps: GameDeps) {
@@ -70,6 +97,27 @@ export function createGameStore(deps: GameDeps) {
           st.save.stars[level.id] = Math.max(st.save.stars[level.id] ?? 0, stars) as 1 | 2 | 3;
           st.save.currentLevel = Math.max(st.save.currentLevel, level.id + 1);
           st.save.session = null;
+          if (level.ekTuru) st.save.pendingEkTuru = level.id;
+        });
+        persist();
+      };
+
+      const queueTips = (tips: readonly EkTip[]) => {
+        const { save, tip } = get();
+        if (!save.settings.ekTuruExplanations || tip) return;
+        const next = tips.find((t) => !save.tipsSeen.includes(t));
+        if (next) set((st) => void (st.tip = next));
+      };
+
+      /** Ends the round: pays out once and clears the pending flag. */
+      const payEk = () => {
+        const { ek } = get();
+        if (!ek || ek.status === 'playing' || get().ekPaid !== null) return;
+        const coins = ekReward(ek);
+        set((st) => {
+          st.ekPaid = coins;
+          st.save.coins += coins;
+          st.save.pendingEkTuru = null;
         });
         persist();
       };
@@ -81,21 +129,43 @@ export function createGameStore(deps: GameDeps) {
         result: null,
         loading: false,
         error: null,
+        ek: null,
+        ekPaid: null,
+        tip: null,
 
         async openLevel(id) {
-          const target = id ?? get().save.currentLevel;
+          const pending = get().save.pendingEkTuru;
+          const target = id ?? pending ?? get().save.currentLevel;
           set((st) => {
             st.loading = true;
             st.error = null;
           });
           try {
             const level = await deps.loadLevel(target);
+            if (pending === level.id && level.ekTuru) {
+              // Level already solved; only its Ek Turu round is owed.
+              const done = newSession(level);
+              set((st) => {
+                st.level = level;
+                st.session = {
+                  ...done,
+                  progress: { found: level.words.map((w) => w.w), revealed: [] },
+                };
+                st.result = null;
+                st.loading = false;
+                st.ekPaid = null;
+              });
+              get().startEkTuru();
+              return;
+            }
             const saved = get().save.session;
             const session = saved && saved.levelId === level.id ? saved : newSession(level);
             set((st) => {
               st.level = level;
               st.session = session;
               st.result = null;
+              st.ek = null;
+              st.ekPaid = null;
               st.loading = false;
               st.save.session = session;
             });
@@ -156,7 +226,63 @@ export function createGameStore(deps: GameDeps) {
         },
 
         async nextLevel() {
+          set((st) => {
+            st.ek = null;
+            st.ekPaid = null;
+          });
           await get().openLevel(get().save.currentLevel);
+        },
+
+        startEkTuru() {
+          const { level } = get();
+          if (!level?.ekTuru) return;
+          const ek = newEkSession(deps.engine, level.id, level.ekTuru);
+          set((st) => {
+            st.ek = castDraft(ek);
+            st.ekPaid = null;
+            st.result = null;
+          });
+          queueTips(['intro']);
+        },
+
+        ekApply(indices) {
+          const { ek } = get();
+          if (!ek) return null;
+          const out = applyCards(deps.engine, ek, indices);
+          set((st) => void (st.ek = castDraft(out.session)));
+          queueTips(out.tips);
+          if (out.failed) payEk();
+          return { added: out.added, failed: out.failed };
+        },
+
+        ekHint() {
+          const { ek, save } = get();
+          if (!ek || save.coins < HINT_COST.suffix) return false;
+          const i = hintCard(deps.engine, ek);
+          if (i === null) return false;
+          set((st) => {
+            if (st.ek) st.ek.hinted = i;
+            st.save.coins -= HINT_COST.suffix;
+          });
+          persist();
+          return true;
+        },
+
+        ekCollect() {
+          const { ek } = get();
+          if (!ek) return;
+          set((st) => void (st.ek = castDraft(collect(ek))));
+          payEk();
+        },
+
+        dismissTip() {
+          const { tip } = get();
+          if (!tip) return;
+          set((st) => {
+            st.tip = null;
+            if (!st.save.tipsSeen.includes(tip)) st.save.tipsSeen.push(tip);
+          });
+          persist();
         },
 
         setSetting(key, value) {

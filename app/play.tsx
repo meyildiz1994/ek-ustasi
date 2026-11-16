@@ -13,9 +13,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Grid, FILL_STAGGER_MS } from '@/components/Grid';
+import { EkTuruView } from '@/components/EkTuruView';
 import { LevelComplete } from '@/components/LevelComplete';
 import { PreviewBubble, type BubbleHandle, type BubbleTone } from '@/components/PreviewBubble';
 import { RoundButton } from '@/components/RoundButton';
+import { TipCard } from '@/components/TipCard';
 import { TopBar } from '@/components/TopBar';
 import { Wheel } from '@/components/Wheel';
 import { fillDelays, visibleCells, type CellKey } from '@/game/grid';
@@ -40,6 +42,9 @@ export default function PlayScreen() {
   const bonusCounter = useGame((s) => s.save.bonusCounter);
   const loading = useGame((s) => s.loading);
   const error = useGame((s) => s.error);
+  const ek = useGame((s) => s.ek);
+  const ekPaid = useGame((s) => s.ekPaid);
+  const tip = useGame((s) => s.tip);
 
   const { width } = useWindowDimensions();
   const [gridBox, setGridBox] = useState({ w: 0, h: 0 });
@@ -152,6 +157,29 @@ export default function PlayScreen() {
               </>
             )}
           </View>
+        ) : ek ? (
+          <>
+            <TopBar
+              coins={coins}
+              stopName={stop.name}
+              level={level.id}
+              bonus={bonusCounter}
+              onBack={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+            />
+            <EkTuruView
+              ek={ek}
+              paid={ekPaid}
+              coins={coins}
+              onApply={(p) => gameStore.getState().ekApply(p)}
+              onHint={() => gameStore.getState().ekHint()}
+              onCollect={() => gameStore.getState().ekCollect()}
+              onNext={() => {
+                setDelays(new Map());
+                void gameStore.getState().nextLevel();
+              }}
+              onFeedback={(k) => feedback[k]()}
+            />
+          </>
         ) : (
           <>
             <TopBar
@@ -235,12 +263,15 @@ export default function PlayScreen() {
       {result ? (
         <LevelComplete
           result={result}
+          ekTuru={level?.ekTuru !== undefined}
           onNext={() => {
             setDelays(new Map());
-            void gameStore.getState().nextLevel();
+            if (level?.ekTuru) gameStore.getState().startEkTuru();
+            else void gameStore.getState().nextLevel();
           }}
         />
       ) : null}
+      {tip ? <TipCard tip={tip} onClose={() => gameStore.getState().dismissTip()} /> : null}
       {loading && level ? <View style={styles.dim} pointerEvents="none" /> : null}
     </ImageBackground>
   );

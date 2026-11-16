@@ -65,10 +65,11 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 6 — Ek Turu
 
-- [ ] Ek Turu ekranı, kartlar, zincir, çarpan, "Topla", hata açıklamaları
-- [ ] Büyük Ek Turu, arşifonem kartları (1001+)
-- [ ] Eğitici açıklama kartları (ilk karşılaşmada)
-- [ ] Puan formülü testleri
+- [x] Ek Turu ekranı: ekler çark halkasında, büyüyen kelime (her ek ayrı renk), çarpan rozeti, "Topla", hata açıklamaları — D-020
+- [x] Büyük Ek Turu (3× ödül), arşifonem kartları (1001+)
+- [x] Eğitici açıklama kartları (ilk karşılaşmada, ayarla kapatılabilir)
+- [x] Puan formülü testleri; 1000 Ek Turunun hepsi kendi kartlarıyla hedefe ulaşıyor (test)
+- [ ] "Mıknatıs" kart animasyonu ve ışık dalgası → Aşama 8 (his ve ses)
 
 ## Aşama 7 — Duraklar ve harita
 

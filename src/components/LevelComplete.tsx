@@ -10,10 +10,12 @@ import { palette } from '@/theme/palette';
 
 interface Props {
   result: LevelResult;
+  /** The level has an Ek Turu: the button opens it instead of the next level. */
+  ekTuru?: boolean;
   onNext: () => void;
 }
 
-export function LevelComplete({ result, onNext }: Props) {
+export function LevelComplete({ result, ekTuru, onNext }: Props) {
   return (
     <Animated.View entering={FadeIn.duration(250)} style={styles.backdrop}>
       <Animated.View entering={ZoomIn.delay(150).springify()} style={styles.card}>
@@ -35,7 +37,7 @@ export function LevelComplete({ result, onNext }: Props) {
           accessibilityRole="button"
           style={({ pressed }) => [styles.next, pressed && styles.pressed]}
         >
-          <Text style={styles.nextText}>{t('play.next')}</Text>
+          <Text style={styles.nextText}>{t(ekTuru ? 'play.toEkTuru' : 'play.next')}</Text>
         </Pressable>
       </Animated.View>
     </Animated.View>

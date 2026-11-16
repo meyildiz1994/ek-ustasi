@@ -14,20 +14,27 @@ import { ui } from '@/theme/images';
 import { trUpper } from '@/utils/tr';
 
 interface Props {
-  /** Letters in wheel order. */
+  /** Letters (or suffix-card labels in card mode) in wheel order. */
   letters: string[];
+  /** Card mode (Ek Turu): suffix chips on the outer ring, with a small category line. */
+  subs?: string[];
+  /** Index pulsed by the Ek hint. */
+  highlighted?: number | null;
   size: number;
   onChange: (path: number[]) => void;
   onRelease: (path: number[]) => void;
 }
 
-export function Wheel({ letters, size, onChange, onRelease }: Props) {
+export function Wheel({ letters, subs, highlighted, size, onChange, onRelease }: Props) {
+  const cards = subs !== undefined;
   const c = size / 2;
   // Letters sit on the plate's plain inner ring, clear of the rim ornaments.
-  const letterR = size * (letters.length > 6 ? 0.085 : letters.length > 5 ? 0.095 : 0.11);
+  const letterR = cards
+    ? size * (letters.length > 10 ? 0.082 : 0.092)
+    : size * (letters.length > 6 ? 0.085 : letters.length > 5 ? 0.095 : 0.11);
   const positions = useMemo(
-    () => wheelPositions(letters.length, c, c, size * 0.235),
-    [letters.length, c, size],
+    () => wheelPositions(letters.length, c, c, size * (cards ? 0.355 : 0.235)),
+    [letters.length, c, size, cards],
   );
   const [path, setPath] = useState<number[]>([]);
   const [finger, setFinger] = useState<Point | null>(null);
@@ -103,27 +110,35 @@ export function Wheel({ letters, size, onChange, onRelease }: Props) {
         {letters.map((ch, i) => {
           const q = positions[i] as Point;
           const on = path.includes(i);
+          const w = cards ? letterR * 2.5 : letterR * 2;
+          const h = cards ? letterR * 1.9 : letterR * 2;
           return (
             <View
               key={i}
               pointerEvents="none"
               style={[
                 styles.letter,
-                {
-                  left: q.x - letterR,
-                  top: q.y - letterR,
-                  width: letterR * 2,
-                  height: letterR * 2,
-                  borderRadius: letterR,
-                },
+                { left: q.x - w / 2, top: q.y - h / 2, width: w, height: h, borderRadius: h / 2 },
+                cards && styles.card,
+                cards && highlighted === i && styles.cardHint,
                 on && styles.letterOn,
               ]}
             >
               <Text
-                style={[styles.letterText, { fontSize: letterR * 1.4 }, on && styles.letterTextOn]}
+                style={[
+                  styles.letterText,
+                  { fontSize: cards ? letterR * 0.78 : letterR * 1.4 },
+                  on && styles.letterTextOn,
+                ]}
+                numberOfLines={1}
               >
-                {trUpper(ch)}
+                {cards ? ch : trUpper(ch)}
               </Text>
+              {cards ? (
+                <Text style={[styles.sub, { fontSize: letterR * 0.38 }, on && styles.letterTextOn]}>
+                  {subs?.[i]}
+                </Text>
+              ) : null}
             </View>
           );
         })}
@@ -138,4 +153,11 @@ const styles = StyleSheet.create({
   letterOn: { backgroundColor: palette.selection },
   letterText: { color: palette.navy, fontFamily: fonts.extraBold },
   letterTextOn: { color: '#fff' },
+  card: {
+    backgroundColor: palette.cream,
+    borderWidth: 2,
+    borderColor: palette.cobalt,
+  },
+  cardHint: { borderColor: palette.saffron, borderWidth: 4 },
+  sub: { color: palette.cobalt, fontFamily: fonts.medium, marginTop: -4 },
 });
