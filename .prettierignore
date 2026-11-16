@@ -8,3 +8,4 @@ tools/dict/sources
 assets/levels
 tools/levelgen/*.html
 tools/scenes/preview.html
+src/services/pack-assets.generated.ts

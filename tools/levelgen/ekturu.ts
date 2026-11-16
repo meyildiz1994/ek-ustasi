@@ -8,6 +8,7 @@
  */
 import type { DerivationTree } from '../../src/dict/lexicon';
 import type { EkCard, EkTuru } from '../../src/game/level';
+import { chainScore } from '../../src/game/scoring';
 import { SUFFIXES, type Engine, type SuffixId, type Word } from '../../src/morph';
 import type { Rng } from './prng';
 
@@ -67,9 +68,7 @@ export function inflectionTail(n: number): SuffixId[] {
   return out;
 }
 
-/** Chain score (spec §5.2): surface letters × 2 × 2^(suffix count). */
-export const chainScore = (surface: string, suffixes: number): number =>
-  surface.length * 2 * 2 ** suffixes;
+export { chainScore };
 
 export function chainFor(
   engine: Engine,
