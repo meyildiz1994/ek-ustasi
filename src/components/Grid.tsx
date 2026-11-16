@@ -10,6 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import type { CellKey, GridModel } from '@/game/grid';
+import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
 import { trUpper } from '@/utils/tr';
 
@@ -66,7 +67,7 @@ function Cell({
       ]}
     >
       {shown ? (
-        <Text style={[styles.letter, { fontSize: size * 0.56 }]}>{trUpper(letter)}</Text>
+        <Text style={[styles.letter, { fontSize: size * 0.64 }]}>{trUpper(letter)}</Text>
       ) : null}
     </Animated.View>
   );
@@ -115,5 +116,5 @@ const styles = StyleSheet.create({
   },
   cellHidden: { backgroundColor: 'rgba(255,244,224,0.85)', borderColor: 'rgba(30,42,90,0.25)' },
   cellShown: { backgroundColor: palette.turquoise, borderColor: palette.navy },
-  letter: { color: '#fff', fontWeight: '800' },
+  letter: { color: '#fff', fontFamily: fonts.extraBold },
 });

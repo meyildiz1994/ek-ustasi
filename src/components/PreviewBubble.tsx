@@ -8,6 +8,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
+import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
 import { trUpper } from '@/utils/tr';
 
@@ -61,5 +62,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
   },
-  text: { color: '#fff', fontSize: 24, fontWeight: '900', letterSpacing: 3 },
+  text: { color: '#fff', fontSize: 27, fontFamily: fonts.extraBold, letterSpacing: 3 },
 });

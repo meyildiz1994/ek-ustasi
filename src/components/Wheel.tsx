@@ -8,6 +8,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { GestureDetector, usePanGesture } from 'react-native-gesture-handler';
 
 import { dragPath, HIT_FACTOR, wheelPositions, type Point } from '@/game/wheel';
+import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
 import { ui } from '@/theme/images';
 import { trUpper } from '@/utils/tr';
@@ -119,7 +120,7 @@ export function Wheel({ letters, size, onChange, onRelease }: Props) {
               ]}
             >
               <Text
-                style={[styles.letterText, { fontSize: letterR * 1.15 }, on && styles.letterTextOn]}
+                style={[styles.letterText, { fontSize: letterR * 1.4 }, on && styles.letterTextOn]}
               >
                 {trUpper(ch)}
               </Text>
@@ -135,6 +136,6 @@ const styles = StyleSheet.create({
   plate: { position: 'absolute', left: 0, top: 0 },
   letter: { position: 'absolute', alignItems: 'center', justifyContent: 'center' },
   letterOn: { backgroundColor: palette.selection },
-  letterText: { color: palette.navy, fontWeight: '900' },
+  letterText: { color: palette.navy, fontFamily: fonts.extraBold },
   letterTextOn: { color: '#fff' },
 });

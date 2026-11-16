@@ -1,3 +1,4 @@
+import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
@@ -6,12 +7,16 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { loadSkia } from '@/services/skia';
+import { fontFiles } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
 
 export default function RootLayout() {
-  const [ready, setReady] = useState(false);
+  const [skiaReady, setSkiaReady] = useState(false);
+  const [fontsLoaded, fontError] = useFonts(fontFiles);
+  // A font failure falls back to the system font rather than blocking the game.
+  const ready = skiaReady && (fontsLoaded || fontError !== null);
   useEffect(() => {
-    void loadSkia().then(() => setReady(true));
+    void loadSkia().then(() => setSkiaReady(true));
   }, []);
   return (
     <GestureHandlerRootView style={styles.root}>

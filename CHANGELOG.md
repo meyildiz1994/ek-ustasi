@@ -9,6 +9,7 @@
 - Ekranlar: ana sayfa ("Bölüm N"), oyun ekranı (bölgeye göre arka plan, ızgara dolma animasyonu, Skia çark
   çizgisi, önizleme baloncuğu, karıştır + 3 ipucu), bölüm sonu kartı (yıldız, puan, altın).
 - Web: Skia için CanvasKit yükleyici, `pnpm export:web`.
+- Yazı tipi: Baloo 2 (OFL), 3 sabit ağırlık, Latin + Türkçe alt küme (≈68 KB her biri).
 
 ## [0.4.0] — 2026-11-16 — Aşama 4: Bölüm üretim hattı
 

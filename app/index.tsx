@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { t } from '@/i18n';
 import { useGame } from '@/store';
+import { fonts } from '@/theme/fonts';
 import { backgrounds, mascot, ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
 import { trUpper } from '@/utils/tr';
@@ -52,20 +53,20 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(30,42,90,0.75)',
   },
   coin: { width: 28, height: 28, marginRight: 6 },
-  pillText: { color: '#fff', fontSize: 17, fontWeight: '800' },
+  pillText: { color: '#fff', fontSize: 17, fontFamily: fonts.extraBold },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   title: {
     color: '#fff',
-    fontSize: 44,
-    fontWeight: '900',
+    fontSize: 52,
+    fontFamily: fonts.extraBold,
     letterSpacing: 3,
     textShadowColor: palette.navyDeep,
     textShadowRadius: 10,
   },
   subtitle: {
     color: palette.cream,
-    fontSize: 17,
-    fontWeight: '700',
+    fontSize: 19,
+    fontFamily: fonts.bold,
     marginTop: 6,
     textShadowColor: palette.navyDeep,
     textShadowRadius: 8,
@@ -84,5 +85,5 @@ const styles = StyleSheet.create({
     borderBottomColor: '#147A75',
   },
   pressed: { transform: [{ scale: 0.96 }] },
-  playText: { color: '#fff', fontSize: 26, fontWeight: '900' },
+  playText: { color: '#fff', fontSize: 26, fontFamily: fonts.extraBold },
 });

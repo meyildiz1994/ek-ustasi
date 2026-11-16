@@ -26,6 +26,7 @@ import { t } from '@/i18n';
 import { feedback } from '@/services/feedback';
 import { stopForLevel } from '@/services/levels';
 import { gameStore, useGame } from '@/store';
+import { fonts } from '@/theme/fonts';
 import { backgrounds, ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
 
@@ -249,7 +250,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: palette.navy },
   safe: { flex: 1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
-  msg: { color: '#fff', fontSize: 18, fontWeight: '700' },
+  msg: { color: '#fff', fontSize: 18, fontFamily: fonts.bold },
   retry: { padding: 12 },
   gridArea: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 6 },
   bubbleRow: { height: 52, justifyContent: 'center' },

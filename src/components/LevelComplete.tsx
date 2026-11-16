@@ -4,6 +4,7 @@ import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 
 import type { LevelResult } from '@/store/game';
 import { t } from '@/i18n';
+import { fonts } from '@/theme/fonts';
 import { mascot, ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
 
@@ -59,13 +60,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mascot: { width: 120, height: 120, marginTop: -84 },
-  title: { fontSize: 30, fontWeight: '900', color: palette.navy, marginTop: 4 },
+  title: { fontSize: 30, fontFamily: fonts.extraBold, color: palette.navy, marginTop: 4 },
   stars: { fontSize: 44, color: palette.saffron, letterSpacing: 6, marginVertical: 6 },
   starsOff: { color: 'rgba(30,42,90,0.18)' },
-  score: { fontSize: 16, color: palette.navy, fontWeight: '700' },
+  score: { fontSize: 18, color: palette.navy, fontFamily: fonts.bold },
   coins: { flexDirection: 'row', alignItems: 'center', marginTop: 10 },
   coin: { width: 30, height: 30, marginRight: 6 },
-  coinText: { fontSize: 22, fontWeight: '900', color: palette.navy },
+  coinText: { fontSize: 22, fontFamily: fonts.extraBold, color: palette.navy },
   next: {
     marginTop: 18,
     minHeight: 52,
@@ -78,5 +79,5 @@ const styles = StyleSheet.create({
     borderBottomColor: '#147A75',
   },
   pressed: { transform: [{ scale: 0.96 }] },
-  nextText: { color: '#fff', fontSize: 20, fontWeight: '900' },
+  nextText: { color: '#fff', fontSize: 20, fontFamily: fonts.extraBold },
 });

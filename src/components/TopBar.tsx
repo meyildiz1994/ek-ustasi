@@ -2,6 +2,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { t } from '@/i18n';
+import { fonts } from '@/theme/fonts';
 import { ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
 import { trUpper } from '@/utils/tr';
@@ -58,15 +59,15 @@ const styles = StyleSheet.create({
   },
   back: { color: '#fff', fontSize: 26, marginRight: 4, marginTop: -3 },
   icon: { width: 28, height: 28, marginRight: 4 },
-  value: { color: '#fff', fontSize: 17, fontWeight: '800' },
+  value: { color: '#fff', fontSize: 17, fontFamily: fonts.extraBold },
   center: { alignItems: 'center' },
   stop: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: '900',
+    fontSize: 21,
+    fontFamily: fonts.extraBold,
     letterSpacing: 1.5,
     textShadowColor: palette.navy,
     textShadowRadius: 6,
   },
-  level: { color: palette.cream, fontSize: 14, fontWeight: '700' },
+  level: { color: palette.cream, fontSize: 15, fontFamily: fonts.bold },
 });

@@ -1,6 +1,7 @@
 /** Round icon button with an optional badge; ≥ 44 pt touch target (spec §16). */
 import { Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 
+import { fonts } from '@/theme/fonts';
 import { palette } from '@/theme/palette';
 
 interface Props {
@@ -55,5 +56,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  badgeText: { color: '#fff', fontSize: 12, fontWeight: '800' },
+  badgeText: { color: '#fff', fontSize: 12, fontFamily: fonts.extraBold },
 });
