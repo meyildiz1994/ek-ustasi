@@ -1,5 +1,13 @@
 # Değişiklik günlüğü
 
+## [0.8.0] — 2026-11-16 — Aşama 8: His, ses, titreşim
+
+- `tools/audio/synth.ts`: 29 özgün ses efekti ve müzik döngüsü kodla üretiliyor (`pnpm sounds`).
+- Ses ve titreşim servisi (`src/services/sound.ts`, `feedback.ts`); her olayın kendi sesi ve titreşimi.
+- Pentatonik harf tıkları, karo dolum notaları, bonus kelimede uçan yıldız.
+- Ek Turu: ek başına yükselen nota, mıknatıs animasyonu, kırılma ve toplama sesleri.
+- Bölüm sonu: konfeti, tek tek düşen yıldızlar. Ana sayfada Ayarlar. Kararlar: D-022.
+
 ## [0.7.0] — 2026-11-16 — Aşama 7: Duraklar ve harita
 
 - `src/scenes/scene.ts`: 100 durağın kâğıt kesme sahneleri tek çiziciden; Skia bileşeni (`Scene`) ve SVG önizleme.

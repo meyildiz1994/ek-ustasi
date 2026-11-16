@@ -1,7 +1,9 @@
 import { router } from 'expo-router';
+import { useState } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { SettingsSheet } from '@/components/SettingsSheet';
 import { t } from '@/i18n';
 import { useGame } from '@/store';
 import { fonts } from '@/theme/fonts';
@@ -12,10 +14,19 @@ import { trUpper } from '@/utils/tr';
 export default function HomeScreen() {
   const level = useGame((s) => s.save.currentLevel);
   const coins = useGame((s) => s.save.coins);
+  const [settings, setSettings] = useState(false);
   return (
     <ImageBackground source={backgrounds.home} style={styles.root} resizeMode="cover">
       <SafeAreaView style={styles.safe}>
         <View style={styles.top}>
+          <Pressable
+            onPress={() => setSettings(true)}
+            accessibilityRole="button"
+            accessibilityLabel={t('home.settings')}
+            style={({ pressed }) => [styles.pill, styles.gear, pressed && styles.pressed]}
+          >
+            <Text style={styles.gearText}>⚙</Text>
+          </Pressable>
           <View style={styles.pill} accessibilityLabel={t('play.coins', { n: coins })}>
             <Image source={ui.coin} style={styles.coin} />
             <Text style={styles.pillText}>{coins}</Text>
@@ -43,6 +54,7 @@ export default function HomeScreen() {
           <Text style={styles.playText}>{t('home.play', { n: level })}</Text>
         </Pressable>
       </SafeAreaView>
+      <SettingsSheet visible={settings} onClose={() => setSettings(false)} />
     </ImageBackground>
   );
 }
@@ -50,7 +62,14 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: palette.navy },
   safe: { flex: 1, alignItems: 'center' },
-  top: { alignSelf: 'stretch', flexDirection: 'row', justifyContent: 'flex-end', padding: 12 },
+  top: {
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12,
+  },
+  gear: { width: 44, justifyContent: 'center', paddingHorizontal: 0 },
+  gearText: { color: '#fff', fontSize: 24, lineHeight: 28 },
   pill: {
     flexDirection: 'row',
     alignItems: 'center',

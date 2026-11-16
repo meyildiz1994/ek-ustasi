@@ -1,12 +1,17 @@
 /** End-of-level card: stars, coins earned, score and the next-level button (spec §4.6). */
+import { useEffect } from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
+import Animated, { BounceIn, FadeIn, ZoomIn } from 'react-native-reanimated';
 
+import { completeTimeline, STAR_AT, STAR_GAP } from '@/game/feel';
 import type { LevelResult } from '@/store/game';
 import { t } from '@/i18n';
+import { feedback } from '@/services/feedback';
 import { fonts } from '@/theme/fonts';
 import { mascot, ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
+
+import { Confetti } from './Effects';
 
 interface Props {
   result: LevelResult;
@@ -16,17 +21,38 @@ interface Props {
 }
 
 export function LevelComplete({ result, ekTuru, onNext }: Props) {
+  useEffect(() => {
+    const ids = completeTimeline(result.stars, result.coins).map(([ms, ev]) =>
+      setTimeout(() => feedback[ev](), ms),
+    );
+    return () => ids.forEach(clearTimeout);
+  }, [result.stars, result.coins]);
+
   return (
     <Animated.View entering={FadeIn.duration(250)} style={styles.backdrop}>
+      <Confetti seed={result.score + result.stars} />
       <Animated.View entering={ZoomIn.delay(150).springify()} style={styles.card}>
         <Image source={mascot.cheer} style={styles.mascot} resizeMode="contain" />
         <Text style={styles.title} accessibilityRole="header">
           {t('play.complete')}
         </Text>
-        <Text style={styles.stars} accessibilityLabel={`${result.stars} yıldız`}>
-          {'★'.repeat(result.stars)}
-          <Text style={styles.starsOff}>{'★'.repeat(3 - result.stars)}</Text>
-        </Text>
+        <View style={styles.starRow} accessibilityLabel={`${result.stars} yıldız`}>
+          {[0, 1, 2].map((k) =>
+            k < result.stars ? (
+              <Animated.Text
+                key={k}
+                entering={BounceIn.delay(STAR_AT + k * STAR_GAP).duration(420)}
+                style={styles.star}
+              >
+                ★
+              </Animated.Text>
+            ) : (
+              <Text key={k} style={[styles.star, styles.starsOff]}>
+                ★
+              </Text>
+            ),
+          )}
+        </View>
         <Text style={styles.score}>{t('play.score', { n: result.score })}</Text>
         <View style={styles.coins}>
           <Image source={ui.coin} style={styles.coin} />
@@ -63,7 +89,8 @@ const styles = StyleSheet.create({
   },
   mascot: { width: 120, height: 120, marginTop: -84 },
   title: { fontSize: 30, fontFamily: fonts.extraBold, color: palette.navy, marginTop: 4 },
-  stars: { fontSize: 44, color: palette.saffron, letterSpacing: 6, marginVertical: 6 },
+  starRow: { flexDirection: 'row', gap: 6, marginVertical: 6 },
+  star: { fontSize: 44, color: palette.saffron },
   starsOff: { color: 'rgba(30,42,90,0.18)' },
   score: { fontSize: 18, color: palette.navy, fontFamily: fonts.bold },
   coins: { flexDirection: 'row', alignItems: 'center', marginTop: 10 },

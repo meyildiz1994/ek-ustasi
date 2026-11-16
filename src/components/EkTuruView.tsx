@@ -10,10 +10,13 @@ import Animated, {
   withSequence,
   withSpring,
   withTiming,
+  ZoomIn,
 } from 'react-native-reanimated';
 
 import { cardCategory, cardLabel, ekMultiplier, naivePreview, type EkSession } from '@/game/ekturu';
+import { ekTimeline } from '@/game/feel';
 import { HINT_COST } from '@/game/hints';
+import { feedback } from '@/services/feedback';
 import { t } from '@/i18n';
 import { ui } from '@/theme/images';
 import { fonts } from '@/theme/fonts';
@@ -34,23 +37,16 @@ interface Props {
   onHint: () => boolean;
   onCollect: () => void;
   onNext: () => void;
-  onFeedback: (kind: 'select' | 'success' | 'error') => void;
 }
 
-export function EkTuruView({
-  ek,
-  paid,
-  coins,
-  onApply,
-  onHint,
-  onCollect,
-  onNext,
-  onFeedback,
-}: Props) {
+export function EkTuruView({ ek, paid, coins, onApply, onHint, onCollect, onNext }: Props) {
   const { width } = useWindowDimensions();
   const [preview, setPreview] = useState('');
   const [note, setNote] = useState<string | null>(null);
   const bubble = useRef<BubbleHandle>(null);
+  const pathLen = useRef(0);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
   const shake = useSharedValue(0);
   const badge = useSharedValue(1);
   const steps = ek.steps.length;
@@ -78,12 +74,21 @@ export function EkTuruView({
 
   const onRelease = (path: number[]) => {
     setPreview('');
+    pathLen.current = 0;
+    const before = steps;
     const out = onApply(path);
     if (!out) return;
-    if (out.failed) {
-      onFeedback('error');
-      bubble.current?.shake();
-    } else if (out.added > 0) onFeedback('success');
+    // Each suffix that stuck gets its own rising note, then the break (if any) lands last.
+    for (const [ms, ev] of ekTimeline(before, out.added, out.failed)) {
+      const play = ev.kind === 'step' ? () => feedback.ekStep(ev.n) : feedback.ekBreak;
+      timers.current.push(setTimeout(play, ms));
+    }
+    if (out.failed) bubble.current?.shake();
+  };
+
+  const collect = () => {
+    feedback.collect();
+    onCollect();
   };
 
   const hint = () => {
@@ -117,16 +122,22 @@ export function EkTuruView({
       <View style={styles.wordArea}>
         <View style={styles.word} accessibilityLabel={ek.word.surface}>
           {morphemes.map((m, i) => (
-            <Text
-              key={i}
-              style={[
-                styles.morph,
-                { backgroundColor: SEGMENT_COLORS[i === 0 ? 0 : 1 + ((i - 1) % 3)] },
-                morphemes.join('').length > 14 && styles.morphSmall,
-              ]}
+            // A new morpheme snaps in like a magnet; each one keyed by position+text so a
+            // changed surface (softening: kitap → kitab|ı) re-animates the root too.
+            <Animated.View
+              key={`${i}:${m}`}
+              entering={ZoomIn.delay(i === 0 ? 0 : (i - 1) * 40).springify()}
             >
-              {trUpper(m)}
-            </Text>
+              <Text
+                style={[
+                  styles.morph,
+                  { backgroundColor: SEGMENT_COLORS[i === 0 ? 0 : 1 + ((i - 1) % 3)] },
+                  morphemes.join('').length > 14 && styles.morphSmall,
+                ]}
+              >
+                {trUpper(m)}
+              </Text>
+            </Animated.View>
           ))}
           <Animated.View style={[styles.badge, badgeStyle]}>
             <Text style={styles.badgeText}>×{ekMultiplier(ek)}</Text>
@@ -159,10 +170,11 @@ export function EkTuruView({
             highlighted={ek.hinted}
             size={wheelSize}
             onChange={(p) => {
-              if (p.length > 0) {
-                onFeedback('select');
+              if (p.length > pathLen.current) {
+                feedback.select(p.length - 1);
                 setNote(null);
               }
+              pathLen.current = p.length;
               setPreview(
                 p.length
                   ? naivePreview(
@@ -182,7 +194,7 @@ export function EkTuruView({
               onPress={hint}
             />
             <Pressable
-              onPress={onCollect}
+              onPress={collect}
               disabled={steps === 0}
               accessibilityRole="button"
               style={({ pressed }) => [

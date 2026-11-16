@@ -69,7 +69,7 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 - [x] Büyük Ek Turu (3× ödül), arşifonem kartları (1001+)
 - [x] Eğitici açıklama kartları (ilk karşılaşmada, ayarla kapatılabilir)
 - [x] Puan formülü testleri; 1000 Ek Turunun hepsi kendi kartlarıyla hedefe ulaşıyor (test)
-- [ ] "Mıknatıs" kart animasyonu ve ışık dalgası → Aşama 8 (his ve ses)
+- [x] "Mıknatıs" ek animasyonu (Aşama 8); ışık dalgası cihaz testinden sonra
 
 ## Aşama 7 — Duraklar ve harita
 
@@ -80,7 +80,8 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 8 — His, ses, haptik
 
-- [ ] Özgün/CC0 sesler, pentatonik tıklar, haptik eşlemeleri, konfeti, ayarlar
+- [x] Özgün sesler (kodla sentez), pentatonik tıklar, haptik eşlemeleri, konfeti, ayarlar — D-022
+- [ ] Gerçek cihazda ses/titreşim ve 60 fps kontrolü (Emre)
 
 ## Aşama 9 — Ekonomi, satın alma, reklam
 

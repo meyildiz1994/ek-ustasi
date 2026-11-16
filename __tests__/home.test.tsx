@@ -4,7 +4,11 @@ import HomeScreen from '../app/index';
 
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 jest.mock('@/store', () => {
-  const save = { currentLevel: 7, coins: 245 };
+  const save = {
+    currentLevel: 7,
+    coins: 245,
+    settings: { sound: true, music: true, haptics: true, ekTuruExplanations: true },
+  };
   return { useGame: (sel: (s: { save: typeof save }) => unknown) => sel({ save }) };
 });
 

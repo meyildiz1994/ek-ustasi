@@ -199,3 +199,21 @@ cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
   "İstanbul / İstanbul'dan sevgiler" yazılıyor; ayrılma eki morfoloji motoruyla seçiliyor (İzmir'den, New York'tan).
   Paylaşım, görüntünün PNG'si ile sistemin paylaşım ekranından yapılıyor (yalnız telefonda). Kazanılan kartpostallar
   kayıtta tutuluyor; haritada biten durağa dokununca yeniden açılıyor.
+
+## D-022 — Sesler, titreşim ve his (Aşama 8)
+
+- **Sesler kodla sentezleniyor:** Hazır ses kütüphanesi yerine `tools/audio/synth.ts` 29 efekti ve bir müzik
+  döngüsünü sinüs/üçgen dalga ve tohumlu gürültüden üretiyor (`pnpm sounds`). Sesler tamamen özgün, lisans
+  gerektirmiyor; aynı komut her seferinde aynı baytları yazıyor (testle denetleniyor).
+- **WAV, sıkıştırmasız:** Toplam ~2,3 MB. 44,1 kHz mono efektler, 22,05 kHz tek 32 saniyelik müzik döngüsü.
+  Boyut hedefi (< 60 MB) için sorun değil; ileride gerekirse AAC'ye çevrilebilir.
+- **Harf tıkları:** Spec'teki gibi Do majör pentatonik, her yeni harfte bir basamak yukarı (10 nota). Izgaraya
+  dolan her karo da bir nota çalıyor, kelime sesi dolum bitince geliyor.
+- **Ek Turu:** Takılan her ek için yükselen bir nota ve güçlü titreşim, aynı sürükleyişte birkaç ek takılırsa
+  140 ms arayla; kırılma sesi en sonda. Yeni ek parçası "mıknatıs" gibi yaylanarak yerine oturuyor.
+- **Bölüm sonu:** Konfeti (Skia, 90 kâğıt parça), yıldızlar tek tek düşüyor ve her biri çınlıyor, sonra altın sesi.
+- **Ayarlar:** Ana sayfadaki dişliden: ses efektleri, müzik, titreşim, Ek Turu açıklamaları. Renk körü ve büyük
+  yazı ayarları kayıtta var, arayüzü sonraki aşamada.
+- **Sessiz mod:** iOS'ta sessiz düğmesine uyuluyor, oyuncunun kendi müziğiyle karışıyor (kesmiyor).
+- Spec'teki "ışık dalgası" ve 5+ ekte ekran sarsıntısı: sarsıntı Aşama 6'dan beri var; ışık dalgası cihaz
+  testinden sonra, performansa bakılarak eklenecek.
