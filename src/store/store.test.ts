@@ -155,3 +155,18 @@ describe('Ek Turu in the store', () => {
     expect(store.getState().tip).toBeNull();
   });
 });
+
+describe('postcards', () => {
+  it('finishing a stop’s last level earns its postcard once', async () => {
+    const store = createGameStore({ provider: memorySaveProvider(), loadLevel, engine });
+    await store.getState().openLevel(50);
+    for (const w of (store.getState().level as Level).words) store.getState().submit(w.w);
+    expect(store.getState().newPostcard).toBe('tr-34-istanbul');
+    expect(store.getState().save.postcards).toEqual(['tr-34-istanbul']);
+    store.getState().dismissPostcard();
+    expect(store.getState().newPostcard).toBeNull();
+    await store.getState().openLevel(49);
+    for (const w of (store.getState().level as Level).words) store.getState().submit(w.w);
+    expect(store.getState().newPostcard).toBeNull();
+  });
+});

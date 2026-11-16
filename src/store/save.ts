@@ -32,6 +32,8 @@ export interface SaveData {
   pendingEkTuru: number | null;
   /** Ek Turu tutorial cards already shown (spec §5.4). */
   tipsSeen: string[];
+  /** Postcards earned, by stop id, in the order they were won (spec §10). */
+  postcards: string[];
   settings: Settings;
 }
 
@@ -54,6 +56,7 @@ export const defaultSave = (): SaveData => ({
   session: null,
   pendingEkTuru: null,
   tipsSeen: [],
+  postcards: [],
   settings: defaultSettings(),
 });
 

@@ -16,7 +16,9 @@ import { Grid, FILL_STAGGER_MS } from '@/components/Grid';
 import { EkTuruView } from '@/components/EkTuruView';
 import { LevelComplete } from '@/components/LevelComplete';
 import { PreviewBubble, type BubbleHandle, type BubbleTone } from '@/components/PreviewBubble';
+import { Postcard } from '@/components/Postcard';
 import { RoundButton } from '@/components/RoundButton';
+import { StopIntro } from '@/components/StopIntro';
 import { TipCard } from '@/components/TipCard';
 import { TopBar } from '@/components/TopBar';
 import { Wheel } from '@/components/Wheel';
@@ -26,7 +28,7 @@ import { gridOf } from '@/game/session';
 import { pathWord } from '@/game/wheel';
 import { t } from '@/i18n';
 import { feedback } from '@/services/feedback';
-import { stopForLevel } from '@/services/levels';
+import { stopForLevel, stops } from '@/services/levels';
 import { gameStore, useGame } from '@/store';
 import { fonts } from '@/theme/fonts';
 import { backgrounds, ui } from '@/theme/images';
@@ -45,6 +47,9 @@ export default function PlayScreen() {
   const ek = useGame((s) => s.ek);
   const ekPaid = useGame((s) => s.ekPaid);
   const tip = useGame((s) => s.tip);
+  const newPostcard = useGame((s) => s.newPostcard);
+  const [postcardOpen, setPostcardOpen] = useState(false);
+  const [introSeen, setIntroSeen] = useState<number | null>(null);
 
   const { width } = useWindowDimensions();
   const [gridBox, setGridBox] = useState({ w: 0, h: 0 });
@@ -129,7 +134,24 @@ export default function PlayScreen() {
     setPicking(!picking);
   };
 
+  /** Next level, with the postcard first when a stop was just finished. */
+  const goNext = () => {
+    setDelays(new Map());
+    if (gameStore.getState().newPostcard) setPostcardOpen(true);
+    else void gameStore.getState().nextLevel();
+  };
+
   const stop = level ? stopForLevel(level.id) : null;
+  const showIntro =
+    !!level &&
+    !!stop &&
+    !!session &&
+    level.id === stop.firstLevel &&
+    session.progress.found.length === 0 &&
+    session.progress.revealed.length === 0 &&
+    !result &&
+    !ek &&
+    introSeen !== level.id;
   const bg = (stop && backgrounds[stop.region as keyof typeof backgrounds]) ?? backgrounds.marmara;
   // Side buttons take 56 + 2·6 px on each side.
   const wheelSize = Math.min(width - 2 * (56 + 12) - 8, 300);
@@ -173,10 +195,7 @@ export default function PlayScreen() {
               onApply={(p) => gameStore.getState().ekApply(p)}
               onHint={() => gameStore.getState().ekHint()}
               onCollect={() => gameStore.getState().ekCollect()}
-              onNext={() => {
-                setDelays(new Map());
-                void gameStore.getState().nextLevel();
-              }}
+              onNext={goNext}
               onFeedback={(k) => feedback[k]()}
             />
           </>
@@ -265,9 +284,19 @@ export default function PlayScreen() {
           result={result}
           ekTuru={level?.ekTuru !== undefined}
           onNext={() => {
-            setDelays(new Map());
             if (level?.ekTuru) gameStore.getState().startEkTuru();
-            else void gameStore.getState().nextLevel();
+            else goNext();
+          }}
+        />
+      ) : null}
+      {showIntro && stop ? <StopIntro stop={stop} onStart={() => setIntroSeen(level.id)} /> : null}
+      {postcardOpen && newPostcard ? (
+        <Postcard
+          stop={stops.find((x) => x.id === newPostcard) ?? (stop as NonNullable<typeof stop>)}
+          onClose={() => {
+            setPostcardOpen(false);
+            gameStore.getState().dismissPostcard();
+            void gameStore.getState().nextLevel();
           }}
         />
       ) : null}

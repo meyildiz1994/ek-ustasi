@@ -17,6 +17,7 @@ import {
 } from '../game/ekturu';
 import type { CellKey } from '../game/grid';
 import { HINT_COST } from '../game/hints';
+import { isStopFinale } from '../game/stops';
 import type { Level } from '../game/level';
 import type { Engine } from '../morph/engine';
 import { bonusCoins, levelEndCoins } from '../game/scoring';
@@ -60,6 +61,8 @@ export interface GameState {
   ekPaid: number | null;
   /** Tutorial card to show now (spec §5.4). */
   tip: EkTip | null;
+  /** Stop id whose postcard was just won; shown before the next level. */
+  newPostcard: string | null;
 
   openLevel(id?: number): Promise<void>;
   submit(word: string): SubmitOutcome | null;
@@ -75,6 +78,7 @@ export interface GameState {
   ekHint(): boolean;
   ekCollect(): void;
   dismissTip(): void;
+  dismissPostcard(): void;
 }
 
 export function createGameStore(deps: GameDeps) {
@@ -98,6 +102,10 @@ export function createGameStore(deps: GameDeps) {
           st.save.currentLevel = Math.max(st.save.currentLevel, level.id + 1);
           st.save.session = null;
           if (level.ekTuru) st.save.pendingEkTuru = level.id;
+          if (isStopFinale(level.id) && !st.save.postcards.includes(level.stopId)) {
+            st.save.postcards.push(level.stopId);
+            st.newPostcard = level.stopId;
+          }
         });
         persist();
       };
@@ -132,6 +140,7 @@ export function createGameStore(deps: GameDeps) {
         ek: null,
         ekPaid: null,
         tip: null,
+        newPostcard: null,
 
         async openLevel(id) {
           const pending = get().save.pendingEkTuru;
@@ -283,6 +292,10 @@ export function createGameStore(deps: GameDeps) {
             if (!st.save.tipsSeen.includes(tip)) st.save.tipsSeen.push(tip);
           });
           persist();
+        },
+
+        dismissPostcard() {
+          set((st) => void (st.newPostcard = null));
         },
 
         setSetting(key, value) {

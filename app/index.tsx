@@ -29,6 +29,13 @@ export default function HomeScreen() {
           <Image source={mascot.happy} style={styles.mascot} resizeMode="contain" />
         </View>
         <Pressable
+          onPress={() => router.push('/map')}
+          accessibilityRole="button"
+          style={({ pressed }) => [styles.map, pressed && styles.pressed]}
+        >
+          <Text style={styles.mapText}>{t('home.map')}</Text>
+        </Pressable>
+        <Pressable
           onPress={() => router.push('/play')}
           accessibilityRole="button"
           style={({ pressed }) => [styles.play, pressed && styles.pressed]}
@@ -84,6 +91,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: 5,
     borderBottomColor: '#147A75',
   },
+  map: {
+    marginBottom: 14,
+    minWidth: 180,
+    minHeight: 50,
+    paddingHorizontal: 24,
+    borderRadius: 25,
+    backgroundColor: 'rgba(30,42,90,0.8)',
+    borderWidth: 2,
+    borderColor: palette.cream,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mapText: { color: '#fff', fontSize: 20, fontFamily: fonts.extraBold },
   pressed: { transform: [{ scale: 0.96 }] },
   playText: { color: '#fff', fontSize: 26, fontFamily: fonts.extraBold },
 });

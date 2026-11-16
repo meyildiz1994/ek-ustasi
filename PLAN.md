@@ -73,7 +73,10 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 7 — Duraklar ve harita
 
-- [ ] 100 durağın prosedürel Skia sahneleri, harita ekranı, kartpostal
+- [x] 100 durağın prosedürel sahneleri: uygulama (Skia) ve `preview.html` (SVG) aynı çiziciyi kullanıyor — D-021
+- [x] Harita ekranı (dikey yol, yıldızlar, kilitli duraklar gri), durak kartı, yeni durak tanıtımı
+- [x] Kartpostal (durak bitince, paylaşılabilir)
+- [ ] Kartpostal paylaşımını gerçek telefonda denemek (web'de paylaşım kapalı)
 
 ## Aşama 8 — His, ses, haptik
 
