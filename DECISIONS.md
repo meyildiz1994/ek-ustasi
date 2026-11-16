@@ -88,3 +88,16 @@ Emre: "siyasi ve dini kelimeler olmasın". `blocklist.txt` içindeki siyasi/dini
 ibadet ve kurum adları, ideolojiler, siyasi kurumlar, etnik/mezhep adları). Spec 7.2 gereği bu kelimeler bonus olarak
 kabul edilmeye devam ediyor. Fiil çekimleri (`geldi`, `alır`) bonus sözlüğüne Aşama 5'ten sonra eklenecek (öneri,
 Emre itiraz etmedi).
+
+## D-014 — Görseller: GPT ile üretilmiş raster + prosedürel ayrıntı (hibrit) (2026-11-16)
+
+Spec görsellerin tamamen prosedürel (Skia) çizilmesini öngörüyordu. Emre görselleri OpenAI GPT ile üretti ve 9 arka
+planı gönderdi; bu, önerilen hibrit yaklaşımın kabulü sayıldı:
+
+- 9 bölge arka planı (ana ekran, 7 coğrafi bölge, dünya), arayüz ikonları, çark tabağı, maskot (hüdhüd kuşu),
+  uygulama ikonu ve açılış amblemi raster olarak `assets/images/` altında.
+- Her durağın (il/ülke) kendine özgü ayrıntıları, ızgara karoları, harfler ve animasyonlar prosedürel kalıyor.
+- Görsel dil: "Anadolu İznik çinisi + kâğıt kesme", palet `src/theme/palette.ts`.
+- Boyutlar: arka planlar 1024×1536 JPG (q82), ikonlar 256 px, maskot 512 px, çark tabağı 1024 px; PNG'ler 256 renge
+  indirildi. Toplam ≈4,3 MB. Orijinal 1254/1536 px dosyalar Emre'de duruyor.
+- Ekranda yazı içeren görsel yok; bütün metinler `i18n/tr.json` üzerinden çiziliyor.
