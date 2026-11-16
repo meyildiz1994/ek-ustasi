@@ -3,3 +3,5 @@ coverage
 .expo
 dist
 pnpm-lock.yaml
+assets/dict
+tools/dict/sources

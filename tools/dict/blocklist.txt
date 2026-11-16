@@ -1,0 +1,135 @@
+# Ek Ustası — hedef kelime engelleme listesi (spec §7.2)
+# TASLAK: Claude tarafından hazırlandı, Emre'nin onayını bekliyor.
+#
+# Bu listedeki kelimeler ve bu köklerden çekimle türeyen biçimler HEDEF kelime olamaz.
+# Bonus kelime olarak kabul edilebilirler (spec §7.2).
+# Biçim: satır başına bir kelime (küçük harf). Sonunda * olan satır önek eşleşmesidir.
+# Bir kelimeyi listeden çıkarmak için satırı silmek ya da başına # koymak yeterli.
+
+## Küfür ve hakaret
+amcık*
+orospu*
+pezevenk*
+yarrak*
+yavşak*
+kahpe*
+gavat*
+ibne*
+puşt*
+kaltak*
+sürtük*
+piç
+göt
+sik
+sikiş
+siktir
+yarak
+taşak
+çük
+dalyarak
+gerizekalı
+dangalak
+salak
+aptal
+bok
+boktan
+sıçmak
+osurmak
+sapık
+sapıklık
+gebermek
+kahrolsun
+lavuk
+kancık
+hödük
+şerefsiz
+namussuz
+haysiyetsiz
+it oğlu it
+aşağılık
+kevaşe
+fahişe
+oğlancı
+
+## Cinsel içerik
+seks
+seksi
+sevişmek
+porno
+pornografi
+erotik
+mastürbasyon
+orgazm
+sperm
+meni
+döl
+vajina
+penis
+prezervatif
+genelev
+kerhane
+tecavüz
+taciz
+pedofili
+ensest
+memeler
+
+## Şiddet ve ölüm
+cinayet
+katil
+katliam
+soykırım
+işkence
+intihar
+idam
+infaz
+kurşuna
+öldürmek
+boğazlamak
+terör
+terörist
+bomba
+patlayıcı
+ceset
+kıyım
+vahşet
+linç
+
+## Uyuşturucu
+uyuşturucu
+esrar
+eroin
+kokain
+afyon
+haşhaş
+
+## Aşağılayıcı ya da ayrımcı ifadeler
+zenci
+gavur
+kâfir
+dinsiz
+çingene
+yobaz
+kızılbaş
+dönme
+
+## Hassas: siyasi / dini (EMRE KARAR VERSİN: hedefte kalsın mı?)
+allah
+tanrı
+peygamber
+kuran
+incil
+tevrat
+şeriat
+cihat
+mezhep
+tarikat
+darbe
+cunta
+şehit
+ırkçı
+ırkçılık
+faşist
+faşizm
+komünist
+hilafet

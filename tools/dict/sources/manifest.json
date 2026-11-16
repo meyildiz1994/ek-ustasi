@@ -1,0 +1,30 @@
+{
+  "zemberek/master-dictionary.dict": {
+    "url": "https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/morphology/src/main/resources/tr/master-dictionary.dict",
+    "sha256": "7eec0b78ca39c243e665bb1001eaaa6bda3a8dc86773e736d3a21fc9eb1c4c23"
+  },
+  "zemberek/non-tdk.dict": {
+    "url": "https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/morphology/src/main/resources/tr/non-tdk.dict",
+    "sha256": "fb606619217b547bf5065bafcf1d8e60e0edeebf6185f7457c167cd693a22893"
+  },
+  "zemberek/proper.dict": {
+    "url": "https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/morphology/src/main/resources/tr/proper.dict",
+    "sha256": "5704f4017854c474442cce246443b9fec5967799a968ab9d7eb0cce930e32178"
+  },
+  "zemberek/abbreviations.dict": {
+    "url": "https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/morphology/src/main/resources/tr/abbreviations.dict",
+    "sha256": "bafb5117ac6fbae0f7360a1cf8df91e46c131d170084fad18cd2a8882ef9f5ef"
+  },
+  "wordfreq/small_tr.msgpack.gz": {
+    "url": "https://files.pythonhosted.org/packages/py3/w/wordfreq/wordfreq-3.1.1-py3-none-any.whl#wordfreq/data/small_tr.msgpack.gz",
+    "sha256": "10980704ee3ac5b52f226579251905412a04ead57092a12182dd0b8be6a765df"
+  },
+  "wordfreq/LICENSE.txt": {
+    "url": "https://files.pythonhosted.org/packages/py3/w/wordfreq/wordfreq-3.1.1-py3-none-any.whl#wordfreq-3.1.1.dist-info/LICENSE.txt",
+    "sha256": "262b51ebd3e7e29d3e5b82cb1fceefcf0a0db5627f119d4ad85157adfb6e16fe"
+  },
+  "fetchedAt": {
+    "url": "2026-11-16",
+    "sha256": ""
+  }
+}

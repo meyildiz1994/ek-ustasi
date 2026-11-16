@@ -20,5 +20,20 @@ vakasıyla sabitlendi. Kaynak: standart Türkiye Türkçesi kuralları (genel di
 | Hata önceliği                         | `ORDER` → `VOWEL_HARMONY`/`CONSONANT` → `NOT_LEXICAL`                                                                                          | strictVariant              |
 | Fiil ekleri                           | Kapsam dışı (spec 6.2 yalnız ad ekleri tanımlıyor); `-lA` fiil yapım eki eklenmedi                                                             | —                          |
 
-Açık sorular (Aşama 3'te sözlükle netleşecek): yumuşamayan çok heceli kelimelerin tam listesi, `frontOverride`
+## Aşama 3: Zemberek bayrakları
+
+Bayraklar Zemberek'ten geliyor (Voicing → `soften`, NoVoicing → `noSoften`, LastVowelDrop → `vowelDrop`,
+Doubling → `geminate`, InverseHarmony → `frontOverride`, ikincil tür Time → `temporal`). Elle düzeltmeler
+`tools/dict/overrides.json` içinde:
+
+- `renk`, `denk`: Zemberek'te Voicing yok ama `rengi`, `dengi` doğru → `soften`.
+- `su`: `suyu` düzensizliği.
+- `hal`: Zemberek'in ilk maddesi "halletmek"teki hal (ikizleşen); oyunda yaygın anlam `hali` → yalnız `frontOverride`.
+- `bugün`, `dün`, `öbür`: `-kü`.
+- Kural: InverseHarmony taşıyan ve -t ile biten kelimeler (`dikkat`, `hakikat`) yumuşamaz (`dikkati`).
+  Zemberek bunları ayrıca NoVoicing ile işaretlemiyor.
+- Eşsesli maddelerde (Index:1, 2 …) indekssiz ad okuması seçiliyor (`hak → hakkı`, `ağız → ağzı`).
+  Tüm 6.6 vakaları ve 38 paradigma üretilen sözlükle de test ediliyor (`src/dict/real-lexicon.test.ts`).
+
+Açık sorular: yumuşamayan çok heceli kelimelerin tam listesi, `frontOverride`
 listesinin tamamı, ikizleşen kökler (`ret → reddi` gibi yumuşama + ikizleşme birleşimi henüz desteklenmiyor).
