@@ -10,6 +10,7 @@ import manifestJson from '../../assets/levels/manifest.json';
 import stopsJson from '../../assets/levels/stops.json';
 import { packOf, type Level, type LevelManifest, type LevelPack } from '../game/level';
 import { decodePack, levelFromPack } from '../game/packs';
+import type { SceneRecipe } from '../scenes/scene';
 import { PACK_ASSETS } from './pack-assets.generated';
 
 export const manifest = manifestJson as LevelManifest;
@@ -23,9 +24,10 @@ export interface StopInfo {
   firstLevel: number;
   lastLevel: number;
   palette: { sky: string[]; ground: string[]; accent: string };
+  scene: SceneRecipe['scene'];
 }
 
-export const stops = stopsJson as StopInfo[];
+export const stops = stopsJson as unknown as StopInfo[];
 
 export const stopForLevel = (id: number): StopInfo =>
   stops[Math.min(stops.length - 1, Math.floor((id - 1) / manifest.levelsPerPack))] as StopInfo;

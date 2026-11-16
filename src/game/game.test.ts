@@ -24,6 +24,7 @@ import {
   stars,
   wordScore,
 } from './scoring';
+import { isStopFinale, mapX, stopIndexOf, stopProgress } from './stops';
 import { classifyWord } from './validate';
 import { dragPath, hitTest, pathWord, shuffleOrder, stepPath, wheelPositions } from './wheel';
 
@@ -206,5 +207,35 @@ describe('fillDelays', () => {
       ['1,5', 160],
       ['2,1', 240],
     ]);
+  });
+});
+
+describe('stops', () => {
+  const stop = { firstLevel: 51, lastLevel: 100 };
+  it('tracks progress, stars and lock state', () => {
+    expect(stopProgress(stop, 10, {})).toEqual({ state: 'locked', done: 0, stars: 0 });
+    expect(stopProgress(stop, 51, { 50: 3 })).toEqual({ state: 'current', done: 0, stars: 0 });
+    expect(stopProgress(stop, 53, { 51: 3, 52: 2 })).toEqual({
+      state: 'current',
+      done: 2,
+      stars: 5,
+    });
+    expect(stopProgress(stop, 101, { 51: 3, 100: 1 })).toEqual({
+      state: 'done',
+      done: 50,
+      stars: 4,
+    });
+    expect(stopProgress(stop, 400, {}).done).toBe(50);
+  });
+  it('maps levels to stops and finales', () => {
+    expect(stopIndexOf(1)).toBe(1);
+    expect(stopIndexOf(50)).toBe(1);
+    expect(stopIndexOf(51)).toBe(2);
+    expect(isStopFinale(50)).toBe(true);
+    expect(isStopFinale(49)).toBe(false);
+    for (let i = 1; i <= 100; i++) {
+      expect(mapX(i)).toBeGreaterThanOrEqual(0.2);
+      expect(mapX(i)).toBeLessThanOrEqual(0.8);
+    }
   });
 });

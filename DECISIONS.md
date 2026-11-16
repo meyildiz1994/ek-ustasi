@@ -183,3 +183,19 @@ cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
   kaynaştırma harfi, ilk ünsüz benzeşmesi, ilk sıra hatası. Her biri bir kez gösterilir, ayarlardan kapatılabilir.
 - **Kayıt:** Bölüm bitip Ek Turu oynanmadan uygulama kapanırsa, açılışta o bölümün Ek Turu yeniden açılır
   (`pendingEkTuru`). Tur içi durum kaydedilmiyor (tur kısa).
+
+## D-021 — Duraklar, harita ve kartpostal (Aşama 7)
+
+- **Tek sahne çizici:** `src/scenes/scene.ts` durak tarifini (katmanlar, saat, palet, seed) SVG yol dizgilerinden
+  oluşan "kâğıt kesme" şekillerine çeviriyor. Uygulama bunları Skia ile, `tools/scenes/preview.html` SVG olarak
+  çiziyor; gözden geçirilen ile uygulamadaki aynı. Test 100 sahnenin hepsini kuruyor ve hepsinin birbirinden farklı
+  olduğunu doğruluyor.
+- **Nerede görünüyor:** Oyun ekranının arka planı bölgenin GPT görseli olarak kalıyor (D-014). Durağa özgü sahne;
+  yeni durağa girişte çıkan tanıtım kartında, haritadaki durak kartında ve kartpostalda görünüyor.
+- **Harita:** İstanbul altta, yol yukarı doğru kıvrılarak ilerliyor. Biten duraklar yıldız toplamıyla (en çok 150),
+  mevcut durak altın halkayla, kilitli duraklar gri ve kilit simgesiyle gösteriliyor. Bölge adları ilk durağın
+  altında yazıyor.
+- **Kartpostal:** Durağın 50. bölümü bitince (Büyük Ek Turundan sonra) kazanılıyor. Sahnenin üstüne Skia ile
+  "İstanbul / İstanbul'dan sevgiler" yazılıyor; ayrılma eki morfoloji motoruyla seçiliyor (İzmir'den, New York'tan).
+  Paylaşım, görüntünün PNG'si ile sistemin paylaşım ekranından yapılıyor (yalnız telefonda). Kazanılan kartpostallar
+  kayıtta tutuluyor; haritada biten durağa dokununca yeniden açılıyor.

@@ -18,6 +18,7 @@ import {
 import type { EkTuru, LevelManifest } from './level';
 import { decodePack } from './packs';
 import { chainScore } from './scoring';
+import { placeAblative } from './stops';
 
 const DIR = join(__dirname, '..', '..', 'assets', 'levels');
 const manifest = JSON.parse(readFileSync(join(DIR, 'manifest.json'), 'utf8')) as LevelManifest;
@@ -176,5 +177,21 @@ describe('every packed Ek Turu is playable with its own cards', () => {
       }
     }
     expect(rounds).toBe(1000);
+  });
+});
+
+describe('placeAblative', () => {
+  it('writes place names with the right ablative', () => {
+    const names = JSON.parse(
+      readFileSync(join(__dirname, '..', '..', 'assets', 'levels', 'stops.json'), 'utf8'),
+    ) as { name: string }[];
+    const got = Object.fromEntries(names.map((s) => [s.name, placeAblative(engine, s.name)]));
+    expect(got['İstanbul']).toBe("İstanbul'dan");
+    expect(got['İzmir']).toBe("İzmir'den");
+    expect(got['Bakü']).toBe("Bakü'den");
+    expect(got['New York']).toBe("New York'tan");
+    expect(got['Kars']).toBe("Kars'tan");
+    expect(got['Tokyo']).toBe("Tokyo'dan");
+    for (const v of Object.values(got)) expect(v).toMatch(/'(?:d|t)(?:a|e)n$/);
   });
 });

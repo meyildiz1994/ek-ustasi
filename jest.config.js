@@ -13,6 +13,7 @@ module.exports = {
     'src/dict/**/*.ts',
     'src/i18n.ts',
     'src/game/**/*.ts',
+    'src/scenes/**/*.ts',
     '!**/*.test.ts',
     '!**/*.fixture.ts',
     '!**/index.ts',

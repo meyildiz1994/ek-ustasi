@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [0.7.0] — 2026-11-16 — Aşama 7: Duraklar ve harita
+
+- `src/scenes/scene.ts`: 100 durağın kâğıt kesme sahneleri tek çiziciden; Skia bileşeni (`Scene`) ve SVG önizleme.
+- Harita ekranı (`/map`): 100 durak, yıldız toplamları, kilitli duraklar, durak kartı.
+- Yeni durağa girişte tanıtım kartı; durak bitince kartpostal (Skia yazılı, paylaşılabilir).
+- Ana sayfaya "Harita" butonu. Kararlar: D-021.
+
 ## [0.6.0] — 2026-11-16 — Aşama 6: Ek Turu
 
 - `src/game/ekturu.ts`: Ek Turu turu (kartları sırayla takma, katı varyant kontrolü, zincir kırılması, Topla),

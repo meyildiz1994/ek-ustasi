@@ -2,44 +2,9 @@
  * Hand-written stop content: a one-sentence original introduction, scene layers and time of day.
  * Layers are generic forms (no real building is copied); see tools/scenes/preview.html.
  */
-export type Layer =
-  | 'mountains'
-  | 'snowPeaks'
-  | 'hills'
-  | 'plateau'
-  | 'sea'
-  | 'lake'
-  | 'river'
-  | 'waterfall'
-  | 'city'
-  | 'domes'
-  | 'minarets'
-  | 'tower'
-  | 'bridge'
-  | 'castle'
-  | 'ruins'
-  | 'columns'
-  | 'rockSpires'
-  | 'balloons'
-  | 'trees'
-  | 'pines'
-  | 'terraces'
-  | 'vineyards'
-  | 'fields'
-  | 'palms'
-  | 'desert'
-  | 'boats'
-  | 'lighthouse'
-  | 'windmills'
-  | 'houses'
-  | 'skyscrapers'
-  | 'birds'
-  | 'clouds'
-  | 'stars'
-  | 'moon'
-  | 'snow';
+import type { Layer, TimeOfDay } from '../../src/scenes/scene';
 
-export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night';
+export type { Layer, TimeOfDay };
 
 export interface StopContent {
   intro: string;

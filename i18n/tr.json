@@ -6,7 +6,8 @@
   "home": {
     "play": "Bölüm {n}",
     "comingSoon": "Yakında",
-    "continue": "Devam et"
+    "continue": "Devam et",
+    "map": "Harita"
   },
   "morph": {
     "vowelHarmony": "Ünlü uyumu bozuldu: son ünlü {last} ({lastDesc}), ek -{form} ({formDesc}).",
@@ -98,5 +99,36 @@
       "body": "Ekler belli bir sırayla gelir: yapım eki, çoğul, iyelik, hâl. Örneğin iyelikten sonra yapım eki gelmez.",
       "example": "kalem|lik|ler|imiz|den"
     }
+  },
+  "map": {
+    "title": "Yolculuk",
+    "stop": "{n}. durak",
+    "levels": "{done}/{total} bölüm",
+    "stars": "{n} yıldız",
+    "locked": "Kilitli",
+    "play": "Oyna",
+    "postcard": "Kartpostal",
+    "close": "Kapat",
+    "regions": {
+      "marmara": "Marmara",
+      "ege": "Ege",
+      "akdeniz": "Akdeniz",
+      "icAnadolu": "İç Anadolu",
+      "karadeniz": "Karadeniz",
+      "doguAnadolu": "Doğu Anadolu",
+      "guneydogu": "Güneydoğu Anadolu",
+      "dunya": "Dünya"
+    }
+  },
+  "stop": {
+    "welcome": "Yeni durak",
+    "start": "Başla"
+  },
+  "postcard": {
+    "title": "Kartpostal kazandın!",
+    "from": "{place} sevgiler",
+    "share": "Paylaş",
+    "continue": "Devam et",
+    "shareText": "Ek Ustası'nda {name} durağını bitirdim!"
   }
 }
