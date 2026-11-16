@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [Unreleased] — Görsel varlıklar
+
+- Emre'nin GPT ile ürettiği 29 görsel eklendi: 9 arka plan, 13 arayüz ikonu/rozeti, çark tabağı, 3 maskot pozu,
+  uygulama ikonu (iOS + Android adaptive + monokrom), açılış amblemi (`expo-splash-screen`), favicon.
+- `src/theme/palette.ts`, `src/theme/images.ts` (tek yerden `require` haritası).
+- Lisans kaydı (LICENSES.md), promptlar (docs/ASSET_PROMPTS.md), D-014.
+
 ## [0.3.0] — 2026-11-16 — Aşama 3: Sözlük hattı
 
 - `tools/dict`: Zemberek ayrıştırıcı, wordfreq okuyucu, engelleme listesi, elle doğrulanmış türetmeler,
