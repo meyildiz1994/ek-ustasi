@@ -1,0 +1,12 @@
+{
+  "_comment": "Zemberek bayraklarını düzelten/ekleyen elle kurallar. Her biri MORPHOLOGY_NOTES.md içinde gerekçeli.",
+  "roots": {
+    "renk": { "soften": true },
+    "denk": { "soften": true },
+    "su": { "bufferY": true },
+    "hal": { "frontOverride": true, "geminate": false },
+    "bugün": { "kiRounded": true },
+    "dün": { "kiRounded": true },
+    "öbür": { "temporal": true, "kiRounded": true }
+  }
+}

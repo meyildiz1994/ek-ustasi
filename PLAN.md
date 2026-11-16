@@ -32,13 +32,14 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 3 — Sözlük hattı (`tools/dict`)
 
-- [ ] Kaynak seçimi ve lisans doğrulaması (Zemberek, Hunspell-tr, Wiktionary) → `LICENSES.md`
-- [ ] İndirme + normalize (29 harf, şapka kaldırma) betikleri, deterministik
-- [ ] Frekans listesi (açık lisanslı korpus) ile `target_words.txt` (≥10.000)
-- [ ] `blocklist.txt` (insan gözden geçirmesi) + uygulama
-- [ ] `valid_words.bin` DAWG/trie kodlayıcı + cihaz tarafı çözücü, < 1 ms arama benchmark'ı
-- [ ] `derivations.json`: kök → yapım eki türetim ağacı (motorla doğrulanmış); `lexicon.ts` çekirdeğinin yerini alır
-- [ ] Kök özellik etiketleri (ünlü düşmesi, yumuşama, `frontOverride`) sözlük kaynağından çıkarılır
+- [x] Kaynak seçimi ve lisans doğrulaması: Zemberek (Apache 2.0), wordfreq (CC BY-SA 4.0) → `LICENSES.md`
+- [x] `pnpm dict:fetch` indirme (SHA-256 manifest) + `pnpm dict` deterministik üretim; kaynaklar depoda
+- [x] Frekansla `target_words.txt`: 11.513 kelime (7.638 madde + 3.875 çekimli biçim)
+- [x] `blocklist.txt` + uygulama; siyasi ve dini kelimeler Emre kararıyla hedef dışı
+- [x] `valid_words.bin` DAWG kodlayıcı (`tools/dict/dawg-build.ts`) + cihaz çözücü (`src/dict/dawg.ts`), arama < 0,05 ms
+- [x] `derivations.json` (motorla doğrulanmış) + `root_flags.json`; `src/dict/lexicon.ts` motora bağlıyor
+- [x] Kök bayrakları Zemberek'ten + `overrides.json`; 6.6 ve paradigmalar üretilen sözlükle de geçiyor
+- [ ] Uygulamada `.bin` / `.json` varlıklarının yüklenmesi (Metro assetExts + expo-file-system) → Aşama 5
 
 ## Aşama 4 — Bölüm üretim hattı (`tools/levelgen`, Vitest)
 

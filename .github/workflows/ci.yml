@@ -24,3 +24,5 @@ jobs:
         run: pnpm format:check
       - name: Test (with coverage thresholds)
         run: pnpm test:coverage
+      - name: Dictionary pipeline tests (rebuild must match committed assets)
+        run: pnpm test:tools
