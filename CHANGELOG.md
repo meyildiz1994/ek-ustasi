@@ -1,5 +1,16 @@
 # Değişiklik günlüğü
 
+## [0.5.0] — 2026-11-16 — Aşama 5: Çekirdek oynanış
+
+- `src/game`: ızgara modeli, çark yolu (isabet, ara örnekleme, geri alma), kelime sınıflandırma (hedef / bonus /
+  zaten bulundu / geçersiz), puan + kombo, yıldız, altın kuralları, üç ipucu, oyun oturumu, paket çözücü.
+- `src/store`: zustand + immer oyun deposu, sürümlü MMKV kaydı; yarım bölüm aynen devam eder.
+- `src/services/levels.ts`: yalnız gereken paketi okur, SHA-256 doğrular, 3 paket önbellekte.
+- Ekranlar: ana sayfa ("Bölüm N"), oyun ekranı (bölgeye göre arka plan, ızgara dolma animasyonu, Skia çark
+  çizgisi, önizleme baloncuğu, karıştır + 3 ipucu), bölüm sonu kartı (yıldız, puan, altın).
+- Web: Skia için CanvasKit yükleyici, `pnpm export:web`.
+- Yazı tipi: Baloo 2 (OFL), 3 sabit ağırlık, Latin + Türkçe alt küme (≈68 KB her biri).
+
 ## [0.4.0] — 2026-11-16 — Aşama 4: Bölüm üretim hattı
 
 - `tools/levelgen`: seed'li PRNG, ana kelime + kelime seçimi, ızgara yerleşimi (geri izleme + 200 yeniden

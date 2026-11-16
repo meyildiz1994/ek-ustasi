@@ -42,3 +42,6 @@ yarn-error.*
 
 # test coverage
 coverage/
+
+# Skia web runtime (copied by `pnpm web:setup`)
+public/canvaskit.wasm

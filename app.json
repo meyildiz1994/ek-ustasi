@@ -33,7 +33,9 @@
           "resizeMode": "contain",
           "backgroundColor": "#1E2A5A"
         }
-      ]
+      ],
+      "expo-asset",
+      "expo-font"
     ],
     "scheme": "ekustasi",
     "experiments": {
