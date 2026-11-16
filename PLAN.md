@@ -39,7 +39,7 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 - [x] `valid_words.bin` DAWG kodlayıcı (`tools/dict/dawg-build.ts`) + cihaz çözücü (`src/dict/dawg.ts`), arama < 0,05 ms
 - [x] `derivations.json` (motorla doğrulanmış) + `root_flags.json`; `src/dict/lexicon.ts` motora bağlıyor
 - [x] Kök bayrakları Zemberek'ten + `overrides.json`; 6.6 ve paradigmalar üretilen sözlükle de geçiyor
-- [ ] Uygulamada `.bin` / `.json` varlıklarının yüklenmesi (Metro assetExts + expo-file-system) → Aşama 5
+- [x] Uygulamada `.bin` / `.json` varlıklarının yüklenmesi (Metro assetExts + expo-file-system) — Aşama 5 (paketler; `.bin` sözlük bonus kelimeleri için Aşama 6'da)
 
 ## Aşama 4 — Bölüm üretim hattı (`tools/levelgen`, Vitest)
 
@@ -55,12 +55,13 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 5 — Çekirdek oynanış
 
-- [ ] `src/game`: grid, wheel (yol seçimi, ara örnekleme, geri alma), validate, scoring, hints — saf TS + testler
-- [ ] Skia çark + ızgara bileşenleri, önizleme baloncuğu, üst bar
-- [ ] zustand + immer store, MMKV kayıt (sürümlü şema, göç), yarım bölümün geri yüklenmesi
-- [ ] Paket yükleme (ilk paket, tembel açma, SHA-256 doğrulama)
-- [ ] İlk 20 bölüm uçtan uca oynanabilir, 60 fps
-- [ ] Görsel referans: Emre'nin ekran görüntüleri + HTML prototip (türün düzeni, kopya değil)
+- [x] `src/game`: grid, wheel (yol seçimi, ara örnekleme, geri alma), validate, scoring, hints, session — saf TS + testler
+- [x] Skia çark çizgisi + ızgara (dolma animasyonu), önizleme baloncuğu (titreme), üst bar, yardımcı butonlar, bölüm sonu kartı
+- [x] zustand + immer store, MMKV kayıt (sürümlü şema, göç), yarım bölümün geri yüklenmesi
+- [x] Paket yükleme (yalnız gereken paket, 3 paketlik önbellek, SHA-256 doğrulama)
+- [x] İlk 20 bölüm uçtan uca oynanabilir (web derlemesinde Playwright ile gerçek sürükleme hareketiyle doğrulandı)
+- [ ] 60 fps ölçümü gerçek cihazda (bulut ortamında ölçülemiyor) → Emre'nin telefonunda Expo ile
+- [x] Görsel referans: türün düzeni (üstte ızgara, altta çark), kopya değil; İznik tabağı çark
 
 ## Aşama 6 — Ek Turu
 

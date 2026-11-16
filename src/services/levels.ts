@@ -4,6 +4,7 @@
  */
 import { Asset } from 'expo-asset';
 import { File } from 'expo-file-system';
+import { Platform } from 'react-native';
 
 import manifestJson from '../../assets/levels/manifest.json';
 import stopsJson from '../../assets/levels/stops.json';
@@ -37,6 +38,7 @@ export let readAsset = async (moduleId: number): Promise<Uint8Array> => {
   const asset = Asset.fromModule(moduleId);
   await asset.downloadAsync();
   const uri = asset.localUri ?? asset.uri;
+  if (Platform.OS === 'web') return new Uint8Array(await (await fetch(uri)).arrayBuffer());
   return new File(uri).bytes();
 };
 

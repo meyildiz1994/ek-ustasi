@@ -3,11 +3,13 @@ import {
   buildGrid,
   cellKey,
   emptyProgress,
+  fillDelays,
   isSolved,
   markFound,
   settle,
   unfoundWords,
   visibleCells,
+  type CellKey,
 } from './grid';
 import { HINT_COST, hintCell, hintLetter, hintWord } from './hints';
 import type { PlacedWord } from './level';
@@ -190,5 +192,19 @@ describe('level helpers', () => {
     expect(isEkTuruLevel(10)).toBe(true);
     expect(isEkTuruLevel(11)).toBe(false);
     expect(isBigEkTuruLevel(100)).toBe(true);
+  });
+});
+
+describe('fillDelays', () => {
+  it('orders the found word first, then other new cells in reading order', () => {
+    const before = new Set<CellKey>(['0,0']);
+    const after = new Set<CellKey>(['0,0', '2,1', '0,1', '0,2', '1,5']);
+    const d = fillDelays(before, after, ['0,0', '0,1', '0,2'], 80);
+    expect([...d.entries()]).toEqual([
+      ['0,1', 0],
+      ['0,2', 80],
+      ['1,5', 160],
+      ['2,1', 240],
+    ]);
   });
 });

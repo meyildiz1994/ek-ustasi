@@ -109,3 +109,23 @@ export function markFound(model: GridModel, progress: GridProgress, word: string
   if (!model.byWord.has(word) || progress.found.includes(word)) return progress;
   return settle(model, { ...progress, found: [...progress.found, word] }).progress;
 }
+
+/**
+ * Fill-animation delays for cells that became visible: cells of `order` (e.g. the found word, in
+ * reading order) first, then any other new cells in grid reading order, `stepMs` apart.
+ */
+export function fillDelays(
+  before: ReadonlySet<CellKey>,
+  after: ReadonlySet<CellKey>,
+  order: readonly CellKey[],
+  stepMs: number,
+): Map<CellKey, number> {
+  const fresh = [...after].filter((k) => !before.has(k));
+  const rank = (k: CellKey) => {
+    const i = order.indexOf(k);
+    const [r, c] = k.split(',').map(Number) as [number, number];
+    return i === -1 ? order.length + r * 1000 + c : i;
+  };
+  fresh.sort((a, b) => rank(a) - rank(b));
+  return new Map(fresh.map((k, i) => [k, i * stepMs]));
+}

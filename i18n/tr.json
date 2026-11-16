@@ -4,8 +4,9 @@
     "tagline": "Türkçenin eklerini ustaca tak!"
   },
   "home": {
-    "play": "Oyna",
-    "comingSoon": "Yakında"
+    "play": "Bölüm {n}",
+    "comingSoon": "Yakında",
+    "continue": "Devam et"
   },
   "morph": {
     "vowelHarmony": "Ünlü uyumu bozuldu: son ünlü {last} ({lastDesc}), ek -{form} ({formDesc}).",
@@ -24,5 +25,25 @@
     "back": "kalın",
     "rounded": "yuvarlak",
     "unrounded": "düz"
+  },
+  "play": {
+    "level": "Bölüm {n}",
+    "coins": "{n} altın",
+    "bonus": "{n} bonus kelime",
+    "shuffle": "Harfleri karıştır",
+    "hintLetter": "İpucu: bir harf aç ({cost} altın)",
+    "hintTargeted": "Hedefli ipucu: seçtiğin kutuyu aç ({cost} altın)",
+    "hintWord": "Kelime açıcı ({cost} altın)",
+    "pickCell": "Açmak istediğin kutuya dokun",
+    "alreadyFound": "Zaten buldun",
+    "bonusFound": "Bonus kelime!",
+    "notEnoughCoins": "Yeterli altın yok",
+    "loading": "Yükleniyor…",
+    "loadError": "Bölüm yüklenemedi",
+    "back": "Geri",
+    "complete": "Tebrikler!",
+    "earned": "+{n} altın",
+    "next": "Sonraki bölüm",
+    "score": "Puan: {n}"
   }
 }
