@@ -43,14 +43,15 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 4 — Bölüm üretim hattı (`tools/levelgen`, Vitest)
 
-- [ ] Seed'li PRNG, deterministik çıktı
-- [ ] Ana kelime + harf kümesi seçimi, aday kelimeler
-- [ ] Izgara yerleşimi (geri izleme + 200 yeniden başlatma, ≤12×12)
-- [ ] Zorluk puanı (8.4) + zorluk eğrisi / testere dişi (8.5)
-- [ ] Tekrar kuralları (8.6), Ek Turu verisi (8.7), doğrulama listesi (8.8)
-- [ ] Paketleme: 50 bölüm/paket, gzip, `manifest.json` SHA-256
-- [ ] `report.html`, `review.html`; önce `--count 100`, sonra 5000
-- [ ] `stops.json` (100 durak) + `tools/scenes/preview.html`
+- [x] Seed'li PRNG, deterministik çıktı (ilk 100 bölüm testte depodaki paketlerle bayt bayt karşılaştırılıyor)
+- [x] Ana kelime + harf kümesi seçimi, aday kelimeler; hedef zorluğa göre kelime seçimi
+- [x] Izgara yerleşimi (geri izleme + 200 yeniden başlatma, ≤12×12)
+- [x] Zorluk puanı (8.4) + zorluk eğrisi / testere dişi (8.5) — normlar D-015
+- [x] Tekrar kuralları (8.6), Ek Turu verisi (8.7) — D-016, D-017, doğrulama listesi (8.8)
+- [x] Paketleme: 50 bölüm/paket, gzip, `manifest.json` SHA-256
+- [x] `report.html`, `review.html`; önce `--count 100`, sonra 5000
+- [x] `stops.json` (100 durak) + `tools/scenes/preview.html` — D-018
+- [ ] Emre'nin `review.html` ve durak sırası/metinleri üzerinden gözden geçirmesi
 
 ## Aşama 5 — Çekirdek oynanış
 

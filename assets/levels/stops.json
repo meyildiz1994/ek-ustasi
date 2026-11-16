@@ -1,0 +1,3352 @@
+[
+  {
+    "index": 1,
+    "id": "tr-34-istanbul",
+    "name": "İstanbul",
+    "region": "marmara",
+    "intro": "İki kıtayı birbirine bağlayan boğazı, tepelerdeki kubbeleri ve vapurlarıyla yolculuğun ilk durağı.",
+    "firstLevel": 1,
+    "lastLevel": 50,
+    "palette": {
+      "sky": [
+        "#2C2A65",
+        "#934892",
+        "#DB6A48",
+        "#F8C25D"
+      ],
+      "ground": [
+        "#478569",
+        "#3A7856",
+        "#27452C"
+      ],
+      "accent": "#1F92D1"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "city",
+        "domes",
+        "minarets",
+        "bridge",
+        "boats",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 4191058552
+    }
+  },
+  {
+    "index": 2,
+    "id": "tr-22-edirne",
+    "name": "Edirne",
+    "region": "marmara",
+    "intro": "Nehirlerin kucakladığı sınır şehri; taş köprüleri ve geniş kubbeleriyle tanınır.",
+    "firstLevel": 51,
+    "lastLevel": 100,
+    "palette": {
+      "sky": [
+        "#2883CC",
+        "#5FCCE7",
+        "#90DEEA",
+        "#F3E8C3"
+      ],
+      "ground": [
+        "#448862",
+        "#387046",
+        "#244727"
+      ],
+      "accent": "#2775C4"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "domes",
+        "minarets",
+        "fields",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 3671016703
+    }
+  },
+  {
+    "index": 3,
+    "id": "tr-16-bursa",
+    "name": "Bursa",
+    "region": "marmara",
+    "intro": "Karlı bir dağın eteğine yaslanmış, yeşili ve ipek yoluyla anılan eski başkent.",
+    "firstLevel": 101,
+    "lastLevel": 150,
+    "palette": {
+      "sky": [
+        "#22A1D8",
+        "#61C6E5",
+        "#8FD5EA",
+        "#F6F0C6"
+      ],
+      "ground": [
+        "#458C6D",
+        "#3D764F",
+        "#244227"
+      ],
+      "accent": "#2875C8"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "city",
+        "domes",
+        "trees",
+        "clouds"
+      ],
+      "time": "day",
+      "seed": 2830232839
+    }
+  },
+  {
+    "index": 4,
+    "id": "tr-17-canakkale",
+    "name": "Çanakkale",
+    "region": "marmara",
+    "intro": "Boğazın kıyısında, tarihin ve denizin iç içe geçtiği bir liman kenti.",
+    "firstLevel": 151,
+    "lastLevel": 200,
+    "palette": {
+      "sky": [
+        "#262C64",
+        "#9B4F9C",
+        "#DC4C47",
+        "#F3CF58"
+      ],
+      "ground": [
+        "#4A8263",
+        "#386B4D",
+        "#23432D"
+      ],
+      "accent": "#238BB8"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "castle",
+        "boats",
+        "lighthouse"
+      ],
+      "time": "sunset",
+      "seed": 3649386039
+    }
+  },
+  {
+    "index": 5,
+    "id": "tr-10-balikesir",
+    "name": "Balıkesir",
+    "region": "marmara",
+    "intro": "İki denize birden kıyısı olan, zeytinlikleri ve adalarıyla geniş bir kent.",
+    "firstLevel": 201,
+    "lastLevel": 250,
+    "palette": {
+      "sky": [
+        "#319AD3",
+        "#4BBAE2",
+        "#A4DDEF",
+        "#F8F3D8"
+      ],
+      "ground": [
+        "#508B76",
+        "#336145",
+        "#2A4732"
+      ],
+      "accent": "#2485BC"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "trees",
+        "houses",
+        "boats"
+      ],
+      "time": "day",
+      "seed": 2470647797
+    }
+  },
+  {
+    "index": 6,
+    "id": "tr-41-kocaeli",
+    "name": "Kocaeli",
+    "region": "marmara",
+    "intro": "Körfezin iki yakasına yayılmış, sanayisi ve ormanlık tepeleriyle hareketli bir şehir.",
+    "firstLevel": 251,
+    "lastLevel": 300,
+    "palette": {
+      "sky": [
+        "#395E8E",
+        "#897FBD",
+        "#E3A5B3",
+        "#F9CEA9"
+      ],
+      "ground": [
+        "#4F8C6F",
+        "#336145",
+        "#29562F"
+      ],
+      "accent": "#278ECE"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "city",
+        "bridge",
+        "pines"
+      ],
+      "time": "dawn",
+      "seed": 2182666365
+    }
+  },
+  {
+    "index": 7,
+    "id": "tr-77-yalova",
+    "name": "Yalova",
+    "region": "marmara",
+    "intro": "Kaplıcaları ve çiçek bahçeleriyle bilinen, körfezin küçük ve sakin kıyısı.",
+    "firstLevel": 301,
+    "lastLevel": 350,
+    "palette": {
+      "sky": [
+        "#247BCC",
+        "#52BAE0",
+        "#99D0E6",
+        "#F9EDD7"
+      ],
+      "ground": [
+        "#497E60",
+        "#367251",
+        "#284D30"
+      ],
+      "accent": "#2B8ACA"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "trees",
+        "houses",
+        "clouds"
+      ],
+      "time": "day",
+      "seed": 2373528766
+    }
+  },
+  {
+    "index": 8,
+    "id": "tr-54-sakarya",
+    "name": "Sakarya",
+    "region": "marmara",
+    "intro": "Nehirleri, gölü ve fındıklı yeşil yamaçlarıyla serin bir durak.",
+    "firstLevel": 351,
+    "lastLevel": 400,
+    "palette": {
+      "sky": [
+        "#2980C7",
+        "#67ABE0",
+        "#A0DBE9",
+        "#F4EDC3"
+      ],
+      "ground": [
+        "#4D996A",
+        "#367844",
+        "#2E522F"
+      ],
+      "accent": "#246BBC"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "river",
+        "hills",
+        "trees",
+        "birds"
+      ],
+      "time": "day",
+      "seed": 3614934582
+    }
+  },
+  {
+    "index": 9,
+    "id": "tr-59-tekirdag",
+    "name": "Tekirdağ",
+    "region": "marmara",
+    "intro": "Bağları ve uzun kumsallarıyla denize açılan bir ova kenti.",
+    "firstLevel": 401,
+    "lastLevel": 450,
+    "palette": {
+      "sky": [
+        "#2E3670",
+        "#A3489A",
+        "#E1514C",
+        "#F9C867"
+      ],
+      "ground": [
+        "#4B956E",
+        "#376D4C",
+        "#25412A"
+      ],
+      "accent": "#2681BA"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "vineyards",
+        "fields",
+        "houses",
+        "windmills"
+      ],
+      "time": "sunset",
+      "seed": 2180879320
+    }
+  },
+  {
+    "index": 10,
+    "id": "tr-39-kirklareli",
+    "name": "Kırklareli",
+    "region": "marmara",
+    "intro": "Sınıra yakın ormanları ve sessiz köyleriyle Trakya'nın yeşil köşesi.",
+    "firstLevel": 451,
+    "lastLevel": 500,
+    "palette": {
+      "sky": [
+        "#37659A",
+        "#837ABD",
+        "#E7B1C2",
+        "#FACDAD"
+      ],
+      "ground": [
+        "#519479",
+        "#346044",
+        "#285332"
+      ],
+      "accent": "#267BC5"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "pines",
+        "trees",
+        "fields",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 482269146
+    }
+  },
+  {
+    "index": 11,
+    "id": "tr-11-bilecik",
+    "name": "Bilecik",
+    "region": "marmara",
+    "intro": "Vadilerin arasında, el sanatları ve dut ağaçlarıyla anılan küçük bir şehir.",
+    "firstLevel": 501,
+    "lastLevel": 550,
+    "palette": {
+      "sky": [
+        "#288EDC",
+        "#4FA8E3",
+        "#9ECDEB",
+        "#F9ECD7"
+      ],
+      "ground": [
+        "#4B9B74",
+        "#2E6642",
+        "#264028"
+      ],
+      "accent": "#1E8ACC"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "river",
+        "trees",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 2972283074
+    }
+  },
+  {
+    "index": 12,
+    "id": "tr-35-izmir",
+    "name": "İzmir",
+    "region": "ege",
+    "intro": "Körfezinde günbatımı izlenen, palmiyeli kordonu ve saat kulesiyle Ege'nin incisi.",
+    "firstLevel": 551,
+    "lastLevel": 600,
+    "palette": {
+      "sky": [
+        "#293061",
+        "#9E51A4",
+        "#E55E52",
+        "#F5BB6B"
+      ],
+      "ground": [
+        "#9CAC68",
+        "#8A9645",
+        "#6A6D36"
+      ],
+      "accent": "#1DBDC9"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "palms",
+        "tower",
+        "city",
+        "boats",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 1044454559
+    }
+  },
+  {
+    "index": 13,
+    "id": "tr-48-mugla",
+    "name": "Muğla",
+    "region": "ege",
+    "intro": "Beyaz evleri, koyları ve turkuaz denizi olan masmavi bir kıyı.",
+    "firstLevel": 601,
+    "lastLevel": 650,
+    "palette": {
+      "sky": [
+        "#219BD4",
+        "#5CB0E0",
+        "#98D8E6",
+        "#F4E6BD"
+      ],
+      "ground": [
+        "#899D5C",
+        "#8F9343",
+        "#6C6C37"
+      ],
+      "accent": "#1ABBC7"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "houses",
+        "boats",
+        "windmills"
+      ],
+      "time": "day",
+      "seed": 3112544216
+    }
+  },
+  {
+    "index": 14,
+    "id": "tr-09-aydin",
+    "name": "Aydın",
+    "region": "ege",
+    "intro": "İncir bahçeleri ve antik sütunlarıyla bereketli bir ova.",
+    "firstLevel": 651,
+    "lastLevel": 700,
+    "palette": {
+      "sky": [
+        "#2177D4",
+        "#58C8E4",
+        "#92D9E8",
+        "#F7EFD4"
+      ],
+      "ground": [
+        "#97A95B",
+        "#7C7E44",
+        "#656139"
+      ],
+      "accent": "#20AECB"
+    },
+    "scene": {
+      "layers": [
+        "fields",
+        "columns",
+        "ruins",
+        "trees",
+        "hills"
+      ],
+      "time": "day",
+      "seed": 1245641860
+    }
+  },
+  {
+    "index": 15,
+    "id": "tr-20-denizli",
+    "name": "Denizli",
+    "region": "ege",
+    "intro": "Bembeyaz kireç teraslarından ılık suların aktığı bir kent.",
+    "firstLevel": 701,
+    "lastLevel": 750,
+    "palette": {
+      "sky": [
+        "#35548D",
+        "#8276BC",
+        "#E0A3B1",
+        "#F9CCA9"
+      ],
+      "ground": [
+        "#8FAB5F",
+        "#708042",
+        "#5D6336"
+      ],
+      "accent": "#229FBF"
+    },
+    "scene": {
+      "layers": [
+        "terraces",
+        "hills",
+        "ruins",
+        "trees"
+      ],
+      "time": "dawn",
+      "seed": 3717866737
+    }
+  },
+  {
+    "index": 16,
+    "id": "tr-45-manisa",
+    "name": "Manisa",
+    "region": "ege",
+    "intro": "Üzüm bağları ve efsanevi dağıyla bilinen verimli bir ova kenti.",
+    "firstLevel": 751,
+    "lastLevel": 800,
+    "palette": {
+      "sky": [
+        "#2DA3D2",
+        "#55A3E7",
+        "#A1DAEC",
+        "#F5ECCC"
+      ],
+      "ground": [
+        "#97A758",
+        "#8D9146",
+        "#5B5E31"
+      ],
+      "accent": "#18B2C3"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "vineyards",
+        "fields",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 1603960016
+    }
+  },
+  {
+    "index": 17,
+    "id": "tr-03-afyonkarahisar",
+    "name": "Afyonkarahisar",
+    "region": "ege",
+    "intro": "Yüksek bir kayanın üstündeki kalesiyle uzaktan seçilen bir şehir.",
+    "firstLevel": 801,
+    "lastLevel": 850,
+    "palette": {
+      "sky": [
+        "#2C2C6D",
+        "#985294",
+        "#E34F45",
+        "#F6CF5A"
+      ],
+      "ground": [
+        "#84AC53",
+        "#848E43",
+        "#5E5931"
+      ],
+      "accent": "#17A4CF"
+    },
+    "scene": {
+      "layers": [
+        "castle",
+        "rockSpires",
+        "plateau",
+        "houses",
+        "fields"
+      ],
+      "time": "sunset",
+      "seed": 1114739468
+    }
+  },
+  {
+    "index": 18,
+    "id": "tr-43-kutahya",
+    "name": "Kütahya",
+    "region": "ege",
+    "intro": "Çinileri ve renkli seramikleriyle tanınan bir zanaat şehri.",
+    "firstLevel": 851,
+    "lastLevel": 900,
+    "palette": {
+      "sky": [
+        "#207BC5",
+        "#5DB1E5",
+        "#93D3EC",
+        "#F9EDD7"
+      ],
+      "ground": [
+        "#9BAC68",
+        "#829442",
+        "#6C653D"
+      ],
+      "accent": "#1FABC1"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "castle",
+        "houses",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 1488450486
+    }
+  },
+  {
+    "index": 19,
+    "id": "tr-64-usak",
+    "name": "Uşak",
+    "region": "ege",
+    "intro": "Halıları ve derin kanyonuyla iç Ege'nin sakin kenti.",
+    "firstLevel": 901,
+    "lastLevel": 950,
+    "palette": {
+      "sky": [
+        "#2F6089",
+        "#8B80BC",
+        "#E69EB2",
+        "#FACAA3"
+      ],
+      "ground": [
+        "#9BAC6C",
+        "#7D833A",
+        "#5D5D2D"
+      ],
+      "accent": "#18B5CD"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "river",
+        "houses",
+        "fields"
+      ],
+      "time": "dawn",
+      "seed": 970074774
+    }
+  },
+  {
+    "index": 20,
+    "id": "tr-07-antalya",
+    "name": "Antalya",
+    "region": "akdeniz",
+    "intro": "Dağların denize indiği, eski limanı ve uzun sahilleriyle güneşli bir kent.",
+    "firstLevel": 951,
+    "lastLevel": 1000,
+    "palette": {
+      "sky": [
+        "#2690C9",
+        "#64C3E3",
+        "#93E1EC",
+        "#F6ECCB"
+      ],
+      "ground": [
+        "#C09462",
+        "#994F38",
+        "#623F2D"
+      ],
+      "accent": "#DE612B"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "mountains",
+        "palms",
+        "tower",
+        "boats"
+      ],
+      "time": "day",
+      "seed": 1296571766
+    }
+  },
+  {
+    "index": 21,
+    "id": "tr-33-mersin",
+    "name": "Mersin",
+    "region": "akdeniz",
+    "intro": "Narenciye bahçeleri, sahil boyu kaleleri ve geniş limanıyla sıcak bir kıyı.",
+    "firstLevel": 1001,
+    "lastLevel": 1050,
+    "palette": {
+      "sky": [
+        "#292664",
+        "#A8489E",
+        "#DB4D48",
+        "#F9BE67"
+      ],
+      "ground": [
+        "#B88651",
+        "#AC6D39",
+        "#773A31"
+      ],
+      "accent": "#DC622E"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "castle",
+        "palms",
+        "fields",
+        "boats"
+      ],
+      "time": "sunset",
+      "seed": 4023925755
+    }
+  },
+  {
+    "index": 22,
+    "id": "tr-31-hatay",
+    "name": "Hatay",
+    "region": "akdeniz",
+    "intro": "Mutfağı, mozaikleri ve eski taş sokaklarıyla tanınan bir sofra kenti.",
+    "firstLevel": 1051,
+    "lastLevel": 1100,
+    "palette": {
+      "sky": [
+        "#283462",
+        "#A54A9C",
+        "#DE654F",
+        "#F5C151"
+      ],
+      "ground": [
+        "#C29D66",
+        "#955B37",
+        "#6D422C"
+      ],
+      "accent": "#DE6535"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "houses",
+        "domes",
+        "trees"
+      ],
+      "time": "sunset",
+      "seed": 3143584483
+    }
+  },
+  {
+    "index": 23,
+    "id": "tr-01-adana",
+    "name": "Adana",
+    "region": "akdeniz",
+    "intro": "Bereketli ovasından geçen nehri ve uzun taş köprüsüyle bilinen büyük bir şehir.",
+    "firstLevel": 1101,
+    "lastLevel": 1150,
+    "palette": {
+      "sky": [
+        "#23A4D7",
+        "#5BB3DC",
+        "#92CBE8",
+        "#F5ECC7"
+      ],
+      "ground": [
+        "#C37F55",
+        "#934B39",
+        "#704633"
+      ],
+      "accent": "#E57834"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "fields",
+        "city",
+        "palms"
+      ],
+      "time": "day",
+      "seed": 2861974837
+    }
+  },
+  {
+    "index": 24,
+    "id": "tr-32-isparta",
+    "name": "Isparta",
+    "region": "akdeniz",
+    "intro": "Bahar gelince gül tarlalarının pembeye boyandığı göller bölgesi kenti.",
+    "firstLevel": 1151,
+    "lastLevel": 1200,
+    "palette": {
+      "sky": [
+        "#395693",
+        "#8876BC",
+        "#E8ABBD",
+        "#F9C39A"
+      ],
+      "ground": [
+        "#BF8A69",
+        "#935534",
+        "#673832"
+      ],
+      "accent": "#DD5E2C"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "fields",
+        "mountains",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 1453177604
+    }
+  },
+  {
+    "index": 25,
+    "id": "tr-15-burdur",
+    "name": "Burdur",
+    "region": "akdeniz",
+    "intro": "Turkuaz gölü ve beyaz kumsallı kıyılarıyla serin bir göl kenti.",
+    "firstLevel": 1201,
+    "lastLevel": 1250,
+    "palette": {
+      "sky": [
+        "#2573C1",
+        "#4FB9E3",
+        "#A5DBE9",
+        "#F6E9D0"
+      ],
+      "ground": [
+        "#C5895E",
+        "#9A633C",
+        "#6F3C34"
+      ],
+      "accent": "#DF663A"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "hills",
+        "houses",
+        "birds"
+      ],
+      "time": "day",
+      "seed": 3421312088
+    }
+  },
+  {
+    "index": 26,
+    "id": "tr-46-kahramanmaras",
+    "name": "Kahramanmaraş",
+    "region": "akdeniz",
+    "intro": "Dondurması ve bakır işçiliğiyle tanınan, dağların arasında bir şehir.",
+    "firstLevel": 1251,
+    "lastLevel": 1300,
+    "palette": {
+      "sky": [
+        "#2C8ACE",
+        "#64CBE8",
+        "#A7DEEC",
+        "#F6EBD5"
+      ],
+      "ground": [
+        "#C1954E",
+        "#A55A40",
+        "#673D28"
+      ],
+      "accent": "#E07338"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "castle",
+        "houses",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 3900373997
+    }
+  },
+  {
+    "index": 27,
+    "id": "tr-80-osmaniye",
+    "name": "Osmaniye",
+    "region": "akdeniz",
+    "intro": "Yerfıstığı tarlaları ve ormanlık dağlarıyla Çukurova'nın genç kenti.",
+    "firstLevel": 1301,
+    "lastLevel": 1350,
+    "palette": {
+      "sky": [
+        "#242E65",
+        "#934393",
+        "#E55A48",
+        "#F5C161"
+      ],
+      "ground": [
+        "#C09A59",
+        "#935734",
+        "#6D3B31"
+      ],
+      "accent": "#DF7634"
+    },
+    "scene": {
+      "layers": [
+        "fields",
+        "hills",
+        "trees",
+        "houses"
+      ],
+      "time": "sunset",
+      "seed": 45051438
+    }
+  },
+  {
+    "index": 28,
+    "id": "tr-50-nevsehir",
+    "name": "Nevşehir",
+    "region": "icAnadolu",
+    "intro": "Peri bacaları, kayaya oyulmuş evleri ve sabah gökyüzündeki balonlarıyla masalsı bir vadi.",
+    "firstLevel": 1351,
+    "lastLevel": 1400,
+    "palette": {
+      "sky": [
+        "#35628D",
+        "#968CBA",
+        "#E49BB4",
+        "#F8D3A5"
+      ],
+      "ground": [
+        "#D1AD7A",
+        "#BD8247",
+        "#835534"
+      ],
+      "accent": "#D74737"
+    },
+    "scene": {
+      "layers": [
+        "rockSpires",
+        "balloons",
+        "plateau",
+        "houses",
+        "clouds"
+      ],
+      "time": "dawn",
+      "seed": 3045763326
+    }
+  },
+  {
+    "index": 29,
+    "id": "tr-06-ankara",
+    "name": "Ankara",
+    "region": "icAnadolu",
+    "intro": "Bozkırın ortasında yükselen, kalesi ve geniş caddeleriyle başkent.",
+    "firstLevel": 1401,
+    "lastLevel": 1450,
+    "palette": {
+      "sky": [
+        "#2D7DD2",
+        "#57BCDB",
+        "#95D6E4",
+        "#F7F0C5"
+      ],
+      "ground": [
+        "#CFB87D",
+        "#AB753F",
+        "#8E5C39"
+      ],
+      "accent": "#CE4336"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "city",
+        "castle",
+        "tower",
+        "clouds"
+      ],
+      "time": "day",
+      "seed": 1332280764
+    }
+  },
+  {
+    "index": 30,
+    "id": "tr-42-konya",
+    "name": "Konya",
+    "region": "icAnadolu",
+    "intro": "Uçsuz ovası, yeşil kubbesi ve semazenleriyle bilinen huzurlu bir şehir.",
+    "firstLevel": 1451,
+    "lastLevel": 1500,
+    "palette": {
+      "sky": [
+        "#353277",
+        "#9A509F",
+        "#E26150",
+        "#F9D566"
+      ],
+      "ground": [
+        "#C79B66",
+        "#BA914A",
+        "#8D5E35"
+      ],
+      "accent": "#CB372A"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "domes",
+        "minarets",
+        "fields"
+      ],
+      "time": "sunset",
+      "seed": 2889746461
+    }
+  },
+  {
+    "index": 31,
+    "id": "tr-26-eskisehir",
+    "name": "Eskişehir",
+    "region": "icAnadolu",
+    "intro": "Nehrinde gondolların süzüldüğü, öğrencilerle dolu canlı bir kent.",
+    "firstLevel": 1501,
+    "lastLevel": 1550,
+    "palette": {
+      "sky": [
+        "#121630",
+        "#1D254E",
+        "#31476D",
+        "#476A9E"
+      ],
+      "ground": [
+        "#CDAA6A",
+        "#AC7139",
+        "#815331"
+      ],
+      "accent": "#D24A28"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "city",
+        "trees",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 1815231112
+    }
+  },
+  {
+    "index": 32,
+    "id": "tr-38-kayseri",
+    "name": "Kayseri",
+    "region": "icAnadolu",
+    "intro": "Karlı volkanik dağın gölgesinde, mantısı ve kayak pistleriyle bilinen şehir.",
+    "firstLevel": 1551,
+    "lastLevel": 1600,
+    "palette": {
+      "sky": [
+        "#2880D2",
+        "#55C6E2",
+        "#A5DDEE",
+        "#F6E8CA"
+      ],
+      "ground": [
+        "#D2B06A",
+        "#A97647",
+        "#88593A"
+      ],
+      "accent": "#CF2D2A"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "plateau",
+        "city",
+        "domes"
+      ],
+      "time": "day",
+      "seed": 3990883489
+    }
+  },
+  {
+    "index": 33,
+    "id": "tr-58-sivas",
+    "name": "Sivas",
+    "region": "icAnadolu",
+    "intro": "Taş işçiliğiyle süslü kapıları ve yüksek yaylalarıyla serin bir kent.",
+    "firstLevel": 1601,
+    "lastLevel": 1650,
+    "palette": {
+      "sky": [
+        "#37608B",
+        "#948CC0",
+        "#E6B2C0",
+        "#F9C89A"
+      ],
+      "ground": [
+        "#D19F66",
+        "#B58C40",
+        "#785730"
+      ],
+      "accent": "#DB5533"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "domes",
+        "houses",
+        "snow"
+      ],
+      "time": "dawn",
+      "seed": 3507431528
+    }
+  },
+  {
+    "index": 34,
+    "id": "tr-68-aksaray",
+    "name": "Aksaray",
+    "region": "icAnadolu",
+    "intro": "Derin vadileri ve ovadan yükselen volkanik dağıyla kervan yolunun durağı.",
+    "firstLevel": 1651,
+    "lastLevel": 1700,
+    "palette": {
+      "sky": [
+        "#302F79",
+        "#9C4F93",
+        "#E6705C",
+        "#F5C55B"
+      ],
+      "ground": [
+        "#D4A777",
+        "#A86F3E",
+        "#895034"
+      ],
+      "accent": "#CE5B3B"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "plateau",
+        "ruins"
+      ],
+      "time": "sunset",
+      "seed": 2976364576
+    }
+  },
+  {
+    "index": 35,
+    "id": "tr-51-nigde",
+    "name": "Niğde",
+    "region": "icAnadolu",
+    "intro": "Elma bahçeleri ve sarp dağlarıyla bilinen bir yayla kenti.",
+    "firstLevel": 1701,
+    "lastLevel": 1750,
+    "palette": {
+      "sky": [
+        "#2D8DD7",
+        "#5EAFDE",
+        "#9CDEE8",
+        "#F8EAD3"
+      ],
+      "ground": [
+        "#D0AA5D",
+        "#BD7B42",
+        "#735535"
+      ],
+      "accent": "#C72E29"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "trees",
+        "fields",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 2285592381
+    }
+  },
+  {
+    "index": 36,
+    "id": "tr-40-kirsehir",
+    "name": "Kırşehir",
+    "region": "icAnadolu",
+    "intro": "Bozkırın türkülerini ve ozanlarını yetiştirmiş sıcak bir kent.",
+    "firstLevel": 1751,
+    "lastLevel": 1800,
+    "palette": {
+      "sky": [
+        "#2D2A65",
+        "#9E519E",
+        "#E65F5B",
+        "#F3C96D"
+      ],
+      "ground": [
+        "#C59A67",
+        "#BE8A46",
+        "#784430"
+      ],
+      "accent": "#C04830"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "fields",
+        "houses",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 3564959356
+    }
+  },
+  {
+    "index": 37,
+    "id": "tr-66-yozgat",
+    "name": "Yozgat",
+    "region": "icAnadolu",
+    "intro": "Çamlığı ve geniş tarlalarıyla bozkırın ortasında yeşil bir ada.",
+    "firstLevel": 1801,
+    "lastLevel": 1850,
+    "palette": {
+      "sky": [
+        "#248BC2",
+        "#54BCDE",
+        "#A1D5E8",
+        "#F8F4D8"
+      ],
+      "ground": [
+        "#C7AE66",
+        "#BE8C46",
+        "#815731"
+      ],
+      "accent": "#D42B34"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "pines",
+        "fields",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 3842171375
+    }
+  },
+  {
+    "index": 38,
+    "id": "tr-70-karaman",
+    "name": "Karaman",
+    "region": "icAnadolu",
+    "intro": "Türkçenin resmî dil ilan edildiği yer olarak anılan, ovaya yayılmış bir şehir.",
+    "firstLevel": 1851,
+    "lastLevel": 1900,
+    "palette": {
+      "sky": [
+        "#395484",
+        "#958CBA",
+        "#E9A5B3",
+        "#F6D9A7"
+      ],
+      "ground": [
+        "#D3B569",
+        "#B37A42",
+        "#845A33"
+      ],
+      "accent": "#D13429"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "castle",
+        "fields",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 1999153087
+    }
+  },
+  {
+    "index": 39,
+    "id": "tr-18-cankiri",
+    "name": "Çankırı",
+    "region": "icAnadolu",
+    "intro": "Tuz mağaraları ve kuru tepeleriyle bilinen sakin bir kent.",
+    "firstLevel": 1901,
+    "lastLevel": 1950,
+    "palette": {
+      "sky": [
+        "#2891D7",
+        "#6CB1E0",
+        "#8ED5EB",
+        "#F4E3C3"
+      ],
+      "ground": [
+        "#C9AE6E",
+        "#BE8E41",
+        "#854E32"
+      ],
+      "accent": "#D93E30"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "castle",
+        "houses",
+        "fields"
+      ],
+      "time": "day",
+      "seed": 4128083605
+    }
+  },
+  {
+    "index": 40,
+    "id": "tr-71-kirikkale",
+    "name": "Kırıkkale",
+    "region": "icAnadolu",
+    "intro": "Nehrin kıvrıldığı vadide kurulmuş, başkente komşu bir şehir.",
+    "firstLevel": 1951,
+    "lastLevel": 2000,
+    "palette": {
+      "sky": [
+        "#2A2970",
+        "#934A96",
+        "#E3825F",
+        "#F8C059"
+      ],
+      "ground": [
+        "#D0B76C",
+        "#B48F4B",
+        "#785536"
+      ],
+      "accent": "#D43C2B"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "hills",
+        "city",
+        "fields"
+      ],
+      "time": "sunset",
+      "seed": 4248311492
+    }
+  },
+  {
+    "index": 41,
+    "id": "tr-61-trabzon",
+    "name": "Trabzon",
+    "region": "karadeniz",
+    "intro": "Sisli yamaçlara tutunan manastırı, yaylaları ve hamsisiyle Karadeniz'in kalbi.",
+    "firstLevel": 2001,
+    "lastLevel": 2050,
+    "palette": {
+      "sky": [
+        "#208CD9",
+        "#4BB0E2",
+        "#98D4E6",
+        "#F5ECBC"
+      ],
+      "ground": [
+        "#2D8043",
+        "#20562F",
+        "#18441F"
+      ],
+      "accent": "#289F7B"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "mountains",
+        "pines",
+        "clouds",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 2804061462
+    }
+  },
+  {
+    "index": 42,
+    "id": "tr-53-rize",
+    "name": "Rize",
+    "region": "karadeniz",
+    "intro": "Dik yamaçları kaplayan çay bahçeleri ve şelaleli yaylalarıyla yemyeşil bir kıyı.",
+    "firstLevel": 2051,
+    "lastLevel": 2100,
+    "palette": {
+      "sky": [
+        "#2E5185",
+        "#9D89BD",
+        "#E4A0BA",
+        "#FBD6B7"
+      ],
+      "ground": [
+        "#378652",
+        "#1D5926",
+        "#183F1E"
+      ],
+      "accent": "#2BB191"
+    },
+    "scene": {
+      "layers": [
+        "terraces",
+        "mountains",
+        "waterfall",
+        "sea",
+        "clouds"
+      ],
+      "time": "dawn",
+      "seed": 3454633394
+    }
+  },
+  {
+    "index": 43,
+    "id": "tr-08-artvin",
+    "name": "Artvin",
+    "region": "karadeniz",
+    "intro": "Coşkun dereleri, ahşap evleri ve sık ormanlarıyla dağların kenti.",
+    "firstLevel": 2101,
+    "lastLevel": 2150,
+    "palette": {
+      "sky": [
+        "#1FA2DB",
+        "#68ADDF",
+        "#98D4EC",
+        "#F6EAD5"
+      ],
+      "ground": [
+        "#2C8150",
+        "#206937",
+        "#17361C"
+      ],
+      "accent": "#2D9A74"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "pines",
+        "houses",
+        "clouds"
+      ],
+      "time": "day",
+      "seed": 2928564329
+    }
+  },
+  {
+    "index": 44,
+    "id": "tr-78-karabuk",
+    "name": "Karabük",
+    "region": "karadeniz",
+    "intro": "Ahşap konakları ve dar sokaklarıyla zamanın durduğu bir kasaba.",
+    "firstLevel": 2151,
+    "lastLevel": 2200,
+    "palette": {
+      "sky": [
+        "#2C3A77",
+        "#9E4796",
+        "#DF6B62",
+        "#F5B05C"
+      ],
+      "ground": [
+        "#378149",
+        "#1F6539",
+        "#174022"
+      ],
+      "accent": "#2CA571"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "houses",
+        "trees",
+        "clouds"
+      ],
+      "time": "sunset",
+      "seed": 3712108638
+    }
+  },
+  {
+    "index": 45,
+    "id": "tr-55-samsun",
+    "name": "Samsun",
+    "region": "karadeniz",
+    "intro": "Geniş deltası ve uzun sahiliyle Karadeniz'in en büyük liman kenti.",
+    "firstLevel": 2201,
+    "lastLevel": 2250,
+    "palette": {
+      "sky": [
+        "#2292CE",
+        "#52ABDA",
+        "#90D4E9",
+        "#F7F3D4"
+      ],
+      "ground": [
+        "#328B5A",
+        "#246A3F",
+        "#1B4126"
+      ],
+      "accent": "#2A9367"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "river",
+        "city",
+        "boats",
+        "birds"
+      ],
+      "time": "day",
+      "seed": 1486574442
+    }
+  },
+  {
+    "index": 46,
+    "id": "tr-05-amasya",
+    "name": "Amasya",
+    "region": "karadeniz",
+    "intro": "Nehir boyunca dizilen eski evleri ve kayalardaki mezarlarıyla elma kokulu bir şehir.",
+    "firstLevel": 2251,
+    "lastLevel": 2300,
+    "palette": {
+      "sky": [
+        "#121B35",
+        "#1F2C4D",
+        "#2F4465",
+        "#477394"
+      ],
+      "ground": [
+        "#37904A",
+        "#1E6629",
+        "#1C4023"
+      ],
+      "accent": "#29A86D"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "houses",
+        "rockSpires",
+        "trees",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 2536875947
+    }
+  },
+  {
+    "index": 47,
+    "id": "tr-57-sinop",
+    "name": "Sinop",
+    "region": "karadeniz",
+    "intro": "Ülkenin en kuzey ucunda, mavi ve yeşilin buluştuğu sessiz bir yarımada.",
+    "firstLevel": 2301,
+    "lastLevel": 2350,
+    "palette": {
+      "sky": [
+        "#2A2C6A",
+        "#924F9C",
+        "#DA5749",
+        "#F8AE4F"
+      ],
+      "ground": [
+        "#307E54",
+        "#247031",
+        "#183A1D"
+      ],
+      "accent": "#2A937E"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "lighthouse",
+        "pines",
+        "boats"
+      ],
+      "time": "sunset",
+      "seed": 2679362006
+    }
+  },
+  {
+    "index": 48,
+    "id": "tr-37-kastamonu",
+    "name": "Kastamonu",
+    "region": "karadeniz",
+    "intro": "Ahşap camileri ve kanyonlu ormanlarıyla sarp bir dağ kenti.",
+    "firstLevel": 2351,
+    "lastLevel": 2400,
+    "palette": {
+      "sky": [
+        "#1F74D6",
+        "#62B3DF",
+        "#A1DBED",
+        "#F6E9D0"
+      ],
+      "ground": [
+        "#398458",
+        "#266439",
+        "#133914"
+      ],
+      "accent": "#30AB82"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "pines",
+        "castle",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 3546640379
+    }
+  },
+  {
+    "index": 49,
+    "id": "tr-14-bolu",
+    "name": "Bolu",
+    "region": "karadeniz",
+    "intro": "Gölleri ve ormanlarıyla dört mevsim doğa yürüyüşü için bir durak.",
+    "firstLevel": 2401,
+    "lastLevel": 2450,
+    "palette": {
+      "sky": [
+        "#336794",
+        "#9A86C1",
+        "#E49BA9",
+        "#F8DDB0"
+      ],
+      "ground": [
+        "#347F52",
+        "#1C5F25",
+        "#1A4723"
+      ],
+      "accent": "#2C9673"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "pines",
+        "mountains",
+        "birds"
+      ],
+      "time": "dawn",
+      "seed": 1234196979
+    }
+  },
+  {
+    "index": 50,
+    "id": "tr-28-giresun",
+    "name": "Giresun",
+    "region": "karadeniz",
+    "intro": "Kiraz ve fındık bahçeleriyle, adası ve kalesiyle anılan bir kıyı kenti.",
+    "firstLevel": 2451,
+    "lastLevel": 2500,
+    "palette": {
+      "sky": [
+        "#1F96DB",
+        "#68BFDF",
+        "#8FD6E6",
+        "#F8F1D3"
+      ],
+      "ground": [
+        "#378150",
+        "#23702E",
+        "#1D4E2A"
+      ],
+      "accent": "#2A9868"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "castle",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 4014171008
+    }
+  },
+  {
+    "index": 51,
+    "id": "tr-52-ordu",
+    "name": "Ordu",
+    "region": "karadeniz",
+    "intro": "Denizi tepeden izleyen teleferiği ve fındıklıklarıyla yeşil bir şehir.",
+    "firstLevel": 2501,
+    "lastLevel": 2550,
+    "palette": {
+      "sky": [
+        "#293170",
+        "#97448E",
+        "#DB5E4D",
+        "#FBD456"
+      ],
+      "ground": [
+        "#34894D",
+        "#256F41",
+        "#153C18"
+      ],
+      "accent": "#239F76"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "trees",
+        "houses"
+      ],
+      "time": "sunset",
+      "seed": 1864534843
+    }
+  },
+  {
+    "index": 52,
+    "id": "tr-74-bartin",
+    "name": "Bartın",
+    "region": "karadeniz",
+    "intro": "Irmağı, plajları ve eski liman kasabasıyla küçük ama güzel bir kıyı.",
+    "firstLevel": 2551,
+    "lastLevel": 2600,
+    "palette": {
+      "sky": [
+        "#266EC0",
+        "#54A2DE",
+        "#9CCEEC",
+        "#F7E8CF"
+      ],
+      "ground": [
+        "#398E5E",
+        "#23613A",
+        "#183A1C"
+      ],
+      "accent": "#299E83"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "river",
+        "houses",
+        "boats"
+      ],
+      "time": "day",
+      "seed": 2087582248
+    }
+  },
+  {
+    "index": 53,
+    "id": "tr-67-zonguldak",
+    "name": "Zonguldak",
+    "region": "karadeniz",
+    "intro": "Kömür madenleri ve denize bakan yamaçlarıyla emeğin şehri.",
+    "firstLevel": 2601,
+    "lastLevel": 2650,
+    "palette": {
+      "sky": [
+        "#365C87",
+        "#927DB5",
+        "#E9B4C7",
+        "#FAC6A3"
+      ],
+      "ground": [
+        "#37905F",
+        "#1F602B",
+        "#1C4A2A"
+      ],
+      "accent": "#2B9777"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "hills",
+        "houses",
+        "lighthouse"
+      ],
+      "time": "dawn",
+      "seed": 1026585929
+    }
+  },
+  {
+    "index": 54,
+    "id": "tr-81-duzce",
+    "name": "Düzce",
+    "region": "karadeniz",
+    "intro": "Şelaleleri, yaylası ve ormanlarıyla iki büyük şehir arasında yeşil bir mola.",
+    "firstLevel": 2651,
+    "lastLevel": 2700,
+    "palette": {
+      "sky": [
+        "#2D7AD7",
+        "#5BA0DC",
+        "#96D9E9",
+        "#F5EBC1"
+      ],
+      "ground": [
+        "#348959",
+        "#236C2F",
+        "#183F20"
+      ],
+      "accent": "#26A68A"
+    },
+    "scene": {
+      "layers": [
+        "waterfall",
+        "pines",
+        "hills",
+        "river"
+      ],
+      "time": "day",
+      "seed": 3417957873
+    }
+  },
+  {
+    "index": 55,
+    "id": "tr-60-tokat",
+    "name": "Tokat",
+    "region": "karadeniz",
+    "intro": "Yemenileri, bağları ve kaya mezarlarıyla tarihi bir vadi kenti.",
+    "firstLevel": 2701,
+    "lastLevel": 2750,
+    "palette": {
+      "sky": [
+        "#2C3372",
+        "#8B4596",
+        "#E3825F",
+        "#F8CE62"
+      ],
+      "ground": [
+        "#388A5A",
+        "#217337",
+        "#19431C"
+      ],
+      "accent": "#26A680"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "vineyards",
+        "castle",
+        "houses"
+      ],
+      "time": "sunset",
+      "seed": 1043809895
+    }
+  },
+  {
+    "index": 56,
+    "id": "tr-19-corum",
+    "name": "Çorum",
+    "region": "karadeniz",
+    "intro": "Leblebisi ve antik başkent kalıntılarıyla bilinen bir yayla şehri.",
+    "firstLevel": 2751,
+    "lastLevel": 2800,
+    "palette": {
+      "sky": [
+        "#2B88DA",
+        "#5FA5E3",
+        "#A1D5ED",
+        "#F2E0BF"
+      ],
+      "ground": [
+        "#3A8857",
+        "#24663D",
+        "#183E22"
+      ],
+      "accent": "#25B177"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "ruins",
+        "fields",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 3916620604
+    }
+  },
+  {
+    "index": 57,
+    "id": "tr-29-gumushane",
+    "name": "Gümüşhane",
+    "region": "karadeniz",
+    "intro": "Pestili, kömesi ve derin vadileriyle dağların arasında bir şehir.",
+    "firstLevel": 2801,
+    "lastLevel": 2850,
+    "palette": {
+      "sky": [
+        "#355F97",
+        "#8E82BA",
+        "#E59AB9",
+        "#F9D29F"
+      ],
+      "ground": [
+        "#35884E",
+        "#266D38",
+        "#1E4D2A"
+      ],
+      "accent": "#27B090"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "houses",
+        "pines"
+      ],
+      "time": "dawn",
+      "seed": 1360981508
+    }
+  },
+  {
+    "index": 58,
+    "id": "tr-69-bayburt",
+    "name": "Bayburt",
+    "region": "karadeniz",
+    "intro": "Yüksek yaylası ve taş kalesiyle küçük, serin bir kent.",
+    "firstLevel": 2851,
+    "lastLevel": 2900,
+    "palette": {
+      "sky": [
+        "#238FD7",
+        "#54BBE3",
+        "#9CD1E8",
+        "#F9F1D7"
+      ],
+      "ground": [
+        "#357E49",
+        "#22592B",
+        "#16411C"
+      ],
+      "accent": "#23A486"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "castle",
+        "river",
+        "snow"
+      ],
+      "time": "day",
+      "seed": 242999656
+    }
+  },
+  {
+    "index": 59,
+    "id": "tr-25-erzurum",
+    "name": "Erzurum",
+    "region": "doguAnadolu",
+    "intro": "Karlı dağları, kayak pistleri ve çifte minareli yapılarıyla yüksek bir şehir.",
+    "firstLevel": 2901,
+    "lastLevel": 2950,
+    "palette": {
+      "sky": [
+        "#248FE0",
+        "#5EC0E4",
+        "#93D7EB",
+        "#F4E7C2"
+      ],
+      "ground": [
+        "#B4C6CA",
+        "#85949D",
+        "#576C85"
+      ],
+      "accent": "#3D78D6"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "minarets",
+        "city",
+        "snow"
+      ],
+      "time": "day",
+      "seed": 616714674
+    }
+  },
+  {
+    "index": 60,
+    "id": "tr-36-kars",
+    "name": "Kars",
+    "region": "doguAnadolu",
+    "intro": "Taş binaları, kaşarı ve karlı ovalarıyla sınırın ötesine bakan bir kent.",
+    "firstLevel": 2951,
+    "lastLevel": 3000,
+    "palette": {
+      "sky": [
+        "#0C0C22",
+        "#182449",
+        "#324971",
+        "#416186"
+      ],
+      "ground": [
+        "#C7CED1",
+        "#8390A0",
+        "#53657F"
+      ],
+      "accent": "#3581DE"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "castle",
+        "houses",
+        "snow",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 3660327394
+    }
+  },
+  {
+    "index": 61,
+    "id": "tr-65-van",
+    "name": "Van",
+    "region": "doguAnadolu",
+    "intro": "Uçsuz göl kıyısında, kahvaltısı ve kedileriyle ünlü bir şehir.",
+    "firstLevel": 3001,
+    "lastLevel": 3050,
+    "palette": {
+      "sky": [
+        "#282F76",
+        "#A7499A",
+        "#DA6B52",
+        "#F9C667"
+      ],
+      "ground": [
+        "#B8C1C7",
+        "#8599A8",
+        "#5B6A7B"
+      ],
+      "accent": "#3379DB"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "mountains",
+        "castle",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 3044905125
+    }
+  },
+  {
+    "index": 62,
+    "id": "tr-44-malatya",
+    "name": "Malatya",
+    "region": "doguAnadolu",
+    "intro": "Kayısı bahçeleri ve dağ başında doğan güneşiyle bilinen bir kent.",
+    "firstLevel": 3051,
+    "lastLevel": 3100,
+    "palette": {
+      "sky": [
+        "#344A7F",
+        "#9280B3",
+        "#E0A3B4",
+        "#FBDBB1"
+      ],
+      "ground": [
+        "#BFCBCF",
+        "#84949F",
+        "#596773"
+      ],
+      "accent": "#389DDC"
+    },
+    "scene": {
+      "layers": [
+        "fields",
+        "trees",
+        "mountains",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 2498355239
+    }
+  },
+  {
+    "index": 63,
+    "id": "tr-23-elazig",
+    "name": "Elazığ",
+    "region": "doguAnadolu",
+    "intro": "Baraj gölleri ve eski kalesiyle Fırat kıyısında bir şehir.",
+    "firstLevel": 3101,
+    "lastLevel": 3150,
+    "palette": {
+      "sky": [
+        "#1F9CD6",
+        "#62B1DF",
+        "#99CDE6",
+        "#F4E9C3"
+      ],
+      "ground": [
+        "#BBC7CE",
+        "#8997A4",
+        "#536179"
+      ],
+      "accent": "#318AD8"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "hills",
+        "castle",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 765231885
+    }
+  },
+  {
+    "index": 64,
+    "id": "tr-04-agri",
+    "name": "Ağrı",
+    "region": "doguAnadolu",
+    "intro": "Ülkenin en yüksek dağının gölgesinde, geniş bir ova kenti.",
+    "firstLevel": 3151,
+    "lastLevel": 3200,
+    "palette": {
+      "sky": [
+        "#365C7D",
+        "#9183B4",
+        "#E2A7BB",
+        "#F9CCAA"
+      ],
+      "ground": [
+        "#CBD1D2",
+        "#7E899A",
+        "#5D6B7E"
+      ],
+      "accent": "#4380DB"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "plateau",
+        "fields",
+        "clouds"
+      ],
+      "time": "dawn",
+      "seed": 308752290
+    }
+  },
+  {
+    "index": 65,
+    "id": "tr-24-erzincan",
+    "name": "Erzincan",
+    "region": "doguAnadolu",
+    "intro": "Dağlarla çevrili ovası ve coşkun ırmağıyla doğunun kapısı.",
+    "firstLevel": 3201,
+    "lastLevel": 3250,
+    "palette": {
+      "sky": [
+        "#2478C2",
+        "#5CB2E0",
+        "#97D3E7",
+        "#F7EFD4"
+      ],
+      "ground": [
+        "#CBD0D2",
+        "#828E9B",
+        "#4E5C73"
+      ],
+      "accent": "#4587D9"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "fields",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 177809651
+    }
+  },
+  {
+    "index": 66,
+    "id": "tr-13-bitlis",
+    "name": "Bitlis",
+    "region": "doguAnadolu",
+    "intro": "Volkanik krater gölü ve taş evleriyle dağların arasında bir şehir.",
+    "firstLevel": 3251,
+    "lastLevel": 3300,
+    "palette": {
+      "sky": [
+        "#2C2F68",
+        "#A54A9C",
+        "#DE7863",
+        "#F1AE50"
+      ],
+      "ground": [
+        "#C6D0D7",
+        "#7889A1",
+        "#5A6777"
+      ],
+      "accent": "#459BD9"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "mountains",
+        "houses",
+        "snow"
+      ],
+      "time": "sunset",
+      "seed": 4248653399
+    }
+  },
+  {
+    "index": 67,
+    "id": "tr-62-tunceli",
+    "name": "Tunceli",
+    "region": "doguAnadolu",
+    "intro": "Vadileri, berrak dereleri ve geniş milli parkıyla doğanın korunduğu bir kent.",
+    "firstLevel": 3301,
+    "lastLevel": 3350,
+    "palette": {
+      "sky": [
+        "#2075CF",
+        "#59BBDE",
+        "#99D9E6",
+        "#F4E9CD"
+      ],
+      "ground": [
+        "#B8C2C6",
+        "#8A97A8",
+        "#5D6779"
+      ],
+      "accent": "#2F90DA"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "mountains",
+        "trees",
+        "birds"
+      ],
+      "time": "day",
+      "seed": 3841889942
+    }
+  },
+  {
+    "index": 68,
+    "id": "tr-75-ardahan",
+    "name": "Ardahan",
+    "region": "doguAnadolu",
+    "intro": "Kışın donan gölü ve çiçekli yaylalarıyla en serin duraklardan biri.",
+    "firstLevel": 3351,
+    "lastLevel": 3400,
+    "palette": {
+      "sky": [
+        "#3E5F93",
+        "#837BB2",
+        "#E3A0B5",
+        "#F9D2B8"
+      ],
+      "ground": [
+        "#C9D0D4",
+        "#8395A0",
+        "#53607F"
+      ],
+      "accent": "#458CDE"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "plateau",
+        "snow",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 2781888126
+    }
+  },
+  {
+    "index": 69,
+    "id": "tr-76-igdir",
+    "name": "Iğdır",
+    "region": "doguAnadolu",
+    "intro": "Ovasında kayısı yetişen, karlı dağı gören bir sınır kenti.",
+    "firstLevel": 3401,
+    "lastLevel": 3450,
+    "palette": {
+      "sky": [
+        "#25336F",
+        "#8F5298",
+        "#DF664E",
+        "#F9C866"
+      ],
+      "ground": [
+        "#BDCAD0",
+        "#8598A3",
+        "#51627B"
+      ],
+      "accent": "#319BDD"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "fields",
+        "trees",
+        "houses"
+      ],
+      "time": "sunset",
+      "seed": 2572121400
+    }
+  },
+  {
+    "index": 70,
+    "id": "tr-49-mus",
+    "name": "Muş",
+    "region": "doguAnadolu",
+    "intro": "Lalelerin açtığı geniş ovası ve dağlarıyla sakin bir şehir.",
+    "firstLevel": 3451,
+    "lastLevel": 3500,
+    "palette": {
+      "sky": [
+        "#3192D3",
+        "#51BBDB",
+        "#A1D9E8",
+        "#F7F3D9"
+      ],
+      "ground": [
+        "#B7C3CC",
+        "#8995A4",
+        "#506377"
+      ],
+      "accent": "#3387D7"
+    },
+    "scene": {
+      "layers": [
+        "plateau",
+        "fields",
+        "mountains",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 3567127863
+    }
+  },
+  {
+    "index": 71,
+    "id": "tr-12-bingol",
+    "name": "Bingöl",
+    "region": "doguAnadolu",
+    "intro": "Yüzen adacıklı gölü ve ormanlık dağlarıyla serin bir kent.",
+    "firstLevel": 3501,
+    "lastLevel": 3550,
+    "palette": {
+      "sky": [
+        "#314F90",
+        "#9281B6",
+        "#E9A5BE",
+        "#FAD8A8"
+      ],
+      "ground": [
+        "#C4CBCF",
+        "#84959F",
+        "#556282"
+      ],
+      "accent": "#3385D7"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "pines",
+        "mountains"
+      ],
+      "time": "dawn",
+      "seed": 2416022839
+    }
+  },
+  {
+    "index": 72,
+    "id": "tr-30-hakkari",
+    "name": "Hakkari",
+    "region": "doguAnadolu",
+    "intro": "Sarp zirveleri ve derin vadileriyle ülkenin en dağlık köşesi.",
+    "firstLevel": 3551,
+    "lastLevel": 3600,
+    "palette": {
+      "sky": [
+        "#278FBE",
+        "#59B3E3",
+        "#97D2E7",
+        "#F8EED8"
+      ],
+      "ground": [
+        "#BDC4C7",
+        "#8694A7",
+        "#547087"
+      ],
+      "accent": "#498ADF"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "river",
+        "houses",
+        "clouds"
+      ],
+      "time": "day",
+      "seed": 2576595533
+    }
+  },
+  {
+    "index": 73,
+    "id": "tr-63-sanliurfa",
+    "name": "Şanlıurfa",
+    "region": "guneydogu",
+    "intro": "Balıklı göl çevresindeki taş avlularıyla, tarihin en eski izlerini taşıyan bir şehir.",
+    "firstLevel": 3601,
+    "lastLevel": 3650,
+    "palette": {
+      "sky": [
+        "#292A6B",
+        "#AA4BA7",
+        "#DE765E",
+        "#F8BC63"
+      ],
+      "ground": [
+        "#CA9D53",
+        "#A6723A",
+        "#713928"
+      ],
+      "accent": "#F08119"
+    },
+    "scene": {
+      "layers": [
+        "lake",
+        "domes",
+        "minarets",
+        "columns",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 1580682975
+    }
+  },
+  {
+    "index": 74,
+    "id": "tr-47-mardin",
+    "name": "Mardin",
+    "region": "guneydogu",
+    "intro": "Ovaya bakan bal rengi taş evleri ve dar sokaklarıyla yamaçta bir şehir.",
+    "firstLevel": 3651,
+    "lastLevel": 3700,
+    "palette": {
+      "sky": [
+        "#242B6A",
+        "#90519A",
+        "#E6734C",
+        "#F8D563"
+      ],
+      "ground": [
+        "#C78957",
+        "#AE643D",
+        "#693C2B"
+      ],
+      "accent": "#F19722"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "houses",
+        "domes",
+        "plateau"
+      ],
+      "time": "sunset",
+      "seed": 1075384073
+    }
+  },
+  {
+    "index": 75,
+    "id": "tr-27-gaziantep",
+    "name": "Gaziantep",
+    "region": "guneydogu",
+    "intro": "Baklavası, bakırcıları ve kalesiyle lezzetin başkenti.",
+    "firstLevel": 3701,
+    "lastLevel": 3750,
+    "palette": {
+      "sky": [
+        "#2591D0",
+        "#62BADF",
+        "#9BD8ED",
+        "#F6EAC1"
+      ],
+      "ground": [
+        "#D19847",
+        "#9F5F38",
+        "#743C2F"
+      ],
+      "accent": "#EEA93A"
+    },
+    "scene": {
+      "layers": [
+        "castle",
+        "city",
+        "domes",
+        "fields"
+      ],
+      "time": "day",
+      "seed": 457649579
+    }
+  },
+  {
+    "index": 76,
+    "id": "tr-21-diyarbakir",
+    "name": "Diyarbakır",
+    "region": "guneydogu",
+    "intro": "Kara taştan surları ve Dicle kıyısındaki köprüsüyle köklü bir şehir.",
+    "firstLevel": 3751,
+    "lastLevel": 3800,
+    "palette": {
+      "sky": [
+        "#2B2D73",
+        "#934388",
+        "#E17256",
+        "#F8BC68"
+      ],
+      "ground": [
+        "#D39A50",
+        "#A25A39",
+        "#7A3B2A"
+      ],
+      "accent": "#E8AC21"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "castle",
+        "domes"
+      ],
+      "time": "sunset",
+      "seed": 1697875255
+    }
+  },
+  {
+    "index": 77,
+    "id": "tr-02-adiyaman",
+    "name": "Adıyaman",
+    "region": "guneydogu",
+    "intro": "Dağ başındaki dev taş başlarıyla güneşin doğuşunu izleten bir kent.",
+    "firstLevel": 3801,
+    "lastLevel": 3850,
+    "palette": {
+      "sky": [
+        "#305291",
+        "#907EBE",
+        "#E9AABE",
+        "#F4C59F"
+      ],
+      "ground": [
+        "#D4915E",
+        "#B26234",
+        "#7A3C29"
+      ],
+      "accent": "#F1BB32"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "ruins",
+        "plateau"
+      ],
+      "time": "dawn",
+      "seed": 1355426379
+    }
+  },
+  {
+    "index": 78,
+    "id": "tr-72-batman",
+    "name": "Batman",
+    "region": "guneydogu",
+    "intro": "Dicle'nin kıyısında, petrolü ve tarihi köprüsüyle bilinen bir şehir.",
+    "firstLevel": 3851,
+    "lastLevel": 3900,
+    "palette": {
+      "sky": [
+        "#2495C2",
+        "#5DC3DF",
+        "#95CAE9",
+        "#F5F1D0"
+      ],
+      "ground": [
+        "#D5A95D",
+        "#A15936",
+        "#774031"
+      ],
+      "accent": "#F1B022"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "hills",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 3810484225
+    }
+  },
+  {
+    "index": 79,
+    "id": "tr-56-siirt",
+    "name": "Siirt",
+    "region": "guneydogu",
+    "intro": "Battaniyeleri, fıstığı ve dağlarla çevrili vadileriyle bir kent.",
+    "firstLevel": 3901,
+    "lastLevel": 3950,
+    "palette": {
+      "sky": [
+        "#272F62",
+        "#A749A3",
+        "#E05A48",
+        "#F9B05D"
+      ],
+      "ground": [
+        "#CA9358",
+        "#B6673A",
+        "#7C402D"
+      ],
+      "accent": "#ED9426"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "houses",
+        "trees"
+      ],
+      "time": "sunset",
+      "seed": 686379494
+    }
+  },
+  {
+    "index": 80,
+    "id": "tr-79-kilis",
+    "name": "Kilis",
+    "region": "guneydogu",
+    "intro": "Zeytinlikleri ve bağlarıyla güneyin küçük, sıcak bir kenti.",
+    "firstLevel": 3951,
+    "lastLevel": 4000,
+    "palette": {
+      "sky": [
+        "#1D9BCD",
+        "#5CA7E0",
+        "#96D2E8",
+        "#F8ECD3"
+      ],
+      "ground": [
+        "#C69853",
+        "#B6603E",
+        "#83482F"
+      ],
+      "accent": "#E9AA35"
+    },
+    "scene": {
+      "layers": [
+        "hills",
+        "trees",
+        "vineyards",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 2011291415
+    }
+  },
+  {
+    "index": 81,
+    "id": "tr-73-sirnak",
+    "name": "Şırnak",
+    "region": "guneydogu",
+    "intro": "Yüksek dağları ve dik vadileriyle sınır boyunda bir şehir.",
+    "firstLevel": 4001,
+    "lastLevel": 4050,
+    "palette": {
+      "sky": [
+        "#395484",
+        "#8E78B5",
+        "#E49BB6",
+        "#FAD9B7"
+      ],
+      "ground": [
+        "#C99E4F",
+        "#AC633E",
+        "#704129"
+      ],
+      "accent": "#ED943B"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "houses"
+      ],
+      "time": "dawn",
+      "seed": 2229413559
+    }
+  },
+  {
+    "index": 82,
+    "id": "w-82-baku",
+    "name": "Bakü",
+    "region": "dunya",
+    "intro": "Hazar kıyısında, rüzgârlı sahili ve eski surlu şehriyle kardeş bir başkent.",
+    "firstLevel": 4051,
+    "lastLevel": 4100,
+    "palette": {
+      "sky": [
+        "#0C0C27",
+        "#1E294D",
+        "#2F466A",
+        "#425F85"
+      ],
+      "ground": [
+        "#715F9B",
+        "#5A5280",
+        "#34334D"
+      ],
+      "accent": "#A259C9"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "city",
+        "tower",
+        "skyscrapers",
+        "boats",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 3114235037
+    }
+  },
+  {
+    "index": 83,
+    "id": "w-83-saraybosna",
+    "name": "Saraybosna",
+    "region": "dunya",
+    "intro": "Dağların çevrelediği vadide, çarşısı ve köprüleriyle sıcak bir şehir.",
+    "firstLevel": 4101,
+    "lastLevel": 4150,
+    "palette": {
+      "sky": [
+        "#28266E",
+        "#A24EA6",
+        "#E6855C",
+        "#F9D048"
+      ],
+      "ground": [
+        "#71629D",
+        "#4E4276",
+        "#303554"
+      ],
+      "accent": "#9652C7"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "river",
+        "bridge",
+        "minarets",
+        "houses"
+      ],
+      "time": "sunset",
+      "seed": 2684890215
+    }
+  },
+  {
+    "index": 84,
+    "id": "w-84-uskup",
+    "name": "Üsküp",
+    "region": "dunya",
+    "intro": "Taş köprüsü ve eski çarşısıyla nehrin iki yakasına yayılmış bir başkent.",
+    "firstLevel": 4151,
+    "lastLevel": 4200,
+    "palette": {
+      "sky": [
+        "#2270C3",
+        "#55B1E2",
+        "#99DFEB",
+        "#F9EED7"
+      ],
+      "ground": [
+        "#756798",
+        "#504A87",
+        "#353456"
+      ],
+      "accent": "#945BC2"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "castle",
+        "houses"
+      ],
+      "time": "day",
+      "seed": 1728215142
+    }
+  },
+  {
+    "index": 85,
+    "id": "w-85-selanik",
+    "name": "Selanik",
+    "region": "dunya",
+    "intro": "Beyaz kulesi ve uzun sahil yoluyla Ege'nin öbür kıyısındaki liman kenti.",
+    "firstLevel": 4201,
+    "lastLevel": 4250,
+    "palette": {
+      "sky": [
+        "#2A2862",
+        "#944C94",
+        "#E55048",
+        "#F4C26C"
+      ],
+      "ground": [
+        "#73609A",
+        "#4C437A",
+        "#313654"
+      ],
+      "accent": "#995BC2"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "tower",
+        "city",
+        "boats"
+      ],
+      "time": "sunset",
+      "seed": 3526732295
+    }
+  },
+  {
+    "index": 86,
+    "id": "w-86-semerkant",
+    "name": "Semerkant",
+    "region": "dunya",
+    "intro": "Mavi kubbeli meydanlarıyla İpek Yolu'nun parlayan durağı.",
+    "firstLevel": 4251,
+    "lastLevel": 4300,
+    "palette": {
+      "sky": [
+        "#2894C3",
+        "#68BCE3",
+        "#8BDDEA",
+        "#F7E8CA"
+      ],
+      "ground": [
+        "#7E6C93",
+        "#51496E",
+        "#393460"
+      ],
+      "accent": "#A757C1"
+    },
+    "scene": {
+      "layers": [
+        "domes",
+        "minarets",
+        "desert",
+        "plateau"
+      ],
+      "time": "day",
+      "seed": 1171574265
+    }
+  },
+  {
+    "index": 87,
+    "id": "w-87-budapeste",
+    "name": "Budapeşte",
+    "region": "dunya",
+    "intro": "Tuna'nın iki yakasını köprülerle birleştiren, kaplıcalı bir başkent.",
+    "firstLevel": 4301,
+    "lastLevel": 4350,
+    "palette": {
+      "sky": [
+        "#111636",
+        "#212754",
+        "#293C66",
+        "#496A8D"
+      ],
+      "ground": [
+        "#7C6B94",
+        "#4A4771",
+        "#363550"
+      ],
+      "accent": "#A44EC6"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "bridge",
+        "castle",
+        "city",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 1135626389
+    }
+  },
+  {
+    "index": 88,
+    "id": "w-88-viyana",
+    "name": "Viyana",
+    "region": "dunya",
+    "intro": "Saraylar, müzik ve kahvehaneleriyle Tuna kıyısında zarif bir şehir.",
+    "firstLevel": 4351,
+    "lastLevel": 4400,
+    "palette": {
+      "sky": [
+        "#252C6F",
+        "#974495",
+        "#E1564C",
+        "#F3BD6D"
+      ],
+      "ground": [
+        "#786C93",
+        "#514875",
+        "#39355A"
+      ],
+      "accent": "#A646C3"
+    },
+    "scene": {
+      "layers": [
+        "city",
+        "domes",
+        "tower",
+        "trees"
+      ],
+      "time": "sunset",
+      "seed": 922726942
+    }
+  },
+  {
+    "index": 89,
+    "id": "w-89-berlin",
+    "name": "Berlin",
+    "region": "dunya",
+    "intro": "Kanalları, parkları ve büyük bir Türk topluluğuyla canlı bir başkent.",
+    "firstLevel": 4401,
+    "lastLevel": 4450,
+    "palette": {
+      "sky": [
+        "#22A1D3",
+        "#68B9DF",
+        "#9BE4ED",
+        "#F5EDC1"
+      ],
+      "ground": [
+        "#7D709E",
+        "#504771",
+        "#37365E"
+      ],
+      "accent": "#AA4AC4"
+    },
+    "scene": {
+      "layers": [
+        "city",
+        "tower",
+        "river",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 2706925867
+    }
+  },
+  {
+    "index": 90,
+    "id": "w-90-amsterdam",
+    "name": "Amsterdam",
+    "region": "dunya",
+    "intro": "Kanalları, bisikletleri ve laleleriyle su üstünde kurulmuş bir şehir.",
+    "firstLevel": 4451,
+    "lastLevel": 4500,
+    "palette": {
+      "sky": [
+        "#258DC1",
+        "#5BB2E1",
+        "#A1DBE8",
+        "#F8EFCE"
+      ],
+      "ground": [
+        "#7E699B",
+        "#4A4780",
+        "#343560"
+      ],
+      "accent": "#AB4ECA"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "houses",
+        "windmills",
+        "fields",
+        "boats"
+      ],
+      "time": "day",
+      "seed": 4104427098
+    }
+  },
+  {
+    "index": 91,
+    "id": "w-91-londra",
+    "name": "Londra",
+    "region": "dunya",
+    "intro": "Saat kulesi, nehri ve kırmızı otobüsleriyle sisli bir başkent.",
+    "firstLevel": 4501,
+    "lastLevel": 4550,
+    "palette": {
+      "sky": [
+        "#3B6391",
+        "#9789C2",
+        "#E6A3BF",
+        "#F8D6B4"
+      ],
+      "ground": [
+        "#79699B",
+        "#4C437A",
+        "#292A4C"
+      ],
+      "accent": "#A85DCB"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "tower",
+        "bridge",
+        "city",
+        "clouds"
+      ],
+      "time": "dawn",
+      "seed": 1309485808
+    }
+  },
+  {
+    "index": 92,
+    "id": "w-92-paris",
+    "name": "Paris",
+    "region": "dunya",
+    "intro": "Demir kulesi ve nehir kenarındaki kitapçılarıyla ışıklar şehri.",
+    "firstLevel": 4551,
+    "lastLevel": 4600,
+    "palette": {
+      "sky": [
+        "#121630",
+        "#1E2A48",
+        "#2B3A5F",
+        "#447797"
+      ],
+      "ground": [
+        "#755B95",
+        "#584D84",
+        "#303055"
+      ],
+      "accent": "#974CBD"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "tower",
+        "city",
+        "bridge",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 1192006735
+    }
+  },
+  {
+    "index": 93,
+    "id": "w-93-roma",
+    "name": "Roma",
+    "region": "dunya",
+    "intro": "Antik sütunları, meydanları ve çeşmeleriyle açık hava müzesi gibi bir şehir.",
+    "firstLevel": 4601,
+    "lastLevel": 4650,
+    "palette": {
+      "sky": [
+        "#2E3A70",
+        "#A3489A",
+        "#E4785E",
+        "#F9A148"
+      ],
+      "ground": [
+        "#7A7099",
+        "#464176",
+        "#303454"
+      ],
+      "accent": "#934DCB"
+    },
+    "scene": {
+      "layers": [
+        "columns",
+        "ruins",
+        "domes",
+        "city"
+      ],
+      "time": "sunset",
+      "seed": 1673781359
+    }
+  },
+  {
+    "index": 94,
+    "id": "w-94-kahire",
+    "name": "Kahire",
+    "region": "dunya",
+    "intro": "Nil kıyısında, çölün kenarındaki dev piramitlere bakan bir başkent.",
+    "firstLevel": 4651,
+    "lastLevel": 4700,
+    "palette": {
+      "sky": [
+        "#252E6A",
+        "#A84DA2",
+        "#DE8663",
+        "#F7BF5F"
+      ],
+      "ground": [
+        "#7F6AA4",
+        "#594F82",
+        "#2B2F4A"
+      ],
+      "accent": "#9B46C8"
+    },
+    "scene": {
+      "layers": [
+        "river",
+        "desert",
+        "palms",
+        "minarets",
+        "city"
+      ],
+      "time": "sunset",
+      "seed": 3937326302
+    }
+  },
+  {
+    "index": 95,
+    "id": "w-95-marakes",
+    "name": "Marakeş",
+    "region": "dunya",
+    "intro": "Kırmızı surları, kalabalık meydanı ve çarşılarıyla çölün kapısında bir şehir.",
+    "firstLevel": 4701,
+    "lastLevel": 4750,
+    "palette": {
+      "sky": [
+        "#2B77D4",
+        "#4CA3E6",
+        "#8ECAE6",
+        "#F7F3D9"
+      ],
+      "ground": [
+        "#8269A5",
+        "#57537F",
+        "#2F314C"
+      ],
+      "accent": "#A860C7"
+    },
+    "scene": {
+      "layers": [
+        "desert",
+        "palms",
+        "minarets",
+        "houses",
+        "mountains"
+      ],
+      "time": "day",
+      "seed": 4076582592
+    }
+  },
+  {
+    "index": 96,
+    "id": "w-96-dubai",
+    "name": "Dubai",
+    "region": "dunya",
+    "intro": "Çölden yükselen gökdelenleri ve yapay adalarıyla parıltılı bir şehir.",
+    "firstLevel": 4751,
+    "lastLevel": 4800,
+    "palette": {
+      "sky": [
+        "#0F132E",
+        "#1F2B4C",
+        "#293A60",
+        "#4E6E97"
+      ],
+      "ground": [
+        "#7D639C",
+        "#524578",
+        "#303250"
+      ],
+      "accent": "#B24DCB"
+    },
+    "scene": {
+      "layers": [
+        "desert",
+        "skyscrapers",
+        "sea",
+        "palms",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 49201206
+    }
+  },
+  {
+    "index": 97,
+    "id": "w-97-pekin",
+    "name": "Pekin",
+    "region": "dunya",
+    "intro": "Uzun surları, saray avluları ve geniş meydanlarıyla köklü bir başkent.",
+    "firstLevel": 4801,
+    "lastLevel": 4850,
+    "palette": {
+      "sky": [
+        "#2D9ED2",
+        "#55B9DD",
+        "#A5DFE9",
+        "#F8EBCE"
+      ],
+      "ground": [
+        "#826B9E",
+        "#564C76",
+        "#2F324B"
+      ],
+      "accent": "#984CC8"
+    },
+    "scene": {
+      "layers": [
+        "mountains",
+        "castle",
+        "city",
+        "trees"
+      ],
+      "time": "day",
+      "seed": 1183910720
+    }
+  },
+  {
+    "index": 98,
+    "id": "w-98-tokyo",
+    "name": "Tokyo",
+    "region": "dunya",
+    "intro": "Kiraz çiçekleri, karlı dağı ve ışıl ışıl caddeleriyle hızlı bir şehir.",
+    "firstLevel": 4851,
+    "lastLevel": 4900,
+    "palette": {
+      "sky": [
+        "#111731",
+        "#20264C",
+        "#2F3F75",
+        "#4F7492"
+      ],
+      "ground": [
+        "#7D6F9F",
+        "#52467C",
+        "#32334D"
+      ],
+      "accent": "#A459C5"
+    },
+    "scene": {
+      "layers": [
+        "snowPeaks",
+        "skyscrapers",
+        "tower",
+        "trees",
+        "stars",
+        "moon"
+      ],
+      "time": "night",
+      "seed": 872448117
+    }
+  },
+  {
+    "index": 99,
+    "id": "w-99-rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "region": "dunya",
+    "intro": "Dağların okyanusa indiği, sahilleri ve karnavalıyla neşeli bir kent.",
+    "firstLevel": 4901,
+    "lastLevel": 4950,
+    "palette": {
+      "sky": [
+        "#2A2762",
+        "#9654A0",
+        "#DC5147",
+        "#FBD051"
+      ],
+      "ground": [
+        "#7B659F",
+        "#55497E",
+        "#303255"
+      ],
+      "accent": "#AB4ECA"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "mountains",
+        "city",
+        "palms",
+        "birds"
+      ],
+      "time": "sunset",
+      "seed": 3259795610
+    }
+  },
+  {
+    "index": 100,
+    "id": "w-100-new-york",
+    "name": "New York",
+    "region": "dunya",
+    "intro": "Gökdelenleri, köprüleri ve özgürlük heykeliyle yolculuğun son büyük durağı.",
+    "firstLevel": 4951,
+    "lastLevel": 5000,
+    "palette": {
+      "sky": [
+        "#0B0F22",
+        "#1E2C48",
+        "#2D486C",
+        "#456F96"
+      ],
+      "ground": [
+        "#6D6397",
+        "#514E79",
+        "#2D304D"
+      ],
+      "accent": "#8F4FBF"
+    },
+    "scene": {
+      "layers": [
+        "sea",
+        "skyscrapers",
+        "bridge",
+        "boats",
+        "stars"
+      ],
+      "time": "night",
+      "seed": 1189060090
+    }
+  }
+]
