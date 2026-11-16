@@ -1,0 +1,28 @@
+{
+  "app": {
+    "name": "Ek Ustası",
+    "tagline": "Türkçenin eklerini ustaca tak!"
+  },
+  "home": {
+    "play": "Oyna",
+    "comingSoon": "Yakında"
+  },
+  "morph": {
+    "vowelHarmony": "Ünlü uyumu bozuldu: son ünlü {last} ({lastDesc}), ek -{form} ({formDesc}).",
+    "vowelHarmonyException": "Ünlü uyumu bozuldu: \"{base}\" bir istisna, son ünlüsü {last} olsa da ince ek alır. Ek -{form} ({formDesc}) olamaz.",
+    "consonantHard": "Ünsüz benzeşmesi: \"{base}\" sert ünsüzle ({last}) bitiyor, ek -{expected} olmalı.",
+    "consonantSoft": "Ünsüz benzeşmesi: \"{base}\" sert ünsüzle bitmiyor, ek -{expected} olmalı.",
+    "bufferVowelEnd": "\"{base}\" ünlüyle bittiği için ek -{expected} olmalı.",
+    "bufferConsonantEnd": "\"{base}\" ünsüzle bittiği için ek -{expected} olmalı.",
+    "pronominalN": "Araya n girer: \"{base}\" iyelik ya da -ki ekiyle bitiyor, ek -{expected} olmalı.",
+    "consonantGeneric": "Bu ek burada -{expected} biçimini alır.",
+    "order": "Bu ek buraya gelemez: {prev} ekinden sonra {next} eki gelmez.",
+    "orderKi": "Bu ek buraya gelemez: -ki yalnızca -de / -in eklerinden ya da zaman bildiren kelimelerden sonra gelir.",
+    "orderMax": "En fazla {max} ek takabilirsin.",
+    "notLexical": "\"{surface}\" diye bir kelime yok.",
+    "front": "ince",
+    "back": "kalın",
+    "rounded": "yuvarlak",
+    "unrounded": "düz"
+  }
+}
