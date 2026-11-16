@@ -1,5 +1,14 @@
 # Değişiklik günlüğü
 
+## [0.6.0] — 2026-11-16 — Aşama 6: Ek Turu
+
+- `src/game/ekturu.ts`: Ek Turu turu (kartları sırayla takma, katı varyant kontrolü, zincir kırılması, Topla),
+  puan (×2, arşifonem ×1,5), Büyük Ek Turu 3× ödül, Ek ipucu, açıklama tetikleyicileri.
+- Her 5. bölümün sonunda "Ek Turu'na geç"; yarıda kapanırsa açılışta yeniden açılır.
+- Ekranlar: ek çarkı (çark bileşeninin kart modu), renkli ek parçalarıyla büyüyen kelime, çarpan rozeti,
+  hata açıklaması, sonuç kartı, 6 eğitici açıklama kartı.
+- Uygulama içi morfoloji motoru üretilen sözlükle (`src/services/morph.ts`). Kararlar: D-020.
+
 ## [0.5.0] — 2026-11-16 — Aşama 5: Çekirdek oynanış
 
 - `src/game`: ızgara modeli, çark yolu (isabet, ara örnekleme, geri alma), kelime sınıflandırma (hedef / bonus /

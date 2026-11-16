@@ -167,3 +167,19 @@ yalnızca 1.849; hepsi 12 kez kullanılınca (~3.200. bölüm) 7 harfli çarklar
 Bu yüzden 3–4 harfli kelimelerin toplam sınırı 24'e çıkarıldı; 5+ harfli kelimeler için 12 aynen geçerli.
 "30 bölüm içinde tekrar etmez" kuralı herkes için aynı. Üretici ayrıca kelimeleri kullanım sayısına göre
 cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
+
+## D-020 — Ek Turu oynanışı (Aşama 6)
+
+- **Çark mekaniği (Emre, 2026-11-16):** Spec'teki "kartı köke sürükle" yerine ekler harf çarkındaki gibi bir
+  halkaya dizilir. Oyuncu parmağını bir ya da birkaç ekin üzerinden geçirir; bıraktığında ekler sırayla takılır.
+  İlk hatada zincir kırılır ve o ana kadarki puan korunur (spec 5.2). Aynı ek kartı sonraki hamlelerde yeniden
+  kullanılabilir (zincirde -lAr, -DA, -ki birden çok kez geçiyor).
+- **Önizleme** sürükleme sırasında ekleri olduğu gibi yan yana koyar (doğrulamaz). Böylece cevabı ele vermez.
+- **Arşifonem kartları (1001+):** En iyi zincirde birden çok varyantla gelen en fazla iki ekin varyant kartları
+  tek bir arşifonem kartıyla (-lXk, -DA…) değiştirilir. Bu ekler puanı ×2 yerine ×1,5 artırır. Hedef puan da aynı
+  oranda düşürülür, böylece en iyi zincir her bölümde hedefe ulaşıyor (testte 1000 Ek Turunun hepsi oynatılıyor).
+- **Ek ipucu (40 altın):** En iyi zincirin sıradaki eki, oyuncu zincirden saptıysa takılabilecek herhangi bir ek.
+- **Açıklama kartları (5.4):** İlk Ek Turu (nasıl oynanır), ilk ünlü uyumu hatası, ilk ünsüz yumuşaması, ilk
+  kaynaştırma harfi, ilk ünsüz benzeşmesi, ilk sıra hatası. Her biri bir kez gösterilir, ayarlardan kapatılabilir.
+- **Kayıt:** Bölüm bitip Ek Turu oynanmadan uygulama kapanırsa, açılışta o bölümün Ek Turu yeniden açılır
+  (`pendingEkTuru`). Tur içi durum kaydedilmiyor (tur kısa).

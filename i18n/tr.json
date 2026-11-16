@@ -44,6 +44,59 @@
     "complete": "Tebrikler!",
     "earned": "+{n} altın",
     "next": "Sonraki bölüm",
-    "score": "Puan: {n}"
+    "score": "Puan: {n}",
+    "toEkTuru": "Ek Turu'na geç"
+  },
+  "ek": {
+    "title": "Ek Turu",
+    "bigTitle": "Büyük Ek Turu",
+    "big3x": "3× ödül",
+    "howto": "Ekleri sırayla kelimenin sonuna tak.",
+    "target": "Hedef {n}",
+    "score": "{n} puan",
+    "collect": "Topla",
+    "hint": "Ek ipucu ({cost} altın)",
+    "noHint": "Takılacak ek kalmadı",
+    "broken": "Zincir kırıldı",
+    "collected": "Topladın!",
+    "reachedTarget": "Hedefe ulaştın!",
+    "missedTarget": "Hedefe {n} puan kaldı",
+    "reward": "+{n} altın",
+    "next": "Sonraki bölüm",
+    "chain": "{n} ek",
+    "wheel": "Ek çarkı",
+    "gotIt": "Anladım"
+  },
+  "tips": {
+    "intro": {
+      "title": "Ek Turu",
+      "body": "Parmağını çarktaki eklerin üzerinden geçirerek kelimeye ek tak. Her doğru ek puanı ikiye katlar, bir hata turu bitirir; istediğin an Topla.",
+      "example": "göz|lük|çü|lük"
+    },
+    "harmony": {
+      "title": "Ünlü uyumu",
+      "body": "Ekin ünlüsü kelimenin son ünlüsüne uyar: kalın ünlüden (a, ı, o, u) sonra kalın, inceden (e, i, ö, ü) sonra ince ünlü gelir.",
+      "example": "kalem|lik · kitap|lık"
+    },
+    "softening": {
+      "title": "Ünsüz yumuşaması",
+      "body": "p, ç, t, k ile biten kelimeye ünlüyle başlayan bir ek gelince son harf yumuşar: p→b, ç→c, t→d, k→ğ.",
+      "example": "kitab|ı · ağac|ı"
+    },
+    "buffer": {
+      "title": "Kaynaştırma harfi",
+      "body": "Ünlüyle biten kelimeye ünlüyle başlayan bir ek gelince araya y, n ya da s girer.",
+      "example": "masa|yı · ev|i|n|e"
+    },
+    "assimilation": {
+      "title": "Ünsüz benzeşmesi",
+      "body": "f, s, t, k, ç, ş, h, p ile biten kelimeden sonra ekin d'si t'ye, c'si ç'ye döner.",
+      "example": "kitap|ta · iş|çi"
+    },
+    "order": {
+      "title": "Eklerin sırası",
+      "body": "Ekler belli bir sırayla gelir: yapım eki, çoğul, iyelik, hâl. Örneğin iyelikten sonra yapım eki gelmez.",
+      "example": "kalem|lik|ler|imiz|den"
+    }
   }
 }

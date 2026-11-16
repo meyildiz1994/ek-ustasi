@@ -3,6 +3,7 @@ import { join } from 'node:path';
 
 import type { Level, LevelManifest } from '../game/level';
 import { decodePack } from '../game/packs';
+import { engine } from '../services/morph';
 import { createGameStore } from './game';
 import { defaultSave, memorySaveProvider, migrate, readSave, SAVE_VERSION } from './save';
 
@@ -31,7 +32,7 @@ describe('game store', () => {
   it('plays level 1 to the end and resumes a half-finished level', async () => {
     const provider = memorySaveProvider();
     let t = 0;
-    const store = createGameStore({ provider, loadLevel, now: () => (t += 10_000) });
+    const store = createGameStore({ provider, loadLevel, engine, now: () => (t += 10_000) });
     await store.getState().openLevel();
     const level = store.getState().level as Level;
     expect(level.id).toBe(1);
@@ -44,7 +45,7 @@ describe('game store', () => {
     expect(coinsAfterOne).toBe(201);
 
     // Re-open with the same storage: the session comes back.
-    const again = createGameStore({ provider, loadLevel });
+    const again = createGameStore({ provider, loadLevel, engine });
     await again.getState().openLevel();
     expect(again.getState().session?.progress.found).toEqual([first]);
 
@@ -61,7 +62,7 @@ describe('game store', () => {
   });
 
   it('charges hints, counts bonus words and shuffles', async () => {
-    const store = createGameStore({ provider: memorySaveProvider(), loadLevel });
+    const store = createGameStore({ provider: memorySaveProvider(), loadLevel, engine });
     await store.getState().openLevel(5);
     const level = store.getState().level as Level;
     const h = store.getState().hint({ kind: 'letter' });
@@ -81,7 +82,7 @@ describe('game store', () => {
   });
 
   it('refuses unaffordable hints and reports load errors', async () => {
-    const store = createGameStore({ provider: memorySaveProvider(), loadLevel });
+    const store = createGameStore({ provider: memorySaveProvider(), loadLevel, engine });
     expect(store.getState().hint({ kind: 'letter' })).toBeNull();
     await store.getState().openLevel(99);
     expect(store.getState().error).toMatch(/no level/);
@@ -90,5 +91,67 @@ describe('game store', () => {
       s.save.coins = 10;
     });
     expect(store.getState().hint({ kind: 'word' })).toBeNull();
+  });
+});
+
+describe('Ek Turu in the store', () => {
+  const solve = (store: ReturnType<typeof createGameStore>) => {
+    for (const w of (store.getState().level as Level).words) store.getState().submit(w.w);
+  };
+
+  it('opens after every 5th level, pays ¼ of the score and survives a restart', async () => {
+    const provider = memorySaveProvider();
+    const store = createGameStore({ provider, loadLevel, engine });
+    await store.getState().openLevel(5);
+    solve(store);
+    expect(store.getState().result).not.toBeNull();
+    expect(store.getState().save.pendingEkTuru).toBe(5);
+
+    // Closing the app here: the round is offered again on launch.
+    const again = createGameStore({ provider, loadLevel, engine });
+    await again.getState().openLevel();
+    const ek = again.getState().ek!;
+    expect(ek.ek.root).toBe('tane');
+    expect(again.getState().tip).toBe('intro');
+    again.getState().dismissTip();
+    expect(again.getState().save.tipsSeen).toEqual(['intro']);
+
+    const coins = again.getState().save.coins;
+    expect(again.getState().ekHint()).toBe(true);
+    const hinted = again.getState().ek!.hinted!;
+    expect(again.getState().save.coins).toBe(coins - 40);
+    expect(again.getState().ekApply([hinted])).toEqual({ added: 1, failed: false });
+    expect(again.getState().ek!.word.surface).toBe('taneli');
+    const ler = again.getState().ek!.cards.findIndex((c) => c.form === 'ler');
+    expect(again.getState().ekApply([ler])).toEqual({ added: 1, failed: false });
+    expect(again.getState().ek!.word.surface).toBe('taneliler');
+    again.getState().ekCollect();
+    const s = again.getState();
+    expect(s.ek!.status).toBe('collected');
+    expect(s.ekPaid).toBe(Math.floor(s.ek!.score / 4));
+    expect(s.save.coins).toBe(coins - 40 + (s.ekPaid as number));
+    expect(s.save.pendingEkTuru).toBeNull();
+    again.getState().ekCollect();
+    expect(again.getState().save.coins).toBe(s.save.coins);
+
+    await again.getState().nextLevel();
+    expect(again.getState().level?.id).toBe(6);
+    expect(again.getState().ek).toBeNull();
+  });
+
+  it('a broken chain ends the round, pays out and shows the matching tip once', async () => {
+    const store = createGameStore({ provider: memorySaveProvider(), loadLevel, engine });
+    await store.getState().openLevel(5);
+    solve(store);
+    store.getState().startEkTuru();
+    store.getState().dismissTip();
+    const wrong = store.getState().ek!.cards.findIndex((c) => c.form === 'lı');
+    expect(store.getState().ekApply([wrong])).toEqual({ added: 0, failed: true });
+    expect(store.getState().tip).toBe('harmony');
+    expect(store.getState().ekPaid).toBe(0);
+    expect(store.getState().save.pendingEkTuru).toBeNull();
+    store.getState().setSetting('ekTuruExplanations', false);
+    store.getState().dismissTip();
+    expect(store.getState().tip).toBeNull();
   });
 });

@@ -28,6 +28,10 @@ export interface SaveData {
   bonusCounter: number;
   /** Half-finished level, restored on launch. */
   session: Session | null;
+  /** Level whose Ek Turu is owed (level solved, round not finished) — reopened on launch. */
+  pendingEkTuru: number | null;
+  /** Ek Turu tutorial cards already shown (spec §5.4). */
+  tipsSeen: string[];
   settings: Settings;
 }
 
@@ -48,6 +52,8 @@ export const defaultSave = (): SaveData => ({
   coins: COINS.start,
   bonusCounter: 0,
   session: null,
+  pendingEkTuru: null,
+  tipsSeen: [],
   settings: defaultSettings(),
 });
 

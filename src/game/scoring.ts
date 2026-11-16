@@ -46,9 +46,17 @@ export const bonusCoins = (before: number, after: number): number =>
   (Math.floor(after / COINS.bonusEvery) - Math.floor(before / COINS.bonusEvery)) *
   COINS.bonusReward;
 
-/** Ek Turu chain score: surface letters × 2 × 2^(suffix count) (spec §5.2). */
-export const chainScore = (surface: string, suffixes: number): number =>
-  surface.length * 2 * 2 ** suffixes;
+/**
+ * Ek Turu chain score: surface letters × 2 × 2^(suffix count) (spec §5.2). Suffixes added with an
+ * archiphoneme card (the engine picks the variant) multiply by 1.5 instead of 2 (DECISIONS D-020).
+ */
+export const chainScore = (surface: string, suffixes: number, archSuffixes = 0): number =>
+  Math.floor(surface.length * 2 * 2 ** suffixes * ARCH_MULTIPLIER ** archSuffixes);
+
+export const ARCH_MULTIPLIER = 1.5;
+
+/** Big Ek Turu (last level of a stop) pays 3× (spec §5.1). */
+export const BIG_EK_TURU_REWARD = 3;
 
 /** Ek Turu → coins: a quarter of the score (spec §13.1). */
 export const ekTuruCoins = (score: number): number => Math.floor(score / 4);
