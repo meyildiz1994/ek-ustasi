@@ -81,3 +81,10 @@ Ek Turu zincirleri ağırlıkla çekim ekleriyle uzayacak.
 Emre (2026-11-16): Ek Turu "yine aynı mekanikle" olmalı. Spec 5.2–5.3 ek kartlarını köke sürüklemeyi tarif ediyor.
 Aşama 6'da kartlar çark üzerinde (ya da çarka benzer bir halkada) seçilecek şekilde tasarlanacak; motor API'si
 (`SuffixCard`, `strictVariant`) iki tasarıma da uyuyor. Ayrıntı Aşama 6 başında netleşecek.
+
+## D-013 — Siyasi ve dini kelimeler hedef olamaz; fiil çekimleri sonraya (2026-11-16)
+
+Emre: "siyasi ve dini kelimeler olmasın". `blocklist.txt` içindeki siyasi/dini bölüm genişletildi (din adları,
+ibadet ve kurum adları, ideolojiler, siyasi kurumlar, etnik/mezhep adları). Spec 7.2 gereği bu kelimeler bonus olarak
+kabul edilmeye devam ediyor. Fiil çekimleri (`geldi`, `alır`) bonus sözlüğüne Aşama 5'ten sonra eklenecek (öneri,
+Emre itiraz etmedi).

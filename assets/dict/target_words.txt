@@ -212,7 +212,6 @@ yanlış	5.49	L
 akşam	5.48	L
 falan	5.48	L
 güçlü	5.48	L
-parti	5.48	L
 verdi	5.48	L
 beri	5.47	L
 cevap	5.47	L
@@ -376,7 +375,6 @@ dolar	5.28	L
 durumu	5.28	I
 konusu	5.28	I
 normal	5.28	L
-siyasi	5.28	L
 baş	5.27	L
 bayan	5.27	L
 doğum	5.27	L
@@ -458,7 +456,6 @@ sıcak	5.20	L
 sona	5.20	I
 yüzünden	5.20	L
 askeri	5.19	L
-din	5.19	L
 dizi	5.19	L
 hayatı	5.19	I
 ileri	5.19	L
@@ -513,7 +510,6 @@ yola	5.15	I
 adet	5.14	L
 aralık	5.14	L
 basit	5.14	L
-başbakan	5.14	L
 doğu	5.14	L
 fotoğraf	5.14	L
 galiba	5.14	L
@@ -663,7 +659,6 @@ bakan	5.04	L
 başlar	5.04	I
 başta	5.04	L
 bizden	5.04	I
-dini	5.04	L
 eğitimi	5.04	I
 kapı	5.04	L
 kaynak	5.04	L
@@ -671,7 +666,6 @@ kelime	5.04	L
 kral	5.04	L
 mevcut	5.04	L
 murat	5.04	L
-partisi	5.04	I
 programı	5.04	I
 sultan	5.04	L
 yerli	5.04	L
@@ -681,7 +675,6 @@ bağımsız	5.03	L
 batı	5.03	L
 birlik	5.03	L
 dava	5.03	L
-dua	5.03	L
 elbette	5.03	L
 genelde	5.03	L
 girdi	5.03	L
@@ -757,7 +750,6 @@ ihtiyaç	4.98	L
 iken	4.98	L
 kızın	4.98	I
 köpek	4.98	L
-kutsal	4.98	L
 lig	4.98	L
 öne	4.98	I
 özgür	4.98	L
@@ -781,7 +773,6 @@ komik	4.97	L
 plan	4.97	L
 sağlam	4.97	L
 sivil	4.97	L
-siyaset	4.97	L
 sorunu	4.97	I
 telefonu	4.97	I
 yapımı	4.97	I
@@ -793,7 +784,6 @@ gaz	4.96	L
 hesap	4.96	L
 insanı	4.96	I
 kayıt	4.96	L
-kurban	4.96	L
 model	4.96	L
 örgütü	4.96	I
 saçma	4.96	L
@@ -803,7 +793,6 @@ zamanlar	4.96	I
 bilgiler	4.95	I
 görevi	4.95	I
 idare	4.95	L
-meclis	4.95	L
 meslek	4.95	L
 okula	4.95	I
 okulu	4.95	I
@@ -853,7 +842,6 @@ sevgi	4.93	L
 şirketi	4.93	I
 üstünde	4.93	I
 amacı	4.92	I
-anayasa	4.92	L
 aziz	4.92	L
 çiçek	4.92	L
 gazetesi	4.92	I
@@ -1026,7 +1014,6 @@ evine	4.83	I
 gıda	4.83	L
 gül	4.83	L
 güne	4.83	I
-imam	4.83	L
 kahraman	4.83	L
 katı	4.83	L
 kedi	4.83	L
@@ -1202,7 +1189,6 @@ açıdan	4.75	I
 ada	4.75	L
 ağrı	4.75	L
 akşamlar	4.75	I
-cami	4.75	L
 cem	4.75	L
 dar	4.75	L
 ege	4.75	L
@@ -1262,8 +1248,6 @@ bilmek	4.73	L
 cesur	4.73	L
 döner	4.73	L
 eylem	4.73	L
-hacı	4.73	L
-iktidar	4.73	L
 işgal	4.73	L
 kadına	4.73	I
 kupa	4.73	L
@@ -1300,7 +1284,6 @@ kaptan	4.72	L
 kayseri	4.72	I
 koyun	4.72	L
 kusura	4.72	I
-meclisi	4.72	I
 meydan	4.72	L
 miktarda	4.72	I
 ölçüde	4.72	I
@@ -1361,10 +1344,8 @@ nüfus	4.70	L
 ödülü	4.70	I
 saf	4.70	L
 sıfır	4.70	L
-siyasal	4.70	L
 sözler	4.70	I
 şarkılar	4.70	I
-şeytan	4.70	L
 şikayet	4.70	L
 tarzı	4.70	I
 uzaktan	4.70	L
@@ -1621,7 +1602,6 @@ köprü	4.61	L
 layık	4.61	L
 malzeme	4.61	L
 mektup	4.61	L
-namaz	4.61	L
 nur	4.61	L
 öte	4.61	L
 suçlu	4.61	L
@@ -1722,7 +1702,6 @@ bildiğim	4.58	I
 birim	4.58	L
 bizzat	4.58	L
 cenaze	4.58	L
-cennet	4.58	L
 çikolata	4.58	L
 dinlemek	4.58	L
 dosya	4.58	L
@@ -1730,7 +1709,6 @@ duymak	4.58	L
 etkin	4.58	L
 fen	4.58	L
 gemisi	4.58	I
-günah	4.58	L
 hadis	4.58	L
 hassas	4.58	L
 hizmete	4.58	I
@@ -1770,10 +1748,8 @@ kare	4.57	L
 katkı	4.57	L
 kısım	4.57	L
 kol	4.57	L
-melek	4.57	L
 noktada	4.57	I
 özgü	4.57	L
-partinin	4.57	I
 patates	4.57	L
 peşinden	4.57	I
 piyasaya	4.57	I
@@ -1995,7 +1971,6 @@ ziyade	4.51	L
 adres	4.50	L
 askerler	4.50	I
 ata	4.50	L
-cehennem	4.50	L
 dairesi	4.50	I
 dostluk	4.50	L
 düzen	4.50	L
@@ -2007,7 +1982,6 @@ ibaret	4.50	L
 idaresi	4.50	I
 işim	4.50	I
 kaba	4.50	L
-kilise	4.50	L
 kutlu	4.50	L
 mimar	4.50	L
 nice	4.50	L
@@ -2017,7 +1991,6 @@ polisi	4.50	I
 rolü	4.50	I
 sam	4.50	L
 sesli	4.50	L
-şeyh	4.50	L
 ülkeden	4.50	I
 yaşamı	4.50	I
 adli	4.49	L
@@ -2063,7 +2036,6 @@ yavru	4.49	L
 zeka	4.49	L
 açlık	4.48	L
 adeta	4.48	L
-alevi	4.48	I
 amca	4.48	L
 aslı	4.48	I
 bedeli	4.48	I
@@ -2330,7 +2302,6 @@ komedi	4.42	L
 kötüsü	4.42	I
 makale	4.42	L
 mezunu	4.42	I
-namazı	4.42	I
 olaya	4.42	I
 ozan	4.42	L
 pratik	4.42	L
@@ -2358,7 +2329,6 @@ görünür	4.41	L
 hazine	4.41	L
 holding	4.41	L
 ihbar	4.41	L
-iktidara	4.41	I
 kala	4.41	L
 kaleci	4.41	L
 kazası	4.41	I
@@ -2400,7 +2370,6 @@ cihazı	4.40	I
 daim	4.40	L
 dergi	4.40	L
 dersler	4.40	I
-diyanet	4.40	L
 elif	4.40	L
 fiyat	4.40	L
 golü	4.40	I
@@ -2493,7 +2462,6 @@ gecede	4.38	I
 geminin	4.38	I
 gruplar	4.38	I
 hakkın	4.38	I
-ibadet	4.38	L
 içe	4.38	I
 işleme	4.38	I
 izleme	4.38	I
@@ -2539,7 +2507,6 @@ fiyata	4.37	I
 gazı	4.37	I
 havuz	4.37	L
 içeride	4.37	I
-iktidarı	4.37	I
 iri	4.37	L
 kamyon	4.37	L
 klip	4.37	L
@@ -2637,7 +2604,6 @@ mutfak	4.35	L
 nüfusu	4.35	I
 olayım	4.35	I
 öncü	4.35	L
-partiye	4.35	I
 pencere	4.35	L
 pirinç	4.35	L
 polat	4.35	L
@@ -2755,7 +2721,6 @@ mit	4.33	L
 muhtemel	4.33	L
 oran	4.33	L
 papa	4.33	L
-partiler	4.33	I
 pınar	4.33	L
 post	4.33	L
 profil	4.33	L
@@ -2939,7 +2904,6 @@ itaat	4.29	L
 kap	4.29	L
 karbon	4.29	L
 kesme	4.29	L
-kıyamet	4.29	L
 kopya	4.29	L
 kurgu	4.29	L
 kül	4.29	L
@@ -3111,7 +3075,6 @@ nefis	4.26	L
 ortalığı	4.26	I
 oteller	4.26	I
 pasaport	4.26	L
-rahip	4.26	L
 rakibi	4.26	I
 sahi	4.26	L
 sapan	4.26	L
@@ -3148,7 +3111,6 @@ bağımlı	4.25	L
 beton	4.25	L
 bulunmak	4.25	L
 cadde	4.25	L
-cennete	4.25	I
 cevaplar	4.25	I
 çekme	4.25	L
 çiçeği	4.25	I
@@ -3267,7 +3229,6 @@ duygusu	4.23	I
 estetik	4.23	L
 evcil	4.23	L
 görüşü	4.23	I
-hac	4.23	L
 jet	4.23	L
 kalesi	4.23	I
 kana	4.23	L
@@ -3314,7 +3275,6 @@ değerler	4.22	I
 denetim	4.22	L
 denizin	4.22	I
 dilim	4.22	L
-dinler	4.22	I
 doğuştan	4.22	L
 dönüm	4.22	L
 döviz	4.22	L
@@ -3399,12 +3359,10 @@ ikiz	4.21	L
 iktisat	4.21	L
 ismin	4.21	I
 karışımı	4.21	I
-meclise	4.21	I
 milliyet	4.21	L
 moral	4.21	L
 nasip	4.21	L
 niyet	4.21	L
-oruç	4.21	L
 otomotiv	4.21	L
 özen	4.21	L
 param	4.21	I
@@ -3525,7 +3483,6 @@ sevgiler	4.19	I
 somut	4.19	L
 sonuca	4.19	I
 şehirden	4.19	I
-şeytanın	4.19	I
 tanınmış	4.19	L
 tura	4.19	L
 vampir	4.19	L
@@ -3549,7 +3506,6 @@ bitmek	4.18	L
 boyutu	4.18	I
 danışman	4.18	L
 deneyim	4.18	L
-dinin	4.18	I
 disiplin	4.18	L
 diyet	4.18	L
 ehli	4.18	L
@@ -3573,7 +3529,6 @@ komisyon	4.18	L
 kronik	4.18	L
 kulübün	4.18	I
 kurabiye	4.18	L
-laik	4.18	L
 lezbiyen	4.18	L
 maçlar	4.18	I
 maliyeti	4.18	I
@@ -3645,7 +3600,6 @@ ocağı	4.17	I
 sakat	4.17	L
 sembolü	4.17	I
 sis	4.17	L
-siyasete	4.17	I
 sulu	4.17	L
 şartı	4.17	I
 takviye	4.17	L
@@ -3750,7 +3704,6 @@ mafya	4.15	L
 mağara	4.15	L
 makarna	4.15	L
 mars	4.15	L
-mecliste	4.15	I
 mühim	4.15	L
 nitekim	4.15	L
 odun	4.15	L
@@ -3764,7 +3717,6 @@ salt	4.15	L
 server	4.15	L
 severler	4.15	I
 seyir	4.15	L
-siyaseti	4.15	I
 soğan	4.15	L
 sokağı	4.15	I
 soldan	4.15	I
@@ -3819,7 +3771,6 @@ mekanı	4.14	I
 muhtar	4.14	L
 ortalık	4.14	L
 öyküsü	4.14	I
-papaz	4.14	L
 pazarlık	4.14	L
 rakam	4.14	L
 rehberi	4.14	I
@@ -3859,7 +3810,6 @@ hazırım	4.13	I
 kripto	4.13	L
 kumanda	4.13	L
 maymun	4.13	L
-melekler	4.13	I
 mirası	4.13	I
 mutfakta	4.13	I
 nüfusun	4.13	I
@@ -3969,7 +3919,6 @@ hür	4.11	L
 ilkel	4.11	L
 işçiler	4.11	I
 kırmak	4.11	L
-kilisesi	4.11	I
 lige	4.11	I
 muz	4.11	L
 nem	4.11	L
@@ -4001,7 +3950,6 @@ buluşmak	4.10	L
 cinsi	4.10	L
 dehşet	4.10	L
 dikiş	4.10	L
-dindar	4.10	L
 elemanı	4.10	I
 eserin	4.10	I
 evinden	4.10	I
@@ -4295,7 +4243,6 @@ arabada	4.05	I
 ateşkes	4.05	L
 balon	4.05	L
 beter	4.05	L
-caminin	4.05	I
 caz	4.05	L
 cumhur	4.05	L
 dem	4.05	L
@@ -4365,7 +4312,6 @@ avantaj	4.04	L
 bağlamda	4.04	I
 bakışı	4.04	I
 boşluğu	4.04	I
-camiye	4.04	I
 cemaati	4.04	I
 çalışkan	4.04	L
 çerçeve	4.04	L
@@ -4390,7 +4336,6 @@ kimseden	4.04	I
 kocam	4.04	I
 kont	4.04	L
 kulüpler	4.04	I
-kurbanı	4.04	I
 mahir	4.04	L
 mahsur	4.04	L
 masaüstü	4.04	L
@@ -4431,7 +4376,6 @@ diller	4.03	I
 doğada	4.03	I
 doz	4.03	L
 dramatik	4.03	L
-duası	4.03	I
 ergen	4.03	L
 eşyalar	4.03	I
 eylemler	4.03	I
@@ -4442,7 +4386,6 @@ geçmişin	4.03	I
 geleneği	4.03	I
 giysi	4.03	L
 güvenin	4.03	I
-halife	4.03	L
 hayaller	4.03	I
 hayvanı	4.03	I
 herzaman	4.03	L
@@ -4608,7 +4551,6 @@ misali	4.01	I
 muhabir	4.01	L
 otu	4.01	I
 parkta	4.01	I
-partiden	4.01	I
 piknik	4.01	L
 piyasada	4.01	I
 salata	4.01	L
@@ -4639,8 +4581,6 @@ bek	4.00	L
 biricik	4.00	L
 bozmak	4.00	L
 cemiyeti	4.00	I
-cenneti	4.00	I
-cennette	4.00	I
 çim	4.00	L
 çürük	4.00	L
 dağıtımı	4.00	I
@@ -4711,7 +4651,6 @@ cömert	3.99	L
 çekiliş	3.99	L
 davayı	3.99	I
 deposu	3.99	I
-dualar	3.99	I
 eksi	3.99	L
 fiziki	3.99	L
 fren	3.99	L
@@ -4738,7 +4677,6 @@ olanağı	3.99	I
 ödünç	3.99	L
 öneri	3.99	L
 öteye	3.99	I
-partiyi	3.99	I
 peyzaj	3.99	L
 psikolog	3.99	L
 rektörü	3.99	I
@@ -4864,7 +4802,6 @@ darp	3.97	L
 dip	3.97	L
 dişli	3.97	L
 eyleme	3.97	I
-ezan	3.97	L
 ezgi	3.97	L
 fiili	3.97	L
 gözlüğü	3.97	I
@@ -4895,7 +4832,6 @@ sürmek	3.97	L
 tabloda	3.97	I
 tedirgin	3.97	L
 teslimat	3.97	L
-tövbe	3.97	L
 trilyon	3.97	L
 uğraşmak	3.97	L
 vakıflar	3.97	I
@@ -5263,7 +5199,6 @@ nine	3.92	L
 oturum	3.92	L
 ödüller	3.92	I
 önleme	3.92	I
-partide	3.92	I
 pelin	3.92	L
 peşin	3.92	L
 pilav	3.92	L
@@ -5339,7 +5274,6 @@ neticede	3.91	I
 otobüste	3.91	I
 otopsi	3.91	L
 ötede	3.91	I
-sağcı	3.91	L
 sahile	3.91	I
 sahneyi	3.91	I
 saz	3.91	L
@@ -5360,7 +5294,6 @@ vizyon	3.91	L
 yudum	3.91	L
 ağabey	3.90	L
 ağabeyi	3.90	I
-ahiret	3.90	L
 alarmı	3.90	I
 alttan	3.90	I
 analitik	3.90	L
@@ -5379,7 +5312,6 @@ boykot	3.90	L
 boyuna	3.90	L
 bülbül	3.90	L
 cebine	3.90	I
-cennetin	3.90	I
 cerrah	3.90	L
 cümlesi	3.90	L
 çocuktan	3.90	I
@@ -5444,14 +5376,12 @@ zırh	3.90	L
 alayı	3.89	I
 altmış	3.89	L
 arazide	3.89	I
-ateist	3.89	L
 atıf	3.89	L
 baki	3.89	L
 basını	3.89	I
 batarya	3.89	L
 batıl	3.89	L
 boğazı	3.89	I
-bölücü	3.89	L
 börek	3.89	L
 çimento	3.89	L
 çubuğu	3.89	I
@@ -5551,7 +5481,6 @@ ine	3.88	I
 kampa	3.88	I
 karpuz	3.88	L
 kıskanç	3.88	L
-kiliseye	3.88	I
 kitlesi	3.88	I
 kozmetik	3.88	L
 krem	3.88	L
@@ -5627,7 +5556,6 @@ limited	3.87	L
 liseye	3.87	I
 malik	3.87	L
 marina	3.87	L
-meclisin	3.87	I
 mekanda	3.87	I
 metreye	3.87	I
 mis	3.87	L
@@ -5798,7 +5726,6 @@ pound	3.85	L
 sahtekar	3.85	L
 sığınak	3.85	L
 sinde	3.85	I
-solcu	3.85	L
 soygun	3.85	L
 sözlüğü	3.85	I
 şan	3.85	L
@@ -5933,7 +5860,6 @@ görünüşe	3.83	I
 hanımın	3.83	I
 hor	3.83	L
 ihtiva	3.83	L
-imamı	3.83	I
 iştirak	3.83	L
 kabak	3.83	L
 kalça	3.83	L
@@ -6219,7 +6145,6 @@ maddeyi	3.80	I
 manşet	3.80	L
 marjinal	3.80	L
 mektupta	3.80	I
-meleği	3.80	I
 mesafesi	3.80	I
 meyvesi	3.80	I
 müzede	3.80	I
@@ -6241,7 +6166,6 @@ soruna	3.80	I
 sütlü	3.80	L
 şehzade	3.80	L
 şeridi	3.80	I
-şeytana	3.80	I
 takla	3.80	L
 tankı	3.80	I
 taraflar	3.80	I
@@ -6275,13 +6199,11 @@ bekçi	3.79	L
 boncuk	3.79	L
 bursu	3.79	I
 bütçesi	3.79	I
-camide	3.79	I
 cebinden	3.79	I
 cümleyi	3.79	I
 detayı	3.79	I
 didem	3.79	I
 dimdik	3.79	L
-dinden	3.79	I
 dizüstü	3.79	L
 doğumu	3.79	I
 dolaşım	3.79	L
@@ -6337,7 +6259,6 @@ taslak	3.79	L
 tekerlek	3.79	L
 tepede	3.79	I
 tuzağa	3.79	I
-umre	3.79	L
 una	3.79	I
 üslup	3.79	L
 veliaht	3.79	L
@@ -6361,7 +6282,6 @@ belası	3.78	I
 belirti	3.78	L
 bilek	3.78	L
 bulmaca	3.78	L
-camiler	3.78	I
 çocuklu	3.78	L
 çölde	3.78	I
 deneyi	3.78	I
@@ -6473,7 +6393,6 @@ gidi	3.77	L
 hanı	3.77	I
 hastaya	3.77	I
 hizmetçi	3.77	L
-ibadete	3.77	I
 izlenim	3.77	L
 kaçınmak	3.77	L
 kafadan	3.77	L
@@ -6800,7 +6719,6 @@ beygir	3.73	L
 bilardo	3.73	L
 boksör	3.73	L
 boşluğa	3.73	I
-camisi	3.73	I
 cevher	3.73	L
 çat	3.73	L
 çırak	3.73	L
@@ -6837,7 +6755,6 @@ limana	3.73	I
 listeyi	3.73	I
 madam	3.73	L
 makalede	3.73	I
-meleğim	3.73	I
 mira	3.73	L
 misyonu	3.73	I
 müsabaka	3.73	L
@@ -6977,7 +6894,6 @@ fetva	3.71	L
 fikirde	3.71	I
 file	3.71	L
 granit	3.71	L
-günahı	3.71	I
 halat	3.71	L
 harem	3.71	L
 havuzda	3.71	I
@@ -7044,7 +6960,6 @@ zan	3.71	L
 zekası	3.71	I
 abdal	3.70	L
 açıktan	3.70	L
-ahirette	3.70	I
 akbaba	3.70	L
 akılda	3.70	I
 akli	3.70	L
@@ -7100,7 +7015,6 @@ kelepçe	3.70	L
 kepez	3.70	L
 kesimin	3.70	I
 kibir	3.70	L
-kilisede	3.70	I
 kokteyl	3.70	L
 komedyen	3.70	L
 konsepti	3.70	I
@@ -7208,7 +7122,6 @@ mesleğe	3.69	I
 metinler	3.69	I
 mezunlar	3.69	I
 mouse	3.69	L
-müftü	3.69	L
 onbaşı	3.69	L
 ortamın	3.69	I
 oturacak	3.69	L
@@ -7301,7 +7214,6 @@ kahvenin	3.68	I
 kardan	3.68	I
 kefil	3.68	L
 kıyak	3.68	L
-komünizm	3.68	L
 köken	3.68	L
 körü	3.68	I
 kuzeyden	3.68	I
@@ -7383,7 +7295,6 @@ eşkıya	3.67	L
 etapta	3.67	I
 gelini	3.67	I
 gülünç	3.67	L
-hacca	3.67	I
 haini	3.67	I
 hamsi	3.67	L
 hatunlar	3.67	I
@@ -7391,7 +7302,6 @@ hayalin	3.67	I
 hektar	3.67	L
 hıyar	3.67	L
 hibe	3.67	L
-ilah	3.67	L
 ipe	3.67	I
 kabir	3.67	L
 kaçı	3.67	I
@@ -7409,7 +7319,6 @@ mağarada	3.67	I
 mavisi	3.67	I
 medyum	3.67	L
 mekik	3.67	L
-müftüsü	3.67	I
 nakış	3.67	L
 nasihat	3.67	L
 nefsi	3.67	I
@@ -7428,7 +7337,6 @@ sayıya	3.67	I
 sevecen	3.67	L
 siviller	3.67	I
 şanslar	3.67	I
-şeytanı	3.67	I
 taksiye	3.67	I
 taktiği	3.67	I
 tanışın	3.67	I
@@ -7507,7 +7415,6 @@ laptop	3.66	L
 lif	3.66	L
 lirası	3.66	I
 lüzum	3.66	L
-mescit	3.66	L
 militan	3.66	L
 naif	3.66	L
 otonom	3.66	L
@@ -7561,7 +7468,6 @@ dekor	3.65	L
 dergiler	3.65	I
 dikili	3.65	L
 dileği	3.65	I
-dinde	3.65	I
 disko	3.65	L
 duvarda	3.65	I
 emniyeti	3.65	I
@@ -7595,7 +7501,6 @@ maması	3.65	I
 mazot	3.65	L
 mecburi	3.65	L
 menekşe	3.65	L
-mescidi	3.65	I
 milliye	3.65	I
 mitingi	3.65	I
 motora	3.65	I
@@ -7759,7 +7664,6 @@ chat	3.63	L
 çöpü	3.63	I
 damarı	3.63	I
 dengi	3.63	I
-dininin	3.63	I
 doğmadan	3.63	I
 dolması	3.63	I
 doyumsuz	3.63	L
@@ -7803,7 +7707,6 @@ mekana	3.63	I
 metrede	3.63	I
 mevsimde	3.63	I
 misyon	3.63	L
-namaza	3.63	I
 nötr	3.63	L
 oluk	3.63	L
 ortaklar	3.63	I
@@ -8121,7 +8024,6 @@ kırmaya	3.60	I
 kısası	3.60	I
 konvoy	3.60	L
 kulenin	3.60	I
-kurbanın	3.60	I
 küçükler	3.60	I
 külliye	3.60	L
 kürsüye	3.60	I
@@ -8336,7 +8238,6 @@ oğlanı	3.58	I
 paten	3.58	L
 peçete	3.58	L
 poşeti	3.58	I
-rahipler	3.58	I
 ringe	3.58	I
 riskler	3.58	I
 romanlar	3.58	I
@@ -8395,7 +8296,6 @@ dairede	3.57	I
 define	3.57	L
 devresi	3.57	I
 dönerler	3.57	I
-duayı	3.57	I
 dünyam	3.57	I
 erişime	3.57	I
 eşler	3.57	I
@@ -8442,7 +8342,6 @@ müşaviri	3.57	I
 nesilden	3.57	I
 omurga	3.57	L
 ortamdan	3.57	I
-orucu	3.57	I
 ölesiye	3.57	L
 paketler	3.57	I
 pervane	3.57	L
@@ -8520,10 +8419,8 @@ fırsatım	3.56	I
 geçerim	3.56	I
 gine	3.56	L
 gökte	3.56	I
-günaha	3.56	I
 haddi	3.56	I
 hadım	3.56	L
-haham	3.56	L
 hakemin	3.56	I
 hicri	3.56	L
 içeceği	3.56	I
@@ -8899,7 +8796,6 @@ sosa	3.53	I
 sözel	3.53	L
 spiral	3.53	L
 suçüstü	3.53	L
-şeyhi	3.53	I
 şoka	3.53	I
 şurubu	3.53	I
 şuur	3.53	L
@@ -8952,7 +8848,6 @@ gani	3.52	L
 gizemi	3.52	I
 gökmen	3.52	L
 görünüme	3.52	I
-hacılar	3.52	I
 haciz	3.52	L
 hatam	3.52	I
 helak	3.52	L
@@ -9178,7 +9073,6 @@ inançlar	3.50	I
 irtifa	3.50	L
 kabı	3.50	I
 kediye	3.50	I
-kıyamete	3.50	I
 kıyma	3.50	L
 klas	3.50	L
 kolun	3.50	I
@@ -9267,7 +9161,6 @@ güverte	3.49	L
 halay	3.49	L
 hara	3.49	L
 husus	3.49	L
-ihtilal	3.49	L
 ilkin	3.49	L
 işveren	3.49	L
 itilaf	3.49	L
@@ -11212,7 +11105,6 @@ kıskaç	3.09	L
 kıyam	3.09	L
 klasör	3.09	L
 komplike	3.09	L
-mabet	3.09	L
 mansiyon	3.09	L
 meri	3.09	L
 mihrap	3.09	L

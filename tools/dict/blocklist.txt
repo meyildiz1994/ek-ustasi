@@ -1,5 +1,5 @@
 # Ek Ustası — hedef kelime engelleme listesi (spec §7.2)
-# TASLAK: Claude tarafından hazırlandı, Emre'nin onayını bekliyor.
+# Claude hazırladı; siyasi/dini bölüm Emre kararıyla genişletildi (2026-11-16). İnsan gözden geçirmesi sürer.
 #
 # Bu listedeki kelimeler ve bu köklerden çekimle türeyen biçimler HEDEF kelime olamaz.
 # Bonus kelime olarak kabul edilebilirler (spec §7.2).
@@ -113,23 +113,98 @@ yobaz
 kızılbaş
 dönme
 
-## Hassas: siyasi / dini (EMRE KARAR VERSİN: hedefte kalsın mı?)
+## Siyasi ve dini kelimeler (Emre, 2026-11-16: "siyasi ve dini kelimeler olmasın")
+# Hedef olamaz, bonus olarak kabul edilir.
 allah
 tanrı
+ilah
 peygamber
 kuran
 incil
 tevrat
+zebur
 şeriat
 cihat
 mezhep
 tarikat
+din
+dini
+dinsel
+dindar
+diyanet
+islam
+islami
+müslüman
+hristiyan
+hıristiyan
+yahudi
+budist
+ateist
+alevi
+sünni
+şii
+cami
+mescit
+kilise
+havra
+mabet
+namaz
+oruç
+hac
+hacı
+umre
+imam
+müftü
+şeyh
+papaz
+rahip
+haham
+ezan
+dua
+ibadet
+melek
+şeytan
+cennet
+cehennem
+günah
+tövbe
+kıyamet
+ahiret
+kurban
+kutsal
+halife
+hilafet
 darbe
 cunta
+ihtilal
 şehit
 ırkçı
 ırkçılık
 faşist
 faşizm
 komünist
-hilafet
+komünizm
+sosyalist
+kapitalist
+milliyetçi
+ülkücü
+solcu
+sağcı
+bölücü
+siyaset
+siyasi
+siyasal
+parti
+meclis
+milletvekili
+başbakan
+cumhurbaşkanı
+iktidar
+muhalefet
+anayasa
+laik
+laiklik
+kürt
+ermeni
+rum
+süryani

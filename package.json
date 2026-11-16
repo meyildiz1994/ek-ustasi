@@ -17,6 +17,7 @@
     "@msgpack/msgpack": "^3.1.3",
     "@testing-library/react-native": "^14.1.0",
     "@types/jest": "^30.0.0",
+    "@types/node": "^22.20.5",
     "@types/react": "~19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-expo": "^58.0.4",
@@ -42,7 +43,7 @@
     "format:check": "prettier --check .",
     "dict:fetch": "tsx tools/dict/fetch.ts",
     "dict": "tsx tools/dict/build.ts",
-    "test:tools": "vitest run --config tools/vitest.config.ts"
+    "test:tools": "vitest run --config tools/vitest.config.mts"
   },
   "private": true,
   "engines": {

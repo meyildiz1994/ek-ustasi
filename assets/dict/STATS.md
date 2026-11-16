@@ -11,6 +11,6 @@
 | rootsWithDerivations | 1707 |
 | derivedSurfaces | 2175 |
 | validWords | 197598 |
-| targetWords | 11621 |
-| targetLemmas | 7687 |
-| blockedTargets | 127 |
+| targetWords | 11513 |
+| targetLemmas | 7638 |
+| blockedTargets | 235 |

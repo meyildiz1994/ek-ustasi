@@ -4,7 +4,7 @@
 
 - `tools/dict`: Zemberek ayrıştırıcı, wordfreq okuyucu, engelleme listesi, elle doğrulanmış türetmeler,
   kök bayrağı düzeltmeleri, deterministik `pnpm dict` hattı.
-- `assets/dict`: `target_words.txt` (11.621), `valid_words.bin` (197.598 kelime, 190 KB),
+- `assets/dict`: `target_words.txt` (11.513), `valid_words.bin` (197.598 kelime, 190 KB),
   `derivations.json` (1.707 kök), `root_flags.json` (2.590 kök), `STATS.md`.
 - `src/dict/dawg.ts`: EKDW DAWG çözücü (`has`, `words`, `wordsFromLetters`); `src/dict/lexicon.ts`.
 - Vitest ile üretim hattı testleri; CI yeniden üretilen dosyaların depodakiyle bit düzeyinde aynı olduğunu doğruluyor.

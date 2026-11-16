@@ -34,8 +34,8 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 - [x] Kaynak seçimi ve lisans doğrulaması: Zemberek (Apache 2.0), wordfreq (CC BY-SA 4.0) → `LICENSES.md`
 - [x] `pnpm dict:fetch` indirme (SHA-256 manifest) + `pnpm dict` deterministik üretim; kaynaklar depoda
-- [x] Frekansla `target_words.txt`: 11.621 kelime (7.687 madde + 3.934 çekimli biçim)
-- [x] `blocklist.txt` taslağı + uygulama (**Emre'nin onayı bekleniyor**)
+- [x] Frekansla `target_words.txt`: 11.513 kelime (7.638 madde + 3.875 çekimli biçim)
+- [x] `blocklist.txt` + uygulama; siyasi ve dini kelimeler Emre kararıyla hedef dışı
 - [x] `valid_words.bin` DAWG kodlayıcı (`tools/dict/dawg-build.ts`) + cihaz çözücü (`src/dict/dawg.ts`), arama < 0,05 ms
 - [x] `derivations.json` (motorla doğrulanmış) + `root_flags.json`; `src/dict/lexicon.ts` motora bağlıyor
 - [x] Kök bayrakları Zemberek'ten + `overrides.json`; 6.6 ve paradigmalar üretilen sözlükle de geçiyor
