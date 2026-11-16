@@ -232,3 +232,26 @@ cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
   belirgin olmayan birkaç durak (Manisa, Kütahya, Kahramanmaraş, Ardahan, Gaziantep, Kilis, Şırnak) Emre'nin
   onayına açık.
 - **Not:** Durak tanıtım cümleleri kodla çizilen sahnelere göre yazılmıştı; görsellerle birebir örtüşmeyebilir.
+
+## D-024 — Ekonomi, satın alma ve ödüllü reklam (Aşama 9)
+
+- **Yapılandırma tek dosyada:** `config/monetization.ts` (spec §13.2): ürün kimlikleri, paket altınları,
+  ödüllü reklam ödülü ve günlük sınırı, günlük giriş döngüsü, reklam birimi ve RevenueCat anahtarları
+  (anahtarlar ortam değişkeninden, repoda değil).
+- **Paketler:** küçük 500, orta 1200, büyük 3000 altın. Fiyatlar mağaza katmanlarından gelir.
+- **Reklamsız Paket ne yapar?** Spec'te geçiş ve banner reklamı zaten yok; kaldırılacak zorunlu reklam
+  olmadığı için paket, ödüllü yerleşimleri **reklam izlemeden ve günlük sınır olmadan** öder, üstüne
+  bir kez 500 altın verir. Emre'nin onayına açık.
+- **Ödüllü reklam:** iki yerleşim: Mağaza'da "+25 altın" ve altın yetmediğinde açılan kartta "ücretsiz
+  ipucu" (bir harf açar) ya da "+25 altın". Günde en fazla 10 reklam (tüm yerleşimler toplam). Ödül
+  yalnızca reklam sonuna kadar izlenince verilir.
+- **İzin sırası:** UMP (AB/GDPR) formu → iOS'ta ATT → SDK başlatma; ilk reklam isteğinde, açılışta değil.
+  İzinlerden biri yoksa yalnızca kişiselleştirilmemiş reklam istenir. UMP reklama izin vermezse reklam
+  gösterilmez.
+- **Satın alma doğrulaması:** RevenueCat (spec önerisi). Oyun, SDK'nın tamamlandı dediği işlemi işlem
+  kimliğiyle bir kez öder (`grantedTransactions`). Reklamsız Paket'in durumu RevenueCat entitlement'ından
+  (`no_ads`) okunur; "Satın alımları geri yükle" hem Mağaza'da hem Ayarlar'da.
+- **Günlük ödül:** yerel takvim gününe göre (oyuncunun saat dilimi). Art arda günlerde 25-25-50-50-75-75-150
+  döngüsü; bir gün kaçarsa baştan. Saat geri alınırsa o gün tekrar ödenmez.
+- **Web derlemesi:** mağaza ve reklam yok (`*.web.ts` boş servisler); yalnızca önizleme için.
+- Gerçek mağaza ve reklam testleri cihazda geliştirme derlemesiyle yapılmalı: `docs/MAGAZA_KURULUMU.md`.

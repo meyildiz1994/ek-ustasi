@@ -1,8 +1,12 @@
 /** Settings sheet (spec §12): sound, music, haptics and the Ek Turu explanation cards. */
-import { Modal, Pressable, StyleSheet, Switch, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Linking, Modal, Pressable, StyleSheet, Switch, Text, View } from 'react-native';
+
+import { LINKS } from '../../config/monetization';
 
 import { t } from '@/i18n';
 import { feedback } from '@/services/feedback';
+import { restorePurchases } from '@/services/purchases';
 import { gameStore, useGame } from '@/store';
 import type { Settings } from '@/store/save';
 import { fonts } from '@/theme/fonts';
@@ -23,6 +27,26 @@ export function SettingsSheet({ visible, onClose }: Props) {
     gameStore.getState().setSetting(key, value);
     feedback.tap();
   };
+  const [note, setNote] = useState<string | null>(null);
+  const restore = async () => {
+    setNote(null);
+    const out = await restorePurchases();
+    setNote(
+      t(
+        out === 'restored'
+          ? 'shop.restored'
+          : out === 'nothing'
+            ? 'shop.nothingToRestore'
+            : out === 'unavailable'
+              ? 'shop.unavailable'
+              : 'shop.failed',
+      ),
+    );
+  };
+  const open = (url: string) => {
+    if (url) void Linking.openURL(url).catch(() => setNote(t('settings.soon')));
+    else setNote(t('settings.soon'));
+  };
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
       <Pressable style={styles.backdrop} onPress={onClose} accessibilityLabel={t('settings.close')}>
@@ -42,6 +66,24 @@ export function SettingsSheet({ visible, onClose }: Props) {
               />
             </View>
           ))}
+          <Pressable onPress={() => void restore()} accessibilityRole="button" style={styles.row}>
+            <Text style={styles.link}>{t('settings.restore')}</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => open(LINKS.privacy)}
+            accessibilityRole="link"
+            style={styles.row}
+          >
+            <Text style={styles.link}>{t('settings.privacy')}</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => open(LINKS.contact ? `mailto:${LINKS.contact}` : '')}
+            accessibilityRole="link"
+            style={styles.row}
+          >
+            <Text style={styles.link}>{t('settings.contact')}</Text>
+          </Pressable>
+          {note ? <Text style={styles.note}>{note}</Text> : null}
           <Pressable
             onPress={onClose}
             accessibilityRole="button"
@@ -86,6 +128,14 @@ const styles = StyleSheet.create({
     borderBottomColor: 'rgba(30,42,90,0.12)',
   },
   label: { flex: 1, fontSize: 18, fontFamily: fonts.bold, color: palette.navy },
+  link: { flex: 1, fontSize: 17, fontFamily: fonts.bold, color: palette.cobalt },
+  note: {
+    marginTop: 8,
+    fontSize: 15,
+    fontFamily: fonts.medium,
+    color: palette.navy,
+    textAlign: 'center',
+  },
   done: {
     marginTop: 18,
     minHeight: 52,

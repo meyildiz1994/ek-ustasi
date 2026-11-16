@@ -1,11 +1,14 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { DailyReward } from '@/components/DailyReward';
 import { SettingsSheet } from '@/components/SettingsSheet';
+import { dailyOffer, localDay } from '@/game/daily';
+import { feedback } from '@/services/feedback';
 import { t } from '@/i18n';
-import { useGame } from '@/store';
+import { gameStore, useGame } from '@/store';
 import { fonts } from '@/theme/fonts';
 import { backgrounds, mascot, ui } from '@/theme/images';
 import { palette } from '@/theme/palette';
@@ -15,6 +18,11 @@ export default function HomeScreen() {
   const level = useGame((s) => s.save.currentLevel);
   const coins = useGame((s) => s.save.coins);
   const [settings, setSettings] = useState(false);
+  // Offered once per app session; "Sonra" hides it until the next launch.
+  const [dailyLater, setDailyLater] = useState(false);
+  const dailyState = useGame((s) => s.save.daily);
+  const [today] = useState(() => localDay(Date.now()));
+  const daily = useMemo(() => dailyOffer(dailyState, today), [dailyState, today]);
   return (
     <ImageBackground source={backgrounds.home} style={styles.root} resizeMode="cover">
       <SafeAreaView style={styles.safe}>
@@ -27,10 +35,16 @@ export default function HomeScreen() {
           >
             <Text style={styles.gearText}>⚙</Text>
           </Pressable>
-          <View style={styles.pill} accessibilityLabel={t('play.coins', { n: coins })}>
+          <Pressable
+            onPress={() => router.push('/shop')}
+            accessibilityRole="button"
+            accessibilityLabel={`${t('play.coins', { n: coins })}, ${t('home.shop')}`}
+            style={({ pressed }) => [styles.pill, pressed && styles.pressed]}
+          >
             <Image source={ui.coin} style={styles.coin} />
             <Text style={styles.pillText}>{coins}</Text>
-          </View>
+            <Text style={styles.plus}>+</Text>
+          </Pressable>
         </View>
         <View style={styles.center}>
           <Text style={styles.title} accessibilityRole="header">
@@ -55,6 +69,15 @@ export default function HomeScreen() {
         </Pressable>
       </SafeAreaView>
       <SettingsSheet visible={settings} onClose={() => setSettings(false)} />
+      {daily && !dailyLater ? (
+        <DailyReward
+          offer={daily}
+          onClaim={() => {
+            if (gameStore.getState().claimDaily() !== null) feedback.coin();
+          }}
+          onLater={() => setDailyLater(true)}
+        />
+      ) : null}
     </ImageBackground>
   );
 }
@@ -80,6 +103,19 @@ const styles = StyleSheet.create({
   },
   coin: { width: 28, height: 28, marginRight: 6 },
   pillText: { color: '#fff', fontSize: 17, fontFamily: fonts.extraBold },
+  plus: {
+    color: palette.navy,
+    backgroundColor: palette.saffron,
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    textAlign: 'center',
+    fontSize: 17,
+    lineHeight: 22,
+    marginLeft: 8,
+    overflow: 'hidden',
+    fontFamily: fonts.extraBold,
+  },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   title: {
     color: '#fff',

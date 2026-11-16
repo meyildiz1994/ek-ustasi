@@ -37,7 +37,22 @@
       "expo-asset",
       "expo-font",
       "expo-sharing",
-      "expo-audio"
+      "expo-audio",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "delayAppMeasurementInit": true,
+          "userTrackingUsageDescription": "Reklamları sana daha uygun hale getirmek için kullanılır. İzin vermesen de oyun aynı şekilde çalışır."
+        }
+      ],
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "Reklamları sana daha uygun hale getirmek için kullanılır. İzin vermesen de oyun aynı şekilde çalışır."
+        }
+      ]
     ],
     "scheme": "ekustasi",
     "experiments": {

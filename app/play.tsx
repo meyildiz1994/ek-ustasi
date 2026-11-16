@@ -16,6 +16,7 @@ import { FlyingStar } from '@/components/Effects';
 import { Grid, FILL_STAGGER_MS } from '@/components/Grid';
 import { EkTuruView } from '@/components/EkTuruView';
 import { LevelComplete } from '@/components/LevelComplete';
+import { OutOfCoins } from '@/components/OutOfCoins';
 import { PreviewBubble, type BubbleHandle, type BubbleTone } from '@/components/PreviewBubble';
 import { Postcard } from '@/components/Postcard';
 import { RoundButton } from '@/components/RoundButton';
@@ -23,11 +24,13 @@ import { StopIntro } from '@/components/StopIntro';
 import { TipCard } from '@/components/TipCard';
 import { TopBar } from '@/components/TopBar';
 import { Wheel } from '@/components/Wheel';
+import { REWARDED, type RewardPlacement } from '../config/monetization';
 import { fillDelays, visibleCells, type CellKey } from '@/game/grid';
 import { HINT_COST } from '@/game/hints';
 import { gridOf } from '@/game/session';
 import { pathWord } from '@/game/wheel';
 import { t } from '@/i18n';
+import { watchForReward } from '@/services/ads';
 import { feedback } from '@/services/feedback';
 import { stopForLevel, stops } from '@/services/levels';
 import { gameStore, useGame } from '@/store';
@@ -64,6 +67,10 @@ export default function PlayScreen() {
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const pathLen = useRef(0);
   const [stars, setStars] = useState(0);
+  const [outOfCoins, setOutOfCoins] = useState(false);
+  const [adBusy, setAdBusy] = useState(false);
+  const noAds = useGame((s) => s.save.noAds);
+  const rewardsLeft = useGame((s) => s.rewardsLeft());
 
   useEffect(() => {
     void gameStore.getState().openLevel();
@@ -136,7 +143,7 @@ export default function PlayScreen() {
 
   const hint = (kind: 'letter' | 'word') => {
     setPicking(false);
-    if (coins < HINT_COST[kind]) return showFlash(t('play.notEnoughCoins'), 'error');
+    if (coins < HINT_COST[kind]) return setOutOfCoins(true);
     withFill([], () => gameStore.getState().hint({ kind }) !== null);
   };
 
@@ -146,8 +153,28 @@ export default function PlayScreen() {
   };
 
   const togglePicking = () => {
-    if (!picking && coins < HINT_COST.targeted) return showFlash(t('play.notEnoughCoins'), 'error');
+    if (!picking && coins < HINT_COST.targeted) return setOutOfCoins(true);
     setPicking(!picking);
+  };
+
+  /** Rewarded placements from the out-of-coins sheet. */
+  const reward = async (placement: RewardPlacement) => {
+    setAdBusy(true);
+    const out = await watchForReward(placement, () => {
+      if (placement === 'coins') return gameStore.getState().grantReward('coins');
+      let ok = false;
+      withFill([], () => (ok = gameStore.getState().grantReward('freeHint')));
+      return ok;
+    });
+    setAdBusy(false);
+    if (out === 'rewarded') {
+      setOutOfCoins(false);
+      if (placement === 'coins') {
+        feedback.coin();
+        showFlash(t('shop.rewarded', { n: REWARDED.coins }), 'normal');
+      }
+    } else if (out === 'unavailable') showFlash(t('shop.adUnavailable'), 'error');
+    else if (out === 'nothing') showFlash(t('outOfCoins.nothing'), 'error');
   };
 
   /** Next level, with the postcard first when a stop was just finished. */
@@ -206,6 +233,7 @@ export default function PlayScreen() {
               level={level.id}
               bonus={bonusCounter}
               onBack={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+              onCoins={() => router.push('/shop')}
             />
             <EkTuruView
               ek={ek}
@@ -225,6 +253,7 @@ export default function PlayScreen() {
               level={level.id}
               bonus={bonusCounter}
               onBack={() => (router.canGoBack() ? router.back() : router.replace('/'))}
+              onCoins={() => router.push('/shop')}
             />
             <View
               style={styles.gridArea}
@@ -298,6 +327,20 @@ export default function PlayScreen() {
           </>
         )}
       </SafeAreaView>
+      {outOfCoins ? (
+        <OutOfCoins
+          noAds={noAds}
+          left={rewardsLeft}
+          busy={adBusy}
+          onFreeHint={() => void reward('freeHint')}
+          onCoins={() => void reward('coins')}
+          onShop={() => {
+            setOutOfCoins(false);
+            router.push('/shop');
+          }}
+          onClose={() => setOutOfCoins(false)}
+        />
+      ) : null}
       {result ? (
         <LevelComplete
           result={result}

@@ -85,7 +85,8 @@ Her aşamanın çıkış şartı (Bölüm 0): testler geçer · `pnpm typecheck`
 
 ## Aşama 9 — Ekonomi, satın alma, reklam
 
-- [ ] Altın ekonomisi, RevenueCat, ödüllü reklam, ATT/UMP, geri yükleme
+- [x] Altın ekonomisi, günlük ödül, RevenueCat, ödüllü reklam, ATT/UMP, geri yükleme — D-024
+- [ ] Mağaza/AdMob hesapları ve cihazda sandbox testleri (Emre, `docs/MAGAZA_KURULUMU.md`)
 
 ## Aşama 10 — Günlük modlar, analitik, ayarlar, erişilebilirlik
 

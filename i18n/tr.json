@@ -8,7 +8,8 @@
     "comingSoon": "Yakında",
     "continue": "Devam et",
     "map": "Harita",
-    "settings": "Ayarlar"
+    "settings": "Ayarlar",
+    "shop": "Mağaza"
   },
   "morph": {
     "vowelHarmony": "Ünlü uyumu bozuldu: son ünlü {last} ({lastDesc}), ek -{form} ({formDesc}).",
@@ -47,7 +48,8 @@
     "earned": "+{n} altın",
     "next": "Sonraki bölüm",
     "score": "Puan: {n}",
-    "toEkTuru": "Ek Turu'na geç"
+    "toEkTuru": "Ek Turu'na geç",
+    "shop": "Mağaza"
   },
   "ek": {
     "title": "Ek Turu",
@@ -139,6 +141,54 @@
     "haptics": "Titreşim",
     "ekTuruExplanations": "Ek Turu açıklamaları",
     "done": "Tamam",
-    "close": "Kapat"
+    "close": "Kapat",
+    "restore": "Satın alımları geri yükle",
+    "privacy": "Gizlilik politikası",
+    "contact": "İletişim",
+    "soon": "Yakında"
+  },
+  "shop": {
+    "title": "Mağaza",
+    "balance": "{n} altın",
+    "freeTitle": "Ücretsiz altın",
+    "watchAd": "Reklam izle: +{n} altın",
+    "getFree": "Al: +{n} altın",
+    "adsLeft": "Bugün {n} hakkın kaldı",
+    "adsLimit": "Bugünlük reklam hakkın bitti, yarın yenilenir",
+    "packsTitle": "Altın paketleri",
+    "small": "Küçük kese",
+    "medium": "Orta kese",
+    "large": "Büyük kese",
+    "coinsAmount": "{n} altın",
+    "noAdsTitle": "Reklamsız Paket",
+    "noAdsBody": "Ödüller reklam izlemeden gelir, sınır yok. Üstüne {n} altın hediye. Tek seferlik.",
+    "noAdsOwned": "Reklamsız Paket sende ✓",
+    "buy": "Satın al",
+    "restore": "Satın alımları geri yükle",
+    "unavailable": "Mağaza şu an kullanılamıyor. İnternet bağlantını kontrol et.",
+    "adUnavailable": "Şu an reklam yok, biraz sonra tekrar dene.",
+    "thanks": "Teşekkürler! Altınların hesabında.",
+    "failed": "Satın alma tamamlanamadı, ücret alınmadı.",
+    "restored": "Satın alımların geri yüklendi.",
+    "nothingToRestore": "Geri yüklenecek satın alma bulunamadı.",
+    "rewarded": "+{n} altın!",
+    "note": "Fiyatlara vergiler dahildir. Satın almalar App Store / Google Play üzerinden yapılır."
+  },
+  "outOfCoins": {
+    "title": "Altının yetmedi",
+    "freeHint": "Reklam izle: ücretsiz ipucu",
+    "freeHintNoAds": "Ücretsiz ipucu al",
+    "coins": "Reklam izle: +{n} altın",
+    "coinsNoAds": "Al: +{n} altın",
+    "shop": "Mağazaya git",
+    "close": "Vazgeç",
+    "nothing": "Açılacak harf kalmadı"
+  },
+  "daily": {
+    "title": "Günlük ödül",
+    "day": "{n}. gün",
+    "claim": "Al: +{n} altın",
+    "body": "Her gün gel, ödül büyüsün. Bir gün kaçırırsan baştan başlar.",
+    "later": "Sonra"
   }
 }

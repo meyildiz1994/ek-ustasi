@@ -15,6 +15,21 @@ import {
   type EkSession,
   type EkTip,
 } from '../game/ekturu';
+import {
+  PRODUCTS,
+  REWARDED,
+  type ProductConfig,
+  type ProductKey,
+  type RewardPlacement,
+} from '../../config/monetization';
+import {
+  claimDaily,
+  dailyOffer,
+  localDay,
+  quotaLeft,
+  spendQuota,
+  type DailyOffer,
+} from '../game/daily';
 import type { CellKey } from '../game/grid';
 import { HINT_COST } from '../game/hints';
 import { isStopFinale } from '../game/stops';
@@ -79,6 +94,23 @@ export interface GameState {
   ekCollect(): void;
   dismissTip(): void;
   dismissPostcard(): void;
+
+  /** Today's login reward if not yet claimed. */
+  dailyOffer(): DailyOffer | null;
+  /** Claims today's login reward; returns the coins paid, or null if already claimed. */
+  claimDaily(): number | null;
+  /** Rewarded ads left today (Infinity with the no-ads pack, which pays without an ad). */
+  rewardsLeft(): number;
+  /**
+   * Pays a rewarded placement after the ad finished (or straight away with the no-ads pack).
+   * 'coins' adds REWARDED.coins; 'freeHint' opens a letter like the 💡 hint, for free.
+   * Returns false when today's limit is reached or a free hint has nothing to open.
+   */
+  grantReward(placement: RewardPlacement): boolean;
+  /** Pays a verified store purchase once per transaction id. */
+  grantPurchase(product: ProductKey, transactionId: string): boolean;
+  /** Sets the no-ads flag from the store's entitlements (purchase or restore). */
+  setNoAds(owned: boolean): void;
 }
 
 export function createGameStore(deps: GameDeps) {
@@ -296,6 +328,71 @@ export function createGameStore(deps: GameDeps) {
 
         dismissPostcard() {
           set((st) => void (st.newPostcard = null));
+        },
+
+        dailyOffer() {
+          return dailyOffer(get().save.daily, localDay(now()));
+        },
+
+        claimDaily() {
+          const out = claimDaily(get().save.daily, localDay(now()));
+          if (!out) return null;
+          set((st) => {
+            st.save.daily = out.state;
+            st.save.coins += out.coins;
+          });
+          persist();
+          return out.coins;
+        },
+
+        rewardsLeft() {
+          const { save } = get();
+          if (save.noAds) return Infinity;
+          return quotaLeft(save.adQuota, localDay(now()), REWARDED.dailyLimit);
+        },
+
+        grantReward(placement) {
+          if (get().rewardsLeft() <= 0) return false;
+          const today = localDay(now());
+          if (placement === 'freeHint') {
+            const { level, session } = get();
+            if (!level || !session) return false;
+            // Paid as if the player had the coins; nothing is deducted.
+            const out = applyHint(level, session, { kind: 'letter' }, Infinity, rngFor(level));
+            if (!out) return false;
+            set((st) => {
+              st.session = out.session;
+              st.save.session = out.session;
+              if (!st.save.noAds) st.save.adQuota = spendQuota(st.save.adQuota, today);
+            });
+            persist();
+            if (out.solved) finish();
+            return true;
+          }
+          set((st) => {
+            st.save.coins += REWARDED.coins;
+            if (!st.save.noAds) st.save.adQuota = spendQuota(st.save.adQuota, today);
+          });
+          persist();
+          return true;
+        },
+
+        grantPurchase(product, transactionId) {
+          if (get().save.grantedTransactions.includes(transactionId)) return false;
+          const p: ProductConfig = PRODUCTS[product];
+          set((st) => {
+            st.save.grantedTransactions.push(transactionId);
+            st.save.coins += p.coins ?? 0;
+            if (product === 'noAds') st.save.noAds = true;
+          });
+          persist();
+          return true;
+        },
+
+        setNoAds(owned) {
+          if (get().save.noAds === owned) return;
+          set((st) => void (st.save.noAds = owned));
+          persist();
         },
 
         setSetting(key, value) {

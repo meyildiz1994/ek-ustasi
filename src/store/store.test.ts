@@ -170,3 +170,71 @@ describe('postcards', () => {
     expect(store.getState().newPostcard).toBeNull();
   });
 });
+
+describe('economy', () => {
+  const day = (d: number) => new Date(2026, 10, d, 12).getTime();
+
+  it('pays the daily reward once a day and walks the cycle', () => {
+    let t = day(1);
+    const store = createGameStore({
+      provider: memorySaveProvider(),
+      loadLevel,
+      engine,
+      now: () => t,
+    });
+    const s = () => store.getState();
+    expect(s().dailyOffer()).toEqual({ step: 0, coins: 25 });
+    expect(s().claimDaily()).toBe(25);
+    expect(s().claimDaily()).toBeNull();
+    t = day(2);
+    expect(s().claimDaily()).toBe(25);
+    t = day(3);
+    expect(s().claimDaily()).toBe(50);
+    expect(s().save.coins).toBe(200 + 100);
+    t = day(5); // missed a day
+    expect(s().dailyOffer()).toEqual({ step: 0, coins: 25 });
+  });
+
+  it('pays rewarded ads up to the daily limit; no-ads pays without a limit', async () => {
+    let t = day(1);
+    const store = createGameStore({
+      provider: memorySaveProvider(),
+      loadLevel,
+      engine,
+      now: () => t,
+    });
+    const s = () => store.getState();
+    for (let i = 0; i < 10; i++) expect(s().grantReward('coins')).toBe(true);
+    expect(s().grantReward('coins')).toBe(false);
+    expect(s().rewardsLeft()).toBe(0);
+    expect(s().save.coins).toBe(200 + 250);
+    t = day(2);
+    expect(s().rewardsLeft()).toBe(10);
+
+    // Free hint opens a letter without charging coins.
+    await s().openLevel();
+    const before = s().save.coins;
+    expect(s().grantReward('freeHint')).toBe(true);
+    expect(s().session?.progress.revealed).toHaveLength(1);
+    expect(s().save.coins).toBe(before);
+    expect(s().rewardsLeft()).toBe(9);
+
+    s().setNoAds(true);
+    expect(s().rewardsLeft()).toBe(Infinity);
+    expect(s().grantReward('coins')).toBe(true);
+    expect(s().save.adQuota.used).toBe(1);
+  });
+
+  it('pays each store transaction once', () => {
+    const store = createGameStore({ provider: memorySaveProvider(), loadLevel, engine });
+    const s = () => store.getState();
+    expect(s().grantPurchase('coinsMedium', 'tx1')).toBe(true);
+    expect(s().grantPurchase('coinsMedium', 'tx1')).toBe(false);
+    expect(s().save.coins).toBe(200 + 1200);
+    expect(s().grantPurchase('noAds', 'tx2')).toBe(true);
+    expect(s().save.noAds).toBe(true);
+    expect(s().save.coins).toBe(200 + 1200 + 500);
+    s().setNoAds(false);
+    expect(s().save.noAds).toBe(false);
+  });
+});

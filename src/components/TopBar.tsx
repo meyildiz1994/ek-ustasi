@@ -13,23 +13,34 @@ interface Props {
   level: number;
   bonus: number;
   onBack: () => void;
+  /** Coin pill → shop. */
+  onCoins?: () => void;
 }
 
-export function TopBar({ coins, stopName, level, bonus, onBack }: Props) {
+export function TopBar({ coins, stopName, level, bonus, onBack, onCoins }: Props) {
   return (
     <View style={styles.bar}>
-      <Pressable
-        onPress={onBack}
-        accessibilityRole="button"
-        accessibilityLabel={t('play.back')}
-        style={styles.pill}
-      >
-        <Text style={styles.back}>‹</Text>
-        <Image source={ui.coin} style={styles.icon} />
-        <Text style={styles.value} accessibilityLabel={t('play.coins', { n: coins })}>
-          {coins}
-        </Text>
-      </Pressable>
+      <View style={styles.left}>
+        <Pressable
+          onPress={onBack}
+          accessibilityRole="button"
+          accessibilityLabel={t('play.back')}
+          style={[styles.pill, styles.backPill]}
+        >
+          <Text style={styles.back}>‹</Text>
+        </Pressable>
+        <Pressable
+          onPress={onCoins}
+          disabled={!onCoins}
+          accessibilityRole="button"
+          accessibilityLabel={`${t('play.coins', { n: coins })}, ${t('play.shop')}`}
+          style={styles.pill}
+        >
+          <Image source={ui.coin} style={styles.icon} />
+          <Text style={styles.value}>{coins}</Text>
+          {onCoins ? <Text style={styles.plus}>+</Text> : null}
+        </Pressable>
+      </View>
       <View style={styles.center}>
         <Text style={styles.stop}>{trUpper(stopName)}</Text>
         <Text style={styles.level}>{t('play.level', { n: level })}</Text>
@@ -57,7 +68,22 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     backgroundColor: 'rgba(30,42,90,0.75)',
   },
-  back: { color: '#fff', fontSize: 26, marginRight: 4, marginTop: -3 },
+  left: { flexDirection: 'row', gap: 6 },
+  backPill: { width: 44, justifyContent: 'center', paddingHorizontal: 0 },
+  back: { color: '#fff', fontSize: 26, marginTop: -3 },
+  plus: {
+    color: palette.navy,
+    backgroundColor: palette.saffron,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 16,
+    lineHeight: 20,
+    marginLeft: 6,
+    overflow: 'hidden',
+    fontFamily: fonts.extraBold,
+  },
   icon: { width: 28, height: 28, marginRight: 4 },
   value: { color: '#fff', fontSize: 17, fontFamily: fonts.extraBold },
   center: { alignItems: 'center' },
