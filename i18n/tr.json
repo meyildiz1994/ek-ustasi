@@ -7,7 +7,8 @@
     "play": "Bölüm {n}",
     "comingSoon": "Yakında",
     "continue": "Devam et",
-    "map": "Harita"
+    "map": "Harita",
+    "settings": "Ayarlar"
   },
   "morph": {
     "vowelHarmony": "Ünlü uyumu bozuldu: son ünlü {last} ({lastDesc}), ek -{form} ({formDesc}).",
@@ -130,5 +131,14 @@
     "share": "Paylaş",
     "continue": "Devam et",
     "shareText": "Ek Ustası'nda {name} durağını bitirdim!"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "sound": "Ses efektleri",
+    "music": "Müzik",
+    "haptics": "Titreşim",
+    "ekTuruExplanations": "Ek Turu açıklamaları",
+    "done": "Tamam",
+    "close": "Kapat"
   }
 }

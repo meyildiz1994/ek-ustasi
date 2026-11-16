@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { FlyingStar } from '@/components/Effects';
 import { Grid, FILL_STAGGER_MS } from '@/components/Grid';
 import { EkTuruView } from '@/components/EkTuruView';
 import { LevelComplete } from '@/components/LevelComplete';
@@ -59,13 +60,22 @@ export default function PlayScreen() {
   const [delays, setDelays] = useState<ReadonlyMap<CellKey, number>>(new Map());
   const bubble = useRef<BubbleHandle>(null);
   const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const pathLen = useRef(0);
+  const [stars, setStars] = useState(0);
 
   useEffect(() => {
     void gameStore.getState().openLevel();
+    const pending = timers.current;
     return () => {
       if (flashTimer.current) clearTimeout(flashTimer.current);
+      pending.forEach(clearTimeout);
     };
   }, []);
+
+  const later = (ms: number, fn: () => void) => {
+    timers.current.push(setTimeout(fn, ms));
+  };
 
   const model = level ? gridOf(level) : null;
   const visible = useMemo(
@@ -83,14 +93,17 @@ export default function PlayScreen() {
     flashTimer.current = setTimeout(() => setFlash(null), FLASH_MS);
   };
 
-  /** Runs a store action and animates the cells it opened. */
-  const withFill = (order: readonly CellKey[], act: () => boolean) => {
+  /** Runs a store action and animates the cells it opened; notes rise as tiles fill (spec §12). */
+  const withFill = (order: readonly CellKey[], act: () => boolean): number => {
     const before = visible;
-    if (!act()) return;
+    if (!act()) return 0;
     const s = gameStore.getState();
-    if (!s.level || !s.session) return;
+    if (!s.level || !s.session) return 0;
     const after = visibleCells(gridOf(s.level), s.session.progress);
-    setDelays(fillDelays(before, after, order, FILL_STAGGER_MS));
+    const d = fillDelays(before, after, order, FILL_STAGGER_MS);
+    setDelays(d);
+    [...d.values()].forEach((ms, k) => later(ms, () => feedback.fill(k)));
+    return d.size * FILL_STAGGER_MS;
   };
 
   const onRelease = (path: number[]) => {
@@ -101,15 +114,17 @@ export default function PlayScreen() {
     const wi = model.byWord.get(word);
     const order = wi === undefined ? [] : (model.words[wi]?.cells ?? []);
     let res: string | undefined;
-    withFill(order, () => {
+    const fillMs = withFill(order, () => {
       res = gameStore.getState().submit(word)?.result;
       return res === 'target';
     });
-    if (res === 'target') feedback.success();
+    if (res === 'target') later(fillMs, feedback.success);
     else if (res === 'bonus') {
-      feedback.success();
+      feedback.bonus();
+      setStars((n) => n + 1);
       showFlash(`${word} · ${t('play.bonusFound')}`, 'bonus');
     } else if (res === 'alreadyFound') {
+      feedback.already();
       showFlash(t('play.alreadyFound'), 'already');
     } else {
       feedback.error();
@@ -196,7 +211,6 @@ export default function PlayScreen() {
               onHint={() => gameStore.getState().ekHint()}
               onCollect={() => gameStore.getState().ekCollect()}
               onNext={goNext}
-              onFeedback={(k) => feedback[k]()}
             />
           </>
         ) : (
@@ -255,7 +269,8 @@ export default function PlayScreen() {
                 letters={wheelLetters}
                 size={wheelSize}
                 onChange={(p) => {
-                  if (p.length > 0) feedback.select();
+                  if (p.length > pathLen.current) feedback.select(p.length - 1);
+                  pathLen.current = p.length;
                   setPreview(pathWord(wheelLetters, p));
                 }}
                 onRelease={onRelease}
@@ -300,6 +315,7 @@ export default function PlayScreen() {
           }}
         />
       ) : null}
+      {stars > 0 ? <FlyingStar key={stars} /> : null}
       {tip ? <TipCard tip={tip} onClose={() => gameStore.getState().dismissTip()} /> : null}
       {loading && level ? <View style={styles.dim} pointerEvents="none" /> : null}
     </ImageBackground>
