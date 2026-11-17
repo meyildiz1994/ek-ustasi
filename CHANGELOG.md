@@ -8,6 +8,8 @@
 - Altın yetmeyince: reklamla ücretsiz ipucu ya da +25 altın, Mağaza'ya geçiş.
 - RevenueCat satın alma servisi, AdMob ödüllü reklam, UMP + ATT izin akışı.
 - Ayarlar: satın alımları geri yükle, gizlilik politikası, iletişim. Kararlar: D-024.
+- Tarayıcı önizlemesi (`pnpm preview:web`): her adres altında çalışan web derlemesi. Web'de satın alma ve
+  reklam taklit edilir ("deneme" fiyatlar, 1,5 sn sahte reklam).
 
 ## [0.8.1] — 2026-11-16 — Durak görselleri
 

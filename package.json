@@ -68,6 +68,7 @@
     "test:tools": "vitest run --config tools/vitest.config.mts",
     "web:setup": "setup-skia-web public",
     "export:web": "pnpm web:setup && EXPO_OFFLINE=1 expo export -p web",
+    "preview:web": "node tools/web/preview.mjs",
     "sounds": "tsx tools/audio/synth.ts"
   },
   "private": true,
