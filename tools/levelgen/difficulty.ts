@@ -16,9 +16,9 @@ export interface DifficultyFeatures {
 }
 
 export const NORMS = {
-  letters: [4, 7],
-  words: [3, 12],
-  longest: [4, 7],
+  letters: [5, 8],
+  words: [5, 20],
+  longest: [5, 8],
   repeated: [0, 2],
   density: [0.1, 0.5],
 } as const;

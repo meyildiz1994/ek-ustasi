@@ -1,5 +1,21 @@
 # Değişiklik günlüğü
 
+## [0.9.1] — 2026-11-17 — Daha uzun bulmacalar
+
+- 5000 bölüm yeniden üretildi: çarkta daha çok harf (4–5'ten 8'e), bölüm başına daha çok kelime (5–8'den
+  13–20'ye). Kelime sayısı her bölümde değişiyor. 1. bölüm artık `kalem`. Kararlar: D-025.
+
+## [0.9.0] — 2026-11-17 — Aşama 9: Ekonomi, satın alma, ödüllü reklam
+
+- `config/monetization.ts`: ürünler, ödüller, sınırlar, kimlikler tek yerde.
+- Günlük giriş ödülü (7 günlük döngü) ana sayfada.
+- Mağaza ekranı: ücretsiz altın (ödüllü reklam), üç altın paketi, Reklamsız Paket, geri yükleme.
+- Altın yetmeyince: reklamla ücretsiz ipucu ya da +25 altın, Mağaza'ya geçiş.
+- RevenueCat satın alma servisi, AdMob ödüllü reklam, UMP + ATT izin akışı.
+- Ayarlar: satın alımları geri yükle, gizlilik politikası, iletişim. Kararlar: D-024.
+- Tarayıcı önizlemesi (`pnpm preview:web`): her adres altında çalışan web derlemesi. Web'de satın alma ve
+  reklam taklit edilir ("deneme" fiyatlar, 1,5 sn sahte reklam).
+
 ## [0.8.1] — 2026-11-16 — Durak görselleri
 
 - 100 durağın her birine fotoğraf gibi bir görsel (`assets/images/scenes/*.webp`, ~7,2 MB): oyun arka planı,

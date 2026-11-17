@@ -3,6 +3,7 @@
  * cloud saves (iCloud / Play Games) can be added later without touching the game.
  */
 import type { Session } from '../game/session';
+import { emptyDaily, emptyQuota, type AdQuota, type DailyState } from '../game/daily';
 import { COINS } from '../game/scoring';
 
 export const SAVE_VERSION = 1;
@@ -35,6 +36,14 @@ export interface SaveData {
   /** Postcards earned, by stop id, in the order they were won (spec §10). */
   postcards: string[];
   settings: Settings;
+  /** Daily login reward progress (spec §13.1). */
+  daily: DailyState;
+  /** Rewarded ads watched today. */
+  adQuota: AdQuota;
+  /** "Reklamsız Paket" owned (mirrors the store entitlement; restored on demand). */
+  noAds: boolean;
+  /** Store transaction ids already paid out, so a replayed purchase event never pays twice. */
+  grantedTransactions: string[];
 }
 
 export const defaultSettings = (): Settings => ({
@@ -58,6 +67,10 @@ export const defaultSave = (): SaveData => ({
   tipsSeen: [],
   postcards: [],
   settings: defaultSettings(),
+  daily: emptyDaily(),
+  adQuota: emptyQuota(),
+  noAds: false,
+  grantedTransactions: [],
 });
 
 /** Brings any stored object up to the current schema. Unknown / broken data → fresh save. */
