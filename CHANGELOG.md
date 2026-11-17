@@ -1,5 +1,10 @@
 # Değişiklik günlüğü
 
+## [0.9.1] — 2026-11-17 — Daha uzun bulmacalar
+
+- 5000 bölüm yeniden üretildi: çarkta daha çok harf (4–5'ten 8'e), bölüm başına daha çok kelime (5–8'den
+  13–20'ye). Kelime sayısı her bölümde değişiyor. 1. bölüm artık `kalem`. Kararlar: D-025.
+
 ## [0.9.0] — 2026-11-17 — Aşama 9: Ekonomi, satın alma, ödüllü reklam
 
 - `config/monetization.ts`: ürünler, ödüller, sınırlar, kimlikler tek yerde.

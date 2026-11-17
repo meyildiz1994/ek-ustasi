@@ -253,5 +253,35 @@ cezalandırıyor, böylece aynı kelimeler 24'e erken dayanmıyor.
   (`no_ads`) okunur; "Satın alımları geri yükle" hem Mağaza'da hem Ayarlar'da.
 - **Günlük ödül:** yerel takvim gününe göre (oyuncunun saat dilimi). Art arda günlerde 25-25-50-50-75-75-150
   döngüsü; bir gün kaçarsa baştan. Saat geri alınırsa o gün tekrar ödenmez.
-- **Web derlemesi:** mağaza ve reklam yok (`*.web.ts` boş servisler); yalnızca önizleme için.
+- **Web derlemesi:** mağaza ve reklam taklit edilir (`*.web.ts`: "deneme" fiyatlar, 1,5 sn sahte reklam);
+  yalnızca tarayıcı önizlemesi için (`pnpm preview:web`).
 - Gerçek mağaza ve reklam testleri cihazda geliştirme derlemesiyle yapılmalı: `docs/MAGAZA_KURULUMU.md`.
+
+## D-025 — Daha çok harf, daha çok kelime, bölümden bölüme değişen kelime sayısı (Emre, 2026-11-17)
+
+- **Spec'ten sapma (§8.5 tablosu):** Emre tarayıcı önizlemesini oynadı: "bulmacalar çok kısa, çok daha fazla
+  kelime bulması lazım ve bu sürekli değişmesi lazım", "harf sayısı da artsın". Katmanlar yeniden ayarlandı:
+
+| Bölümler  | Harf | Hedef kelime | Önceki (harf / kelime) |
+| --------- | ---- | ------------ | ---------------------- |
+| 1–20      | 4–5  | 5–8          | 3–4 / 3–4              |
+| 21–100    | 5    | 6–10         | 4 / 4–6                |
+| 101–300   | 5–6  | 7–11         | 4–5 / 5–7              |
+| 301–700   | 6    | 8–13         | 5 / 6–9                |
+| 701–1200  | 6–7  | 9–14         | 5–6 / 7–10             |
+| 1201–2000 | 6–7  | 10–15        | 6 / 8–12               |
+| 2001–3000 | 7    | 11–17        | 6–7 / 9–13             |
+| 3001–4000 | 7–8  | 12–18        | 7 / 10–14              |
+| 4001–5000 | 7–8  | 13–20        | 7–8 / 11–16            |
+
+- **Değişen kelime sayısı:** her bölüm katman aralığında kendi kelime sayısını seçer (`wordTarget`, bölüm
+  numarasından türeyen sabit bir çekiliş; katman ilerledikçe hafifçe yukarı, dinlenme bölümlerinde aşağı).
+  Üretici bu sayıdan ±1 sapabilir; sapma zorluk hatasına kelime başına 4 puan olarak eklenir.
+- **Zorluk normları (D-015) kaydırıldı:** harf 5–8, kelime 5–20, en uzun kelime 5–8. Bantlar 701. bölümden
+  sonra ölçülen değerlere göre genişletildi (101–300: 15–31, 701–1200: 33–48, 1201–2000: 34–60, 2001–3000: 52–70,
+  3001–4000: 52–80, 4001–5000: 42–90): 6 ve 7 harfli bölümler aynı kelime sayısında daha düşük puan alıyor.
+- 1. bölümün elle seçilmiş ana kelimesi `elma` yerine `kalem` (elma 5 kelimeye yetmiyor; kalem içinde elma,
+     kale, alem, mal var). 2–3. bölümler `kale`, `okul` olarak kaldı.
+- Kelime başına kullanım sınırı 12/24 yerine 30/60 (D-019): bölümler uzayınca yaygın kelimeler son bölümlere
+  yetmiyordu. Ardışık 30 bölümde tekrar yasağı aynen duruyor.
+- 8 harfli ana kelime sayısı (~1700) son iki katmana yetmeyebilir; biterse 7 harfe düşülür.

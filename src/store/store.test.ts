@@ -111,7 +111,7 @@ describe('Ek Turu in the store', () => {
     const again = createGameStore({ provider, loadLevel, engine });
     await again.getState().openLevel();
     const ek = again.getState().ek!;
-    expect(ek.ek.root).toBe('tane');
+    expect(ek.ek.root).toBe('talih');
     expect(again.getState().tip).toBe('intro');
     again.getState().dismissTip();
     expect(again.getState().save.tipsSeen).toEqual(['intro']);
@@ -121,10 +121,10 @@ describe('Ek Turu in the store', () => {
     const hinted = again.getState().ek!.hinted!;
     expect(again.getState().save.coins).toBe(coins - 40);
     expect(again.getState().ekApply([hinted])).toEqual({ added: 1, failed: false });
-    expect(again.getState().ek!.word.surface).toBe('taneli');
-    const ler = again.getState().ek!.cards.findIndex((c) => c.form === 'ler');
-    expect(again.getState().ekApply([ler])).toEqual({ added: 1, failed: false });
-    expect(again.getState().ek!.word.surface).toBe('taneliler');
+    expect(again.getState().ek!.word.surface).toBe('talihsiz');
+    const lik = again.getState().ek!.cards.findIndex((c) => c.form === 'lik');
+    expect(again.getState().ekApply([lik])).toEqual({ added: 1, failed: false });
+    expect(again.getState().ek!.word.surface).toBe('talihsizlik');
     again.getState().ekCollect();
     const s = again.getState();
     expect(s.ek!.status).toBe('collected');
@@ -145,7 +145,7 @@ describe('Ek Turu in the store', () => {
     solve(store);
     store.getState().startEkTuru();
     store.getState().dismissTip();
-    const wrong = store.getState().ek!.cards.findIndex((c) => c.form === 'lı');
+    const wrong = store.getState().ek!.cards.findIndex((c) => c.form === 'sız');
     expect(store.getState().ekApply([wrong])).toEqual({ added: 0, failed: true });
     expect(store.getState().tip).toBe('harmony');
     expect(store.getState().ekPaid).toBe(0);

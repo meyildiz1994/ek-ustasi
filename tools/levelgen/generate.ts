@@ -5,7 +5,7 @@
  */
 import { isBigEkTuruLevel, isEkTuruLevel, LEVELS_PER_PACK, type Level } from '../../src/game/level';
 import { trCompare } from '../../src/utils/tr';
-import { targetDifficulty, tierOf, tierProgress, type Tier } from './curve';
+import { targetDifficulty, tierOf, tierProgress, wordTarget, type Tier } from './curve';
 import type { Dictionary, TargetWord } from './data';
 import { difficulty, type DifficultyFeatures } from './difficulty';
 import { buildEkTuru, derivationStats } from './ekturu';
@@ -17,14 +17,14 @@ import { STOP_SEEDS, stopIdOf } from './stops-list';
 /** Repetition rules (spec §8.6). */
 export const REPEAT = {
   wordGap: 30,
-  /** Spec: 12. Three/four-letter words get 24 (DECISIONS D-019): there are too few of them. */
-  wordMaxUses: 12,
-  shortWordMaxUses: 24,
+  /** Spec: 12; 30 and 60 for 3–4 letters since levels got longer (DECISIONS D-019, D-025). */
+  wordMaxUses: 30,
+  shortWordMaxUses: 60,
   rootGap: 200,
 } as const;
 
 /** Hand-picked main words for the first levels (spec §8.5: "1–3 elle seçilmiş"). */
-export const HANDPICKED: readonly string[] = ['elma', 'kale', 'okul'];
+export const HANDPICKED: readonly string[] = ['kalem', 'kale', 'okul'];
 
 /** Crossing density assumed before the grid exists; replaced by a running mean per letter count. */
 const DENSITY_GUESS = 0.22;
@@ -40,7 +40,7 @@ export interface GenerateOptions {
   candidates?: number;
   /** Candidates that get a real grid layout per level. */
   layouts?: number;
-  onProgress?: (id: number) => void;
+  onProgress?: (id: number, level: Level) => void;
 }
 
 export type RejectReason = 'fewWords' | 'gridTooSmall' | 'noEkRoot' | 'outOfBand';
@@ -143,6 +143,7 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
   for (let id = 1; id <= opts.count; id++) {
     const tier = tierOf(id);
     const target = targetDifficulty(id);
+    const want = wordTarget(id);
     targets.push(target);
     const rng = createRng(hashSeed(opts.seed, id));
     const ekLevel = isEkTuruLevel(id);
@@ -209,6 +210,11 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
           }
         }
         let best: Omit<Estimate, 'main'> | undefined;
+        // Aim at this level's word count (± 1); the tier range is the hard limit.
+        // Late in the run common words hit their use cap; then any count in the tier will do.
+        const short = avail.length + 1 < want - 1;
+        const kLo = short ? tier.words[0] : Math.max(tier.words[0], want - 1);
+        const kHi = Math.min(tier.words[1], want + 1);
         for (const alpha of [0, 0.25, 0.5, 0.75, 1]) {
           const ranked = avail
             .map((t) => ({
@@ -225,11 +231,12 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
             ranked.splice(ranked.indexOf(root), 1);
             ranked.unshift(root);
           }
-          for (let k = tier.words[0]; k <= Math.min(tier.words[1], avail.length + 1); k++) {
+          for (let k = kLo; k <= Math.min(kHi, avail.length + 1); k++) {
             const words = [m, ...ranked.slice(0, k - 1)];
             const f = features(words, m.w.length, undefined, densityGuess(k));
             f.repeated = repeatedLetters(m.w);
-            const err = Math.abs(difficulty(f) - target);
+            // Missing the level's word count costs as much as 4 points of difficulty per word.
+            const err = Math.abs(difficulty(f) - target) + 4 * Math.abs(k - want);
             if (!best || err < best.err) best = { words, spare: ranked.slice(k - 1), err };
           }
         }
@@ -246,6 +253,9 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
     // 3. Real layouts for the most promising candidates; widen the search when none fits.
     let chosen: Attempt | undefined;
     let chosenErr = Infinity;
+    // Closest out-of-band layout, used only when nothing in the band fits (validation reports it).
+    let fallback: Attempt | undefined;
+    let fallbackOff = Infinity;
     const [lo, hi] = tier.band;
     const seen: Estimate[] = [];
     const local: string[] = [];
@@ -264,6 +274,11 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
         }
         if (attempt.difficulty < lo || attempt.difficulty > hi) {
           rejections.outOfBand++;
+          const off = Math.max(lo - attempt.difficulty, attempt.difficulty - hi);
+          if (off < fallbackOff) {
+            fallback = attempt;
+            fallbackOff = off;
+          }
           if (local.length < 12) local.push(`${est.main.w}:${attempt.difficulty}`);
           continue;
         }
@@ -277,6 +292,7 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
       }
       if (chosen) break;
     }
+    if (!chosen && fallback) chosen = fallback;
     if (!chosen) {
       const diag = seen
         .slice(0, 8)
@@ -304,7 +320,7 @@ export function generateLevels(dict: Dictionary, opts: GenerateOptions): Generat
       usage.uses.set(p.w, (usage.uses.get(p.w) ?? 0) + 1);
     }
     if (level.ekTuru) usage.rootSeen.set(level.ekTuru.root, id);
-    opts.onProgress?.(id);
+    opts.onProgress?.(id, level);
   }
   return { levels, rejections, targets };
 }

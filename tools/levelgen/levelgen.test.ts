@@ -84,7 +84,7 @@ describe('grid', () => {
 describe('difficulty and curve', () => {
   it('stays within 0–100', () => {
     const easy = { letters: 4, words: 3, meanPct: 1, longest: 4, repeated: 0, density: 0.5 };
-    const hard = { letters: 8, words: 16, meanPct: 0, longest: 8, repeated: 3, density: 0 };
+    const hard = { letters: 8, words: 20, meanPct: 0, longest: 8, repeated: 3, density: 0 };
     expect(difficulty(easy)).toBe(0);
     expect(difficulty(hard)).toBe(100);
     expect(difficulty({ ...easy, letters: 6 })).toBeGreaterThan(difficulty(easy));
@@ -175,7 +175,7 @@ describe('generated levels (first 100)', () => {
     ];
     expect(failures).toEqual([]);
     expect(first100.filter((l) => isEkTuruLevel(l.id)).every((l) => l.ekTuru)).toBe(true);
-    expect(first100[0]?.words.map((w) => w.w)).toContain('elma');
+    expect(first100[0]?.words.map((w) => w.w)).toContain('kalem');
   });
 
   it('are deterministic', () => {
